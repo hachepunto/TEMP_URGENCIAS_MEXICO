@@ -68,7 +68,7 @@ str(casos_cie10_frec)
 rm(casos_años)
 ##### abrir tabla de proyecciones poblacionales por año. 
 
-PROYECCIONES_POBLACION<-read.csv("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/PROYECCIONES_POBLACION_MEXICO/pob_mit_proyecciones.csv")
+PROYECCIONES_POBLACION<-read.csv("Datos/proy_pop/pob_mit_proyecciones.csv")
 poblacion_anual<-PROYECCIONES_POBLACION %>%
   group_by(AÑO,ENTIDAD)%>%
   summarise(poblacion_anual = sum(POBLACION))%>%
