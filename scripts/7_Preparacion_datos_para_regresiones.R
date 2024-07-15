@@ -17,7 +17,7 @@ library(splines)
 
 #setwd("~/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_LIMPIOS")
 ### abrir archivos de urgencias
-load(file =  "C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_LIMPIOS/casos_urgencias_2010_2023.RData")
+load(file =  "Datos/r/casos_urgencias_2010_2023.RData")
 
 ### FILTRAR DATOS EN BLANCO
 casos_años <- casos_años %>%
@@ -28,7 +28,7 @@ casos_años <- casos_años %>%
 gc()
 
 ## abrir archivo de códigos CIE10
-CODIGOS_CIE10<-read.csv("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/CODIGOSCIE10/codigos_cie_10_capitulo_mexico.csv", sep = ",")
+CODIGOS_CIE10<-read.csv("Datos/cie10/codigos_cie_10_capitulo_mexico.csv", sep = ",")
 CODIGOS_CIE10<- subset(CODIGOS_CIE10, !duplicated(CODIGOS_CIE10))
 CODIGOS_CIE10 <- as.data.table(CODIGOS_CIE10)
 unique(CODIGOS_CIE10$CAPITULO)
@@ -78,7 +78,7 @@ casos_años<-casos_años%>%
 #unique(casos_años$CAPITULO)
 
 ### abrir dataframe de clues y municipios
-CAT_CLUES<-read.csv("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/CLUES/CATCLUES_2023_actualizado.csv")
+CAT_CLUES<-read.csv("Datos/CLUES/CATCLUES_2023_actualizado.csv")
 CAT_CLUES <- as.data.table(CAT_CLUES)
 
 ### se agrega el dato de CLUES
@@ -137,7 +137,7 @@ gc()
 ###A ESTE DTAFRAME AGREGO LOS DATOS DE TEMPERATURAS DIARIAS PARA CADA MUNICIPIO DURANTE ESTE PERIODO DE TIEMPO
 #### abrir archivos de datos de temperatura
 ### ABIR DATOS DE TEMPERATURAS
-load("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/daymet_temperaturas_municipales_mexico/day_results/temp_2010_2023.RData")
+load("Datos/r/temp_2010_2023.RData")
 ####EN ESTE ARCHIVO CUENTO CON NOMBRESDE MUNICIPIOS Y ESTADOS PERO NO CON LOS CODIGOS
 
 temp_2010_2023_a<-temp_2010_2023%>%
@@ -175,7 +175,7 @@ rm(casos_años_agrupado)
 
 
 ### Abrir dataframes de proyecciones de municipios
-PROYECCIONES_POBLACION_MUNICIPIO<-read.csv("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/PROYECCIONES_POBLACION_MEXICO/proy_pob_mpo_agregados_2010-2030.csv")
+PROYECCIONES_POBLACION_MUNICIPIO<-read.csv("Datos/Proy/pop/proy_pob_mpo_agregados_2010-2030.csv")
 PROYECCIONES_POBLACION_MUNICIPIO <- PROYECCIONES_POBLACION_MUNICIPIO %>%
   mutate(edo = toupper(edo)) %>%
   mutate(mpo = toupper(mpo)) %>%
@@ -217,4 +217,4 @@ casos_años_agrupado_Proyecciones<- casos_años_agrupado_Proyecciones %>%
   mutate(TASA_POR_100milHAB = numero_de_casos / pop_tot *100000)%>%
   filter(!is.na(TASA_POR_100milHAB))
 
-#save(casos_años_agrupado_Proyecciones, file = "casos_años_agrupados_proyecciones.RData")
+#save(casos_años_agrupado_Proyecciones, file = "Datos/r/casos_años_agrupados_proyecciones.RData")
