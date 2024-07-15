@@ -96,4 +96,4 @@ tmin_mun_extract_daily_long = pivot_longer(tmin_mun_extract_daily,
                                                    year = 2023)
 
 
-save.image("r/daymet_v4_daily_na_tmin_2023.rds")
+save.image("r/day_results/daymet_v4_daily_na_tmin_2023.rds")
