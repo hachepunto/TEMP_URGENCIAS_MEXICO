@@ -17,10 +17,10 @@ pacman::p_load(raster, sf, data.table, tidyverse, maps, janitor,
 
 plan(multisession)
 
-setwd("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/SCRIPTS/")
+
 ### abrir archivo de localización de municipios. Este es un archivo shp que contiene los límites geográficos de México
 
-mx_mun = st_read("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/TEMPERATURA_MEXICO_MUNICIPAL_NASA/hdx_municipes_maps/mex_admbnda_adm2_govmex_20210618.shp") %>%
+mx_mun = st_read("Datos/municipios/mex_admbnda_adm2_govmex_20210618.shp") %>%
   mutate(municipio = ADM2_ES,
          state     = ADM1_ES) %>%
   dplyr::select(municipio, state)
@@ -29,7 +29,7 @@ plot(mx_mun)
 
 ### abrir archivos de datos de temperaturas máximas de Daymet
 
-prcp_na_2008_daily <-"C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/TEMPERATURA_MEXICO_MUNICIPAL_NASA/diaria_daymet/daymet_v4_daily_na_prcp_2023.nc" %>%
+prcp_na_2008_daily <-"Datos/Temperaturas/daymet_v4_daily_na_prcp_2023.nc" %>%
   raster::stack()
 
 
@@ -96,4 +96,4 @@ tmax_mun_extract_daily_long = pivot_longer(tmax_mun_extract_daily,
                                                    year = 2023)
 
 
-save.image("daymet_v4_daily_na_prcp_2023.rds")
+save.image("r/daymet_v4_daily_na_prcp_2023.rds")
