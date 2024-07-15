@@ -79,7 +79,7 @@ casos_cie10_frec_ajustada$Tasa_urg_cienmil_hab<- casos_cie10_frec_ajustada$Frec_
 options(scipen = 999)
 casos_cie10_frec_ajustada$Tasa_urg_cienmil_hab <- round(casos_cie10_frec_ajustada$Tasa_urg_cienmil_hab, 3)
 
-save(casos_cie10_frec_ajustada, file = "casos_cie10_frec_adj.RData")
+save(casos_cie10_frec_ajustada, file = "Datos/r/casos_cie10_frec_adj.RData")
 rm(list = ls())
 
 ### GRAFICAR ALLUVIAL PLOT
@@ -87,7 +87,7 @@ rm(list = ls())
 library(dplyr)
 library(alluvial)
 
-setwd("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_LIMPIOS")
+setwd("Datos/r/DATOS_LIMPIOS")
 load("casos_cie10_frec_adj.RData")
 
 
@@ -120,7 +120,7 @@ casos_alluvial<-casos_alluvial %>%
 set.seed(100)
 cols <- hsv(h = sample(1:15/15), s = sample(3:12)/15, v = sample(3:12)/15)
 
-pdf()
+
 alluvial_ts(casos_alluvial, wave = .2, ygap = 10, col = cols, plotdir = "centred", alpha=.9,
             grid = TRUE, grid.lwd = 5, xmargin = 0.8, lab.cex = .5, xlab = '',
             ylab = '', border = NA, axis.cex = .8, leg.cex = .7,
