@@ -2,7 +2,7 @@ library(lfe)
 library(splines)
 library(dplyr)
 ####Crear dataframe para cada uno de los capítulos de enfermedades. 
-setwd("~/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_LIMPIOS")
+setwd("Datos/r")
 load("casos_años_agrupados_proyecciones.RData")
 ###Dataframe para datos diarios
 ENF_INFECCIOSAS<-casos_años_agrupado_Proyecciones%>%
@@ -178,4 +178,4 @@ datos_reg <- datos_reg %>%
         
         text(35,yyr2[dim(yyr2)[1],2:nn],names(yyr2)[2:nn],pos=4,cex=0.3)
         
-    dev.off()
+    #dev.off()
