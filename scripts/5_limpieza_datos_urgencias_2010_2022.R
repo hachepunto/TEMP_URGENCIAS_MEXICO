@@ -96,4 +96,4 @@ for (nombre in nombres_originales) {
 # Combinar los data frames en uno solo con el Diagnóstico y año. Preparando los datos para el grafico alluvial
 casos_años <- bind_rows(casos_años)
 
-save(casos_años, file =  "r/urgencias/casos_urgencias_2010_2023.RData")
+save(casos_años, file =  "r/casos_urgencias_2010_2023.RData")
