@@ -17,7 +17,7 @@ cargar_archivos <- function(tipo, directorio, año_inicio, año_fin) {
 }
 
 # Directorio donde se encuentran los archivos
-directorio <- "C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/daymet_temperaturas_municipales_mexico/day_results"
+directorio <- "r/day_results"
 
 # Año de inicio y fin
 año_inicio <- 2010
