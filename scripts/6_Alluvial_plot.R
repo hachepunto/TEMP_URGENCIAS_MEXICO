@@ -8,9 +8,9 @@ library(ggalluvial)
 library(alluvial)
 
 ## abrir archivo de códigos CIE10 y dataframe de atenciones de urgencias
-load(file =  "C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_URGENCIAS/casos_urgencias_2010_2023.RData")
+load(file =  "r/casos_urgencias_2010_2023.RData")
 
-COD_CIE10<-read.csv("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/CODIGOSCIE10/codigos_cie_10_capitulo_mexico.csv", sep = ",")
+COD_CIE10<-read.csv("Datos/cie10/codigos_cie_10_capitulo_mexico.csv", sep = ",")
 COD_CIE10<- subset(COD_CIE10, !duplicated(COD_CIE10))
 gc()
 
