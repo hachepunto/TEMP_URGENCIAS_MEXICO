@@ -3,7 +3,7 @@ library(dplyr)
 library(stringr)
 
 #### Ubicar la carpeta de trabajo con datos de urgencias 2008 a 2023 descargados de http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_urgencias_gobmx.html. 
-setwd("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_URGENCIAS/")
+setwd("Datos/Urgencias/")
 
 # Obtener la lista de archivos en la carpeta
 archivos <- list.files(full.names = TRUE)
@@ -96,4 +96,4 @@ for (nombre in nombres_originales) {
 # Combinar los data frames en uno solo con el Diagnóstico y año. Preparando los datos para el grafico alluvial
 casos_años <- bind_rows(casos_años)
 
-save(casos_años, file =  "C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/DATOS_URGENCIAS/casos_urgencias_2010_2023.RData")
+save(casos_años, file =  "r/urgencias/casos_urgencias_2010_2023.RData")
