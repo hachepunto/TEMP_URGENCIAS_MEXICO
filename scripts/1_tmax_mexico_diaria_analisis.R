@@ -17,10 +17,10 @@ pacman::p_load(raster, sf, data.table, tidyverse, maps, janitor,
 
 plan(multisession)
 
-setwd("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/SCRIPTS/")
+
 ### abrir archivo de localización de municipios. Este es un archivo shp que contiene los límites geográficos de México
 
-mx_mun = st_read("C:/Users/DEALVAREZ/Documents/2023/PROYECTOS/PROYECTOS/DATOS_SALUD_URGENCIAS_MEXICO/PROYECTO/DATOS/TEMPERATURA_MEXICO_MUNICIPAL_NASA/hdx_municipes_maps/mex_admbnda_adm2_govmex_20210618.shp") %>%
+mx_mun = st_read("datos/municipios/mex_admbnda_adm2_govmex_20210618.shp") %>%
   mutate(municipio = ADM2_ES,
          state     = ADM1_ES) %>%
   dplyr::select(municipio, state)
