@@ -1,0 +1,18 @@
+# datos pesados y derivados: viven en fx-ld1, no en git
+*.nc
+*.RData
+*.rds
+*.parquet
+analisis/datos/
+Datos/municipios/*
+!Datos/municipios/README.md
+Datos/Temperaturas/*
+!Datos/Temperaturas/README.md
+!Datos/Temperaturas/readme_Daymet_Daily_V4R1.pdf
+# salidas originales de Diana (PDF pesados)
+legacy/plots_diana/
+# R / sistema
+.Rhistory
+.RData
+.Rproj.user/
+*.lock
