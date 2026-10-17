@@ -3,11 +3,14 @@
 # Especificación comprometida antes de ver resultados (records/REGISTRO.md, 2026-10-16):
 #   casos ~ i(bin_tmax, ref = [24,27)) + i(bin_prcp) | cve^anio^mes + ent^dow
 #   errores agrupados por municipio; secundario: rezagos 0-3 (suma de coeficientes).
-# Entrada: datos/derivados/panel_2012_2022.parquet
-# Salida:  resultados/tablas/piloto_coeficientes.csv, resultados/tablas/piloto_resumen.csv
+# Uso: Rscript 03_modelo_piloto.R <periodo>   (p. ej. 2012_2025)
+# Entrada: datos/derivados/panel_<periodo>.parquet
+# Salida:  resultados/tablas/piloto_{coeficientes,resumen,sessionInfo}_<periodo>.*
 
 suppressMessages({library(data.table); library(arrow); library(fixest)})
-setDTthreads(16); setFixest_nthreads(16)
+nh <- as.integer(Sys.getenv("NHILOS", "8")); setDTthreads(nh); setFixest_nthreads(nh)
+periodo <- commandArgs(trailingOnly = TRUE)[1]
+stopifnot(!is.na(periodo))
 dir.create("resultados/tablas", recursive = TRUE, showWarnings = FALSE)
 
 cortes   <- c(-Inf, seq(12, 36, by = 3), Inf)
@@ -19,7 +22,7 @@ bin_t    <- function(x) as.integer(cut(x, cortes, right = FALSE))
 bin_p    <- function(x) cut(x, c(-Inf, 0.1, 5, 20, Inf), right = FALSE,
                             labels = c("0", "0.1-5", "5-20", ">20"))
 
-panel <- as.data.table(read_parquet("datos/derivados/panel_2012_2022.parquet"))
+panel <- as.data.table(read_parquet(sprintf("datos/derivados/panel_%s.parquet", periodo)))
 panel[, `:=`(b0 = bin_t(tmax), b1 = bin_t(tmax_l1), b2 = bin_t(tmax_l2),
              b3 = bin_t(tmax_l3), bp = bin_p(prcp))]
 
@@ -66,12 +69,12 @@ coefs <- rbind(coefs, ref)
 coefs[, bin := factor(bin, levels = niveles)]
 setorder(coefs, cap, modelo, bin)
 if (anyNA(coefs)) {
-  fwrite(coefs, "resultados/tablas/piloto_coeficientes_CON_NA.csv")
+  fwrite(coefs, sprintf("resultados/tablas/piloto_coeficientes_CON_NA_%s.csv", periodo))
   print(coefs[!complete.cases(coefs)])
   stop("NA en coeficientes; ver resultados/tablas/piloto_coeficientes_CON_NA.csv")
 }
 
-fwrite(coefs, "resultados/tablas/piloto_coeficientes.csv")
-fwrite(rbindlist(resumen), "resultados/tablas/piloto_resumen.csv")
-writeLines(capture.output(sessionInfo()), "resultados/tablas/piloto_sessionInfo.txt")
+fwrite(coefs, sprintf("resultados/tablas/piloto_coeficientes_%s.csv", periodo))
+fwrite(rbindlist(resumen), sprintf("resultados/tablas/piloto_resumen_%s.csv", periodo))
+writeLines(capture.output(sessionInfo()), sprintf("resultados/tablas/piloto_sessionInfo_%s.txt", periodo))
 message("-> resultados/tablas/piloto_*.csv")

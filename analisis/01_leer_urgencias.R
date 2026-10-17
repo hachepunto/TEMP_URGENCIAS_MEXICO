@@ -1,17 +1,17 @@
 #!/usr/bin/env Rscript
-# Lee las bases crudas de urgencias DGIS 2012-2022 y deja una tabla compacta
+# Lee las bases crudas de urgencias DGIS 2012-2025 y deja una tabla compacta
 # (una fila por atención) con fecha de ingreso, municipio de residencia,
 # CLUES y diagnóstico principal.
 # 2010-2011 se omiten: no traen MUNRESIDENCIA.
 
 suppressMessages({library(data.table); library(arrow)})
-setDTthreads(16)
+setDTthreads(as.integer(Sys.getenv("NHILOS", "8")))
 
 dir_crudos <- "/STORAGE/genut/dalvarez/PROYECTO_URGENCIAS/DATOS/DATOS_URGENCIAS"
-salida     <- "datos/derivados/urgencias_2012_2022.parquet"
+salida     <- "datos/derivados/urgencias_2012_2025.parquet"
 dir.create(dirname(salida), recursive = TRUE, showWarnings = FALSE)
 
-archivos <- list.files(dir_crudos, "^URGENCIAS_20(1[2-9]|2[0-2])\\.", full.names = TRUE)
+archivos <- list.files(dir_crudos, "^URGENCIAS_20(1[2-9]|2[0-5])\\.", full.names = TRUE)
 
 leer_anio <- function(f) {
   anio <- as.integer(sub(".*URGENCIAS_(\\d{4}).*", "\\1", f))

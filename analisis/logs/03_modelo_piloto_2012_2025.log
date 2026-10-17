@@ -1,0 +1,13 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+NOTE: 212,199/0 fixed-effects (6,453,323 observations) removed because of only 0 outcomes or singletons.
+NOTE: 212,311/0 fixed-effects (6,438,963 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=6101947 municipios=2431
+NOTE: 185,417/0 fixed-effects (5,638,068 observations) removed because of only 0 outcomes or singletons.
+NOTE: 185,494/0 fixed-effects (5,623,811 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=6917202 municipios=2445
+NOTE: 137,175/0 fixed-effects (4,170,813 observations) removed because of only 0 outcomes or singletons.
+NOTE: 137,279/0 fixed-effects (4,160,222 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=8384457 municipios=2457
+-> resultados/tablas/piloto_*.csv
+03_modelo_piloto: 320.07 s, 33265056 KB

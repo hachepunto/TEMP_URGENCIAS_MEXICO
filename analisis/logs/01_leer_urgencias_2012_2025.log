@@ -1,0 +1,16 @@
+2012: 9,510,442 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 0.26% | mun_res 999/NA 26.12% | fecha fuera del año 1.48%
+2013: 10,041,694 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 0.35% | mun_res 999/NA 0.00% | fecha fuera del año 1.50%
+2014: 10,645,625 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 0.64% | mun_res 999/NA 8.76% | fecha fuera del año 1.39%
+2015: 10,918,789 filas (descartadas 71) | fecha NA 0.00% | ent_res fuera 1-32 0.40% | mun_res 999/NA 7.20% | fecha fuera del año 1.56%
+2016: 10,795,247 filas (descartadas 3) | fecha NA 0.00% | ent_res fuera 1-32 0.75% | mun_res 999/NA 7.11% | fecha fuera del año 1.43%
+2017: 8,901,362 filas (descartadas 3) | fecha NA 0.00% | ent_res fuera 1-32 4.69% | mun_res 999/NA 10.93% | fecha fuera del año 0.04%
+2018: 8,418,337 filas (descartadas 20) | fecha NA 0.00% | ent_res fuera 1-32 1.38% | mun_res 999/NA 7.92% | fecha fuera del año 0.02%
+2019: 8,844,601 filas (descartadas 3) | fecha NA 0.04% | ent_res fuera 1-32 0.83% | mun_res 999/NA 7.04% | fecha fuera del año 0.03%
+2020: 5,284,803 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 1.02% | mun_res 999/NA 6.13% | fecha fuera del año 0.02%
+2021: 5,383,305 filas (descartadas -1) | fecha NA 0.00% | ent_res fuera 1-32 2.85% | mun_res 999/NA 5.42% | fecha fuera del año 0.01%
+2022: 7,074,271 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 4.15% | mun_res 999/NA 3.20% | fecha fuera del año 0.02%
+2023: 7,806,625 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 5.04% | mun_res 999/NA 3.09% | fecha fuera del año 0.02%
+2024: 7,989,731 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 3.70% | mun_res 999/NA 1.96% | fecha fuera del año 0.03%
+2025: 7,651,752 filas (descartadas 0) | fecha NA 0.00% | ent_res fuera 1-32 4.29% | mun_res 999/NA 1.89% | fecha fuera del año 0.02%
+total: 119,266,584 filas -> datos/derivados/urgencias_2012_2025.parquet
+01_leer_urgencias: 808.02 s, 11127440 KB

@@ -1,12 +1,15 @@
 #!/usr/bin/env Rscript
 # Curvas dosis-respuesta de la prueba piloto. Sólo dibuja desde la tabla; no calcula nada.
-# Entrada: resultados/tablas/piloto_coeficientes.csv
-# Salida:  resultados/figuras/piloto_curvas.pdf / .png
+# Uso: Rscript 04_figura_piloto.R <periodo>
+# Entrada: resultados/tablas/piloto_coeficientes_<periodo>.csv
+# Salida:  resultados/figuras/piloto_curvas_<periodo>.{pdf,png}
 
 suppressMessages({library(data.table); library(ggplot2)})
+periodo <- commandArgs(trailingOnly = TRUE)[1]
+stopifnot(!is.na(periodo))
 dir.create("resultados/figuras", recursive = TRUE, showWarnings = FALSE)
 
-co <- fread("resultados/tablas/piloto_coeficientes.csv")
+co <- fread(sprintf("resultados/tablas/piloto_coeficientes_%s.csv", periodo))
 co[, bin := factor(bin, levels = unique(bin))]
 co[, modelo := factor(modelo, levels = c("dia_0", "acumulado_0_3"),
                       labels = c("Mismo día", "Acumulado 0–3 días"))]
@@ -22,6 +25,6 @@ g <- ggplot(co, aes(bin, irr, group = modelo, colour = modelo, fill = modelo)) +
   theme_minimal(base_size = 10) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "bottom")
 
-ggsave("resultados/figuras/piloto_curvas.pdf", g, width = 9, height = 3.8)
-ggsave("resultados/figuras/piloto_curvas.png", g, width = 9, height = 3.8, dpi = 200)
-message("-> resultados/figuras/piloto_curvas.{pdf,png}")
+ggsave(sprintf("resultados/figuras/piloto_curvas_%s.pdf", periodo), g, width = 9, height = 3.8, device = cairo_pdf)
+ggsave(sprintf("resultados/figuras/piloto_curvas_%s.png", periodo), g, width = 9, height = 3.8, dpi = 200)
+message("-> resultados/figuras/piloto_curvas_", periodo, ".{pdf,png}")

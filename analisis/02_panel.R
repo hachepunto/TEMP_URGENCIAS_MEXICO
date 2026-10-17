@@ -1,16 +1,19 @@
 #!/usr/bin/env Rscript
-# Construye el panel municipio de residencia × día × capítulo, 2012-2022, con ceros
+# Construye el panel municipio de residencia × día × capítulo, 2012-2025, con ceros
 # explícitos, unido a Tmax y precipitación diarias del municipio (Daymet, promedio de polígono).
-# Entrada: datos/derivados/urgencias_2012_2022.parquet (01_leer_urgencias.R)
-# Salida:  datos/derivados/panel_2012_2022.parquet
+# Entrada: datos/derivados/urgencias_2012_2025.parquet (01_leer_urgencias.R)
+# Salida:  datos/derivados/panel_2012_2025.parquet
+# Clima: 2011-2022 de los .rds originales (Daymet V4.0); 2023-2025 de day_results_v4r1
+# (V4R1, 00_clima_municipal.R). En 2022 ambas versiones coinciden (cor = 1, dif. máx. 0.026 °C).
 
 suppressMessages({library(data.table); library(arrow)})
-setDTthreads(16)
+setDTthreads(as.integer(Sys.getenv("NHILOS", "8")))
 
-dir_temp <- "/STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results"
+dir_temp <- function(a) sprintf("/STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/%s",
+                                ifelse(a <= 2022, "day_results", "day_results_v4r1"))
 dbf      <- "../Datos/municipios/mex_admbnda_adm2_govmex_20210618.dbf"
-salida   <- "datos/derivados/panel_2012_2022.parquet"
-anios    <- 2012:2022
+salida   <- "datos/derivados/panel_2012_2025.parquet"
+anios    <- 2012:2025
 
 # capítulos de la prueba piloto (por letra del código CIE-10)
 capitulos <- data.table(
@@ -27,7 +30,7 @@ stopifnot(!anyDuplicated(m[, .(municipio, state)]), !anyDuplicated(m$cve))
 # --- clima diario (incluye 2011 para rezagos) ------------------------------------
 leer_var <- function(var) {
   rbindlist(lapply(c(min(anios) - 1, anios), function(a) {
-    x <- as.data.table(readRDS(sprintf("%s/daymet_v4_daily_na_%s_%d.rds", dir_temp, var, a)))
+    x <- as.data.table(readRDS(sprintf("%s/daymet_v4_daily_na_%s_%d.rds", dir_temp(a), var, a)))
     x[, fecha := as.IDate(sprintf("%s-%02d-%02d", year, month, day))]
     x[, .(municipio, state, fecha, valor = get(paste0(var, "_avg")))]
   }))
@@ -43,11 +46,11 @@ message("clima: ", uniqueN(clima$cve), " municipios, ", uniqueN(clima$fecha), " 
 
 # --- conteos de urgencias por residencia ----------------------------------------
 u <- as.data.table(read_parquet(
-  "datos/derivados/urgencias_2012_2022.parquet",
+  "datos/derivados/urgencias_2012_2025.parquet",
   col_select = c("fecha", "ent_res", "mun_res", "cie3")))
 n_total <- nrow(u)
 u <- u[ent_res %in% 1:32 & !is.na(mun_res) & mun_res < 999 &
-         fecha >= as.IDate("2012-01-01") & fecha <= as.IDate("2022-12-31")]
+         fecha >= as.IDate("2012-01-01") & fecha <= as.IDate(sprintf("%d-12-31", max(anios)))]
 u[, letra := substr(cie3, 1, 1)]
 u <- merge(u, capitulos, by = "letra")
 u[, cve := ent_res * 1000L + mun_res]
