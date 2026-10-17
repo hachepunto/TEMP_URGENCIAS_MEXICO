@@ -60,3 +60,21 @@ marginación correlaciona con clima (los municipios más marginados están en el
 húmedo), así que una diferencia entre terciles puede reflejar clima de base y no sólo
 vulnerabilidad social; el modelo compara dentro del municipio, pero la distribución de días
 ≥ 36 °C difiere entre terciles.
+
+## E. Marginación a clima de base constante (añadido 2026-10-17, antes de correr)
+
+Responde a: ¿municipios con el mismo clima y distinta marginación reaccionan distinto al calor?
+
+- **Clima de base** de cada municipio: fracción de días 2012–2025 con Tmax ≥ 33 °C (bins 9 y 10
+  de `clima_ventanas`). Terciles por número de municipios: C1 (templado), C2, C3 (cálido).
+- Se cruzan con los terciles de marginación ya definidos (M1 menos, M3 más): 9 celdas. Se
+  reporta el tamaño de cada celda (municipios y municipio-días en los bins [33,36) y ≥ 36).
+- Modelo principal de rezagos, estimado por celda, para infecciosas, endocrinas, genitourinario,
+  traumatismos y total (45 modelos).
+- **Contraste comprometido**: dentro de cada estrato climático, M3 vs M1 en el acumulado 0–14 de
+  los bins [33,36) y ≥ 36 °C, con EE por suma de varianzas. El bin ≥ 36 sólo se interpreta en
+  celdas con ≥ 2,000 municipio-días en ese bin y ≥ 50 municipios con al menos uno; si no, se
+  marca «no identificado» y se usa [33,36).
+- Hipótesis: a clima constante, efecto mayor en M3 (menos AC, trabajo al aire libre). Se reporta
+  salga lo que salga. Cautela: las celdas C3×M3 (cálido y marginado) y C1×M1 pueden ser pequeñas;
+  la comparación válida es sólo dentro de estratos con las dos celdas bien pobladas.
