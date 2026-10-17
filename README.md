@@ -69,7 +69,7 @@ analisis/                 pipeline actual
   ESPECIFICACION_*.md     especificaciones comprometidas antes de correr (fechadas en git)
   AUDITORIA_2026-10-17.md / LITERATURA_2026-10-17.md  informes de agentes independientes
   logs/                   log de cada corrida
-  resultados/             tablas (csv) y figuras
+  resultados/             tablas (csv); las figuras no se versionan (Drive:Claude-remote/temp-urgencias/figures/)
 legacy/                   código y salidas originales de Diana (no se usan; ver abajo)
 Datos/                    catálogos pequeños e instrucciones de descarga
 ```
@@ -108,7 +108,8 @@ Rscript 03_modelo_piloto.R 2012_2025 && Rscript 04_figura_piloto.R 2012_2025
 Rscript 05_insumos_capitulos.R && Rscript 06_modelo_rezagos.R 2012_2025 && Rscript 07_figuras_rezagos.R 2012_2025
 # variantes de 06: FE_SPEC=anio_semana | CONTEOS=subgrupos|hospital | MARG=1..3 | CLIMA=1..3 (ver encabezado)
 ```
-Paquetes además de los de arriba: `ggplot2`, `foreign`, `readxl`. No editar un script mientras una
+Las figuras se regeneran con 04, 07, 10, 12, 14, 16 y 17 y se escriben en `analisis/resultados/figuras/`
+(ignorado por git; copias en el Drive del proyecto). Paquetes además de los de arriba: `ggplot2`, `foreign`, `readxl`. No editar un script mientras una
 corrida suya está en curso (R lo lee expresión por expresión).
 
 Clima 2023-2025 (Daymet V4R1, requiere cuenta NASA Earthdata):

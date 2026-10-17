@@ -16,3 +16,6 @@ legacy/plots_diana/
 .RData
 .Rproj.user/
 *.lock
+# figuras: viven en Drive:Claude-remote/temp-urgencias/figures/ (se regeneran con 04, 07, 10, 12, 14, 16, 17)
+analisis/resultados/figuras/
+analisis/resultados/historico/*/figuras/
