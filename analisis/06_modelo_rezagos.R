@@ -4,7 +4,7 @@
 # Uso: Rscript 06_modelo_rezagos.R <periodo> [capítulo ...]   (sin capítulos: todos los del archivo)
 # Variables de entorno (ESPECIFICACION_sensibilidad_subgrupos.md):
 #   FE_SPEC=base (cve^anio^mes + ent^dow) | anio_semana (cve^anio + ent^semana + ent^dow)
-#   CONTEOS=capitulos (default) | subgrupos  -> datos/derivados/conteos_<CONTEOS>_<periodo>.parquet
+#   CONTEOS=capitulos (default) | subgrupos | hospital -> datos/derivados/conteos_<CONTEOS>_<periodo>.parquet
 #   MARG=1|2|3  restringe a un tercil de marginación CONAPO 2020 (datos/derivados/marginacion_terciles_2020.csv)
 #   CLIMA=1|2|3 restringe a un tercil de clima de base (datos/derivados/clima_base_terciles.csv)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
@@ -21,11 +21,12 @@ niveles <- levels(cut(0, cortes, right = FALSE))
 ref_id  <- match("[24,27)", niveles)
 ventanas <- c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
 fe_spec <- Sys.getenv("FE_SPEC", "base"); conteos_tipo <- Sys.getenv("CONTEOS", "capitulos")
-stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos"))
+stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital"))
 marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
 sufijo  <- paste0(if (fe_spec != "base") paste0("_fe-", fe_spec), if (conteos_tipo != "capitulos") paste0("_", conteos_tipo),
                   if (clima_e != "") paste0("_clima", clima_e), if (marg != "") paste0("_marg", marg))
+if (length(sufijo) == 0) sufijo <- ""   # paste0 de puros NULL devuelve character(0)
 fe      <- switch(fe_spec, base = "cve^anio^mes + ent^dow", anio_semana = "cve^anio + ent^semana + ent^dow")
 dir_out <- paste0("resultados/tablas/rezagos", sufijo)
 dir.create(dir_out, recursive = TRUE, showWarnings = FALSE)
@@ -44,7 +45,7 @@ if (marg != "") {
 }
 clima[, `:=`(ent = cve %/% 1000L, anio = year(fecha), mes = month(fecha), dow = wday(fecha),
              semana = pmin((yday(fecha) - 1L) %/% 7L + 1L, 52L))]   # semana del año (no ISO: 29-31 dic quedan en el año)
-todos <- if (conteos_tipo == "capitulos") c(sort(setdiff(unique(conteos$cap), "total")), "total") else sort(unique(conteos$cap))
+todos <- if (conteos_tipo %in% c("capitulos", "hospital")) c(sort(setdiff(unique(conteos$cap), "total")), "total") else sort(unique(conteos$cap))
 caps  <- if (length(args) > 1) args[-1] else todos
 
 regs <- as.vector(outer(names(ventanas), setdiff(seq_along(niveles), ref_id),

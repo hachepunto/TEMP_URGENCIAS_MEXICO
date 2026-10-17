@@ -1,0 +1,33 @@
+M3 vs M1 por estrato climático (acumulado 0-14):
+               cap clima       bin ratio    lo    hi     z
+            <char> <int>    <char> <num> <num> <num> <num>
+ 1:     endocrinas     1   [33,36) 0.791 0.510 1.228 -1.04
+ 2:     endocrinas     2   [33,36) 0.804 0.700 0.923 -3.09
+ 3:     endocrinas     3   [33,36) 0.940 0.795 1.111 -0.73
+ 4: genitourinario     1   [33,36) 0.896 0.645 1.246 -0.65
+ 5: genitourinario     2   [33,36) 1.006 0.902 1.123  0.11
+ 6: genitourinario     3   [33,36) 1.038 0.909 1.185  0.55
+ 7:    infecciosas     1   [33,36) 0.707 0.530 0.942 -2.37
+ 8:    infecciosas     2   [33,36) 1.037 0.923 1.164  0.61
+ 9:    infecciosas     3   [33,36) 0.916 0.791 1.062 -1.16
+10:          total     1   [33,36) 0.876 0.799 0.961 -2.80
+11:          total     2   [33,36) 0.956 0.907 1.008 -1.66
+12:          total     3   [33,36) 1.033 0.953 1.120  0.79
+13:   traumatismos     1   [33,36) 0.876 0.748 1.027 -1.63
+14:   traumatismos     2   [33,36) 0.923 0.844 1.008 -1.78
+15:   traumatismos     3   [33,36) 0.986 0.893 1.089 -0.28
+16:     endocrinas     2 [36, Inf) 1.047 0.783 1.399  0.31
+17:     endocrinas     3 [36, Inf) 0.910 0.759 1.091 -1.02
+18: genitourinario     2 [36, Inf) 0.919 0.710 1.189 -0.64
+19: genitourinario     3 [36, Inf) 1.036 0.893 1.203  0.47
+20:    infecciosas     2 [36, Inf) 0.953 0.758 1.198 -0.41
+21:    infecciosas     3 [36, Inf) 0.934 0.795 1.096 -0.84
+22:          total     2 [36, Inf) 1.000 0.892 1.120 -0.01
+23:          total     3 [36, Inf) 1.004 0.913 1.105  0.09
+24:   traumatismos     2 [36, Inf) 1.060 0.914 1.231  0.77
+25:   traumatismos     3 [36, Inf) 0.953 0.859 1.057 -0.91
+               cap clima       bin ratio    lo    hi     z
+            <char> <int>    <char> <num> <num> <num> <num>
+Fontconfig warning: using without calling FcInit()
+-> resultados/{tablas,figuras}/clima_marg_2012_2025
+14_figura_clima_marg: 2.95 s, 202592 KB

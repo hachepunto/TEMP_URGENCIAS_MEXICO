@@ -1,0 +1,19 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 2: 815 municipios
+tercil de marginación 2: 245 municipios
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 22,110/0 fixed-effects (672,864 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=580066, >=36 acumulado 0-14 = 1.086 [0.928, 1.271] (8 s)
+NOTE: 22,674/0 fixed-effects (690,114 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=562816, >=36 acumulado 0-14 = 1.227 [1.021, 1.474] (7 s)
+NOTE: 19,787/0 fixed-effects (602,217 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=650713, >=36 acumulado 0-14 = 1.114 [0.951, 1.305] (8 s)
+NOTE: 13,894/0 fixed-effects (422,811 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=830119, >=36 acumulado 0-14 = 1.113 [1.020, 1.214] (9 s)
+NOTE: 8,363/0 fixed-effects (254,447 observations) removed because of only 0 outcomes or singletons.
+total: n=998483, >=36 acumulado 0-14 = 1.042 [0.979, 1.109] (11 s)
+Warning messages:
+1: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+2: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+06_clima2_marg2: 54.54 s, 7658760 KB

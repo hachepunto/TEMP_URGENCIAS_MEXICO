@@ -9,46 +9,42 @@ Proyecto iniciado por Diana Álvarez ([dialvas/TEMP_URGENCIAS_MEXICO](https://gi
 
 ## Estado
 
-**Prueba piloto (2026-10-16)**, tres capítulos, especificación fijada antes de ver resultados
-(ver bitácora del proyecto). Razón de tasas en días con Tmax ≥ 36 °C frente a 24–27 °C,
-2012–2025 (119 M atenciones):
+**2026-10-17.** Resultados vigentes = corridas **sin 2013** (el archivo DGIS 2013 no identifica el
+municipio de residencia; ver `analisis/AUDITORIA_2026-10-17.md`). Los resultados previos con 2013
+están congelados en `analisis/resultados/historico/2026-10-17_con2013/`; las diferencias son del
+segundo o tercer decimal. Borrador del manuscrito en `Drive:Claude-remote/temp-urgencias/manuscript/`.
 
-| Capítulo | Mismo día | Acumulado 0–3 días |
-|---|---|---|
-| Traumatismos y envenenamientos (S, T) | 1.138 [1.128, 1.147] | 1.169 [1.156, 1.181] |
-| Genitourinario (N) | 1.085 [1.075, 1.095] | 1.112 [1.096, 1.128] |
-| Circulatorio (I) | 0.964 [0.953, 0.975] | 0.927 [0.911, 0.943] |
-
-Fuente: `analisis/resultados/tablas/piloto_coeficientes_2012_2025.csv`; figura en
-`analisis/resultados/figuras/piloto_curvas_2012_2025.png`. Con 2012–2022 (`*_2012_2022.*`) las
-estimaciones son prácticamente iguales. No es un resultado final: falta sensibilidad a la
-especificación de efectos fijos, festivos y rezagos más largos, y el resto de los capítulos.
-
-**Todos los capítulos con rezagos 0–14 (2026-10-16)**, especificación en
-`analisis/ESPECIFICACION_capitulos_rezagos.md` (comprometida antes de correr). Efecto acumulado
-0–14 días de un día con Tmax ≥ 36 °C frente a 24–27 °C, 2012–2025:
+Efecto acumulado 0–14 días de un día con Tmax ≥ 36 °C frente a 24–27 °C, 2012–2025 sin 2013,
+exposición por municipio de residencia (`analisis/resultados/tablas/rezagos_2012_2025.csv`):
 
 | Capítulo | Mismo día | Acumulado 0–14 |
 |---|---|---|
-| Infecciosas | 1.120 [1.107, 1.134] | 1.170 [1.134, 1.206] |
-| Endocrinas | 1.134 [1.118, 1.150] | 1.159 [1.124, 1.194] |
-| Sangre | 1.069 [1.041, 1.097] | 1.151 [1.078, 1.229] |
-| Genitourinario | 1.070 [1.061, 1.080] | 1.146 [1.116, 1.177] |
-| Piel | 1.062 [1.046, 1.078] | 1.133 [1.093, 1.175] |
-| Traumatismos | 1.118 [1.108, 1.127] | 1.132 [1.110, 1.156] |
-| Síntomas | 1.072 [1.063, 1.081] | 1.108 [1.081, 1.136] |
-| Ojo | 1.039 [1.011, 1.068] | 1.100 [1.031, 1.173] |
-| Mentales | 1.099 [1.081, 1.118] | 1.083 [1.048, 1.119] |
-| Oído | 1.020 [1.003, 1.038] | 1.047 [0.989, 1.108] |
-| Total (15 capítulos) | 1.067 [1.061, 1.072] | 1.037 [1.018, 1.056] |
-| Osteomuscular | 1.033 [1.020, 1.046] | 1.032 [0.996, 1.069] |
-| Digestivo | 1.011 [1.003, 1.019] | 1.027 [1.003, 1.051] |
-| Nervioso | 1.041 [1.022, 1.061] | 0.950 [0.912, 0.989] |
-| Circulatorio | 0.979 [0.967, 0.992] | 0.900 [0.872, 0.928] |
-| Respiratorio | 1.026 [1.017, 1.035] | 0.775 [0.746, 0.805] |
+| Infecciosas | 1.126 | 1.182 [1.146, 1.219] |
+| Endocrinas | 1.133 | 1.156 [1.120, 1.193] |
+| Genitourinario | 1.070 | 1.142 [1.111, 1.174] |
+| Sangre | 1.066 | 1.138 [1.064, 1.217] |
+| Piel | 1.063 | 1.133 [1.094, 1.173] |
+| Traumatismos | 1.113 | 1.124 [1.102, 1.146] |
+| Síntomas | 1.071 | 1.106 [1.078, 1.134] |
+| Ojo | 1.039 | 1.096 [1.026, 1.170] |
+| Mentales | 1.099 | 1.086 [1.052, 1.122] |
+| Oído | 1.023 | 1.063 [1.007, 1.121] |
+| Total (15 capítulos) | 1.067 | 1.038 [1.020, 1.056] |
+| Digestivo | 1.011 | 1.026 [1.002, 1.051] |
+| Osteomuscular | 1.031 | 1.023 [0.986, 1.061] |
+| Nervioso | 1.041 | 0.955 [0.917, 0.995] |
+| Circulatorio | 0.979 | 0.897 [0.868, 0.928] |
+| Respiratorio | 1.028 | 0.783 [0.756, 0.811] |
 
-Fuente: `analisis/resultados/tablas/rezagos_2012_2025.csv`; figuras
-`analisis/resultados/figuras/rezagos_{forest,curvas,perfil}_2012_2025.png`.
+Subgrupos: deshidratación E86 2.11 [1.91, 2.33]; renal aguda N17 0.94 [0.74, 1.19] (adelanto);
+infarto I21 0.99 [0.84, 1.16]. Exposición por municipio del hospital: diferencias < 0.03 salvo
+sangre y mentales. Sensibilidad de efectos fijos (mun×año + edo×semana): efectos del calor a la
+mitad y frío < 12 °C con efecto negativo en todos los capítulos (fragilidad reportada). Sin gradiente
+por marginación, tampoco a clima de base constante.
+
+Antecedentes directos: Sarmiento, Colelli & Pavanello (RFF WP 25-11, 2025) y Aguilar-Gomez, Graff
+Zivin & Neidell (NBER 33491, 2025), ambos con exposición por municipio del hospital; ver
+`analisis/LITERATURA_2026-10-17.md`.
 
 ## Estructura
 
@@ -61,7 +57,17 @@ analisis/                 pipeline actual
   04_figura_piloto.R      curvas dosis-respuesta (sólo dibuja desde la tabla)
   05_insumos_capitulos.R  conteos de 15 capítulos + total; clima con conteos de días por ventana de rezago
   06_modelo_rezagos.R     Poisson FE por capítulo, rezagos 0, 1-3, 4-7, 8-14; acumulado 0-14
+  06b_juntar_rezagos.R    junta los CSV por desenlace de una variante de 06
   07_figuras_rezagos.R    forest, curvas y perfil por ventana
+  08_insumos_subgrupos.R  conteos E86 / N17 / I21
+  09_cobertura_clues.R    atenciones por institución (SSA, IMB) y estado-año
+  10_figuras_sensibilidad.R  principal vs sensibilidad A; subgrupos
+  11_marginacion_terciles.R  terciles CONAPO 2020 (IM alto = menos marginación)
+  12_figura_marginacion.R / 13_clima_base.R / 14_figura_clima_marg.R  heterogeneidad D y E
+  15_conteos_hospital.R   conteos por municipio de la CLUES (especificación F); 16_figura_hospital.R
+  17_figura_apertura.R    ola de calor de junio 2023: E86 vs municipios >= 36 °C
+  ESPECIFICACION_*.md     especificaciones comprometidas antes de correr (fechadas en git)
+  AUDITORIA_2026-10-17.md / LITERATURA_2026-10-17.md  informes de agentes independientes
   logs/                   log de cada corrida
   resultados/             tablas (csv) y figuras
 legacy/                   código y salidas originales de Diana (no se usan; ver abajo)
@@ -100,7 +106,10 @@ export LC_ALL=C.UTF-8 NHILOS=8
 Rscript 01_leer_urgencias.R && Rscript 02_panel.R
 Rscript 03_modelo_piloto.R 2012_2025 && Rscript 04_figura_piloto.R 2012_2025
 Rscript 05_insumos_capitulos.R && Rscript 06_modelo_rezagos.R 2012_2025 && Rscript 07_figuras_rezagos.R 2012_2025
+# variantes de 06: FE_SPEC=anio_semana | CONTEOS=subgrupos|hospital | MARG=1..3 | CLIMA=1..3 (ver encabezado)
 ```
+Paquetes además de los de arriba: `ggplot2`, `foreign`, `readxl`. No editar un script mientras una
+corrida suya está en curso (R lo lee expresión por expresión).
 
 Clima 2023-2025 (Daymet V4R1, requiere cuenta NASA Earthdata):
 `GDAL_DRIVER_PATH=<env>/lib/gdalplugins PROJ_DATA=<env>/share/proj Rscript 00_clima_municipal.R <archivo.nc> <dir_salida>`
@@ -117,6 +126,10 @@ Entradas fuera de git (rutas en el encabezado de cada script):
 ## Cautelas
 
 - Las bases DGIS cubren sobre todo unidades de la Secretaría de Salud, no IMSS/ISSSTE.
-- 2015 y 2018 contienen líneas corruptas; se descartan (71 y 20 líneas) y se registran en el log.
-- 2020–2021: COVID-19 y transición Seguro Popular → INSABI; desde 2023, transferencia de unidades
-  a IMSS-Bienestar (claves CLUES `…IMB…`).
+- 2013 excluido (municipio de residencia inválido en la fuente). 2012: 26 % sin municipio de
+  residencia, concentrado en Colima, Quintana Roo, Tamaulipas e Hidalgo.
+- 2015 y 2018 contienen líneas corruptas; se descartan (72 y 20 líneas) y se registran en el log.
+- 2020–2021: COVID-19 y transición Seguro Popular → INSABI; en 2024 el 67 % de las atenciones pasa a
+  clave IMSS-Bienestar (mismas unidades reetiquetadas; volumen por estado sin salto atribuible).
+- El bin ≥ 36 °C se identifica sobre todo en 7 estados del norte y el Golfo; 588 municipios nunca lo
+  alcanzan.
