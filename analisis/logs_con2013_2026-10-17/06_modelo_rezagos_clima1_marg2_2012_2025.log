@@ -1,0 +1,14 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 1: 823 municipios
+tercil de marginación 2: 308 municipios
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 28,801/0 fixed-effects (876,466 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=698646, >=36 acumulado 0-14 = 1.506 [0.334, 6.787] (10 s)
+NOTE: 28,398/0 fixed-effects (864,323 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=710789, >=36 acumulado 0-14 = 0.551 [0.143, 2.120] (8 s)
+NOTE: 25,481/0 fixed-effects (775,486 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=799626, >=36 acumulado 0-14 = 1.582 [0.344, 7.283] (8 s)
+NOTE: 18,470/0 fixed-effects (562,086 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=1013026, >=36 acumulado 0-14 = 0.371 [0.152, 0.907] (11 s)
+NOTE: 11,527/0 fixed-effects (350,713 observations) removed because of only 0 outcomes or singletons.

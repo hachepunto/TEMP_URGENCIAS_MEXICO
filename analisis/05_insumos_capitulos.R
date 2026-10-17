@@ -37,6 +37,10 @@ u <- u[ent_res %in% 1:32 & !is.na(mun_res) & mun_res < 999 &
          fecha >= as.IDate(sprintf("%d-01-01", min(anios))) &
          fecha <= as.IDate(sprintf("%d-12-31", max(anios)))]
 u[, cve := ent_res * 1000L + mun_res]
+fuera <- u[!cve %in% m$cve, .N, by = cve][order(-N)]
+message("claves municipales sin polígono (descartadas): ", nrow(fuera), " claves, ",
+        format(sum(fuera$N), big.mark = ","), " atenciones; las 12 mayores: ",
+        paste(sprintf("%05d(%s)", fuera$cve[1:min(12, nrow(fuera))], format(fuera$N[1:min(12, nrow(fuera))], big.mark = ",")), collapse = " "))
 u <- u[cve %in% m$cve]
 # asignación por rango con llave numérica (letra*100 + número); cada código cae a lo más en uno
 llave <- function(x) match(substr(x, 1, 1), LETTERS) * 100L +
@@ -44,7 +48,8 @@ llave <- function(x) match(substr(x, 1, 1), LETTERS) * 100L +
 cods <- data.table(cie3 = unique(u$cie3))[, k := llave(cie3)]
 capitulos[, `:=`(k1 = llave(desde), k2 = llave(hasta))]
 cods[capitulos, cap := i.cap, on = .(k >= k1, k <= k2)]
-stopifnot(cods[!is.na(cap), !anyDuplicated(cie3)])
+# los rangos de capítulos no deben solaparse
+stopifnot(capitulos[order(k1), all(k1[-1] > k2[-.N])])
 message("códigos sin llave numérica (3er carácter no dígito): ", cods[is.na(k), .N])
 u[cods, cap := i.cap, on = "cie3"]
 message("atenciones con residencia válida: ", format(nrow(u), big.mark = ","),
