@@ -24,6 +24,32 @@ Fuente: `analisis/resultados/tablas/piloto_coeficientes_2012_2025.csv`; figura e
 estimaciones son prácticamente iguales. No es un resultado final: falta sensibilidad a la
 especificación de efectos fijos, festivos y rezagos más largos, y el resto de los capítulos.
 
+**Todos los capítulos con rezagos 0–14 (2026-10-16)**, especificación en
+`analisis/ESPECIFICACION_capitulos_rezagos.md` (comprometida antes de correr). Efecto acumulado
+0–14 días de un día con Tmax ≥ 36 °C frente a 24–27 °C, 2012–2025:
+
+| Capítulo | Mismo día | Acumulado 0–14 |
+|---|---|---|
+| Infecciosas | 1.120 [1.107, 1.134] | 1.170 [1.134, 1.206] |
+| Endocrinas | 1.134 [1.118, 1.150] | 1.159 [1.124, 1.194] |
+| Sangre | 1.069 [1.041, 1.097] | 1.151 [1.078, 1.229] |
+| Genitourinario | 1.070 [1.061, 1.080] | 1.146 [1.116, 1.177] |
+| Piel | 1.062 [1.046, 1.078] | 1.133 [1.093, 1.175] |
+| Traumatismos | 1.118 [1.108, 1.127] | 1.132 [1.110, 1.156] |
+| Síntomas | 1.072 [1.063, 1.081] | 1.108 [1.081, 1.136] |
+| Ojo | 1.039 [1.011, 1.068] | 1.100 [1.031, 1.173] |
+| Mentales | 1.099 [1.081, 1.118] | 1.083 [1.048, 1.119] |
+| Oído | 1.020 [1.003, 1.038] | 1.047 [0.989, 1.108] |
+| Total (15 capítulos) | 1.067 [1.061, 1.072] | 1.037 [1.018, 1.056] |
+| Osteomuscular | 1.033 [1.020, 1.046] | 1.032 [0.996, 1.069] |
+| Digestivo | 1.011 [1.003, 1.019] | 1.027 [1.003, 1.051] |
+| Nervioso | 1.041 [1.022, 1.061] | 0.950 [0.912, 0.989] |
+| Circulatorio | 0.979 [0.967, 0.992] | 0.900 [0.872, 0.928] |
+| Respiratorio | 1.026 [1.017, 1.035] | 0.775 [0.746, 0.805] |
+
+Fuente: `analisis/resultados/tablas/rezagos_2012_2025.csv`; figuras
+`analisis/resultados/figuras/rezagos_{forest,curvas,perfil}_2012_2025.png`.
+
 ## Estructura
 
 ```
@@ -33,6 +59,9 @@ analisis/                 pipeline actual
   02_panel.R              panel municipio × día × capítulo con ceros + clima diario
   03_modelo_piloto.R      Poisson con efectos fijos (fixest), Tmax en bins de 3 °C
   04_figura_piloto.R      curvas dosis-respuesta (sólo dibuja desde la tabla)
+  05_insumos_capitulos.R  conteos de 15 capítulos + total; clima con conteos de días por ventana de rezago
+  06_modelo_rezagos.R     Poisson FE por capítulo, rezagos 0, 1-3, 4-7, 8-14; acumulado 0-14
+  07_figuras_rezagos.R    forest, curvas y perfil por ventana
   logs/                   log de cada corrida
   resultados/             tablas (csv) y figuras
 legacy/                   código y salidas originales de Diana (no se usan; ver abajo)
@@ -70,6 +99,7 @@ cd analisis
 export LC_ALL=C.UTF-8 NHILOS=8
 Rscript 01_leer_urgencias.R && Rscript 02_panel.R
 Rscript 03_modelo_piloto.R 2012_2025 && Rscript 04_figura_piloto.R 2012_2025
+Rscript 05_insumos_capitulos.R && Rscript 06_modelo_rezagos.R 2012_2025 && Rscript 07_figuras_rezagos.R 2012_2025
 ```
 
 Clima 2023-2025 (Daymet V4R1, requiere cuenta NASA Earthdata):
