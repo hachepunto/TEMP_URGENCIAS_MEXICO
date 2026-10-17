@@ -20,15 +20,15 @@ hachepunto (administrador de su espacio) en oct-2026.
 
 | Fuente | Ruta | Notas |
 |---|---|---|
-| Urgencias DGIS (SSA) 2010–2022, crudo | `PROYECTO_URGENCIAS/DATOS/DATOS_URGENCIAS/` | 16 GB. `MUNRESIDENCIA` existe desde 2012. 2015 y 2018 tienen líneas corruptas. Sin crudo 2023. |
-| Temperatura/precip diaria por municipio (Daymet v4, promedio de polígono) 2008–2022 | `TEMPERATURA_MEXICO_MUNICIPAL/day_results/*.rds` | 2,457 municipios × todos los días, sin NA. Llave por nombre (`municipio`, `state`) del shapefile HDX. Falta 2023. |
-| Daymet NetCDF Norteamérica diario | `TEMP_URGENCIAS_MEXICO/Datos/Temperaturas/` y `TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet/` | ~362 GB duplicados entre ambas. Sólo hace falta para 2023. |
+| Urgencias DGIS (SSA) 2010–2025, crudo | `PROYECTO_URGENCIAS/DATOS/DATOS_URGENCIAS/` | `MUNRESIDENCIA` existe desde 2012. 2015 y 2018 tienen líneas corruptas. 2023–2025 bajados 2026-10-16 (zips + `SHA256SUMS` en `descarga_2026-10/`). 2026 parcial existe en la DGIS, pero Daymet 2026 aún no. |
+| Temperatura/precip diaria por municipio (promedio de polígono) | `TEMPERATURA_MEXICO_MUNICIPAL/day_results/*.rds` (2008–2022, Daymet V4.0, Diana) y `day_results_v4r1/` (tmax 2022–2025, prcp 2023–2025, Daymet V4R1, `00_clima_municipal.R`) | 2,457 municipios × todos los días, sin NA. Llave por nombre (`municipio`, `state`) del shapefile HDX. V4.0 y V4R1 coinciden en 2022. tmax 2010 día 328 sospechoso. |
+| Daymet NetCDF Norteamérica diario | `TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet/` (V4.0, 2008–2022, copia buena) y `diaria_daymet_v4r1/` (V4R1) | La copia que había en `TEMP_URGENCIAS_MEXICO/Datos/Temperaturas/` estaba corrupta y se borró, salvo 4 archivos que complementan días ilegibles de la buena (tmax/tmin 2010, tmin 2011, tmin 2022) y los 2023 de Diana. |
 | Polígonos municipales HDX 2021 | `TEMP_URGENCIAS_MEXICO/Datos/municipios/` | `ADM2_PCODE` = `MX` + clave INEGI de 5 dígitos. |
 | CLUES, CIE-10, proyecciones CONAPO municipales | `PROYECTO_URGENCIAS/DATOS/*` y `TEMP_URGENCIAS_MEXICO/Datos/*` | |
 | Replicación Burke et al. 2018 (NCC) | `NCC2018/` | Modelo del que partió Diana. |
 
 **Herramientas.** R 4.5.2 del env conda `bio` (`~/miniforge/envs/bio`), `data.table`, `arrow`,
-`fixest` 0.14.2. Correr R con `LC_ALL=C.UTF-8` (el locale por defecto rompe nombres con ñ).
+`fixest` 0.14.2, `terra` 1.9.50. Correr R con `LC_ALL=C.UTF-8` (el locale por defecto rompe nombres con ñ); para `terra` sin activar el env, `GDAL_DRIVER_PATH=<env>/lib/gdalplugins` y `PROJ_DATA=<env>/share/proj`. Hilos con `NHILOS` (8 por defecto; tope del nodo 55 sumando todos los jobs). NetCDF: env `nctools` (`ncdump`, `netCDF4`).
 
 **Criterio central del análisis.** Panel municipio de **residencia** × día × capítulo con
 **ceros explícitos**; Poisson con efectos fijos (`fixest::fepois`), temperatura en bins, efectos
@@ -39,7 +39,7 @@ fijos que absorban estacionalidad y cambios de reporte; errores agrupados por mu
   asignaba la exposición al municipio del hospital; sus resultados no son válidos.
 - Las bases DGIS cubren sobre todo unidades SSA (no IMSS/ISSSTE): el denominador es la
   población sin seguridad social, no la total.
-- 2020–2021: COVID y transición Seguro Popular → INSABI.
+- 2020–2021: COVID y transición Seguro Popular → INSABI. Desde 2023: unidades IMSS-Bienestar (CLUES `…IMB…`).
 - Cambios en reporte de unidades a lo largo de los años: no confundir «sin reporte» con «cero».
 
 ---
@@ -130,6 +130,13 @@ De este proyecto:
   original).
 - **Exposición en el municipio de residencia, no del hospital** (desde 2012 existe
   `MUNRESIDENCIA`).
+- **Categorías de `fixest::i()` como enteros, no como etiquetas con corchetes.** Con
+  `ref = "[24,27)"` los nombres de término salen corruptos y emparejar por nombre falla en
+  silencio. Se usa el código entero del bin y se mapea a la etiqueta por llave.
+- **Mismo nombre y tamaño no es mismo archivo.** 32 de 39 NetCDF «duplicados» diferían; la copia
+  del repo estaba corrupta. Antes de borrar un duplicado: `cmp` completo y, si difieren,
+  decodificar ambos.
+- **No usar `pgrep -f`/`pkill -f` con un patrón que esté en la propia línea de comandos.**
 - **Nombres de archivo con ñ en NFD** (hechos en macOS): abrir con `list.files()`, no tecleando
   el nombre.
 
