@@ -78,3 +78,20 @@ Responde a: ¿municipios con el mismo clima y distinta marginación reaccionan d
 - Hipótesis: a clima constante, efecto mayor en M3 (menos AC, trabajo al aire libre). Se reporta
   salga lo que salga. Cautela: las celdas C3×M3 (cálido y marginado) y C1×M1 pueden ser pequeñas;
   la comparación válida es sólo dentro de estratos con las dos celdas bien pobladas.
+
+## F. Exposición por municipio del hospital vs. municipio de residencia (añadido 2026-10-17, antes de correr)
+
+Sarmiento et al. (RFF WP 25-11) y Aguilar-Gomez et al. (NBER 33491) asignan la temperatura al
+municipio de la unidad que atiende. Nosotros al de residencia. Para cuantificar la diferencia:
+
+- Conteos por **municipio de la CLUES** (catálogo `CATCLUES_2023_actualizado.csv`, claves INEGI
+  de entidad y municipio), mismos 15 capítulos + total, mismo periodo, ceros explícitos en los
+  2,457 municipios (los sin unidad quedan todo cero y los descarta `fepois`).
+- Modelo principal de rezagos sin cambios. Se reporta, para cada desenlace, el acumulado 0–14 a
+  ≥ 36 °C con ambas asignaciones y su diferencia (los dos paneles comparten días, así que la
+  diferencia no tiene EE independiente; se reporta descriptivamente y con los IC de cada uno).
+- Descriptivo previo: fracción de atenciones cuyo municipio de residencia difiere del de la
+  unidad, total y por tercil de marginación del municipio de residencia.
+- Hipótesis: la asignación por hospital atenúa el efecto (error de medida de exposición para
+  quien viaja a atenderse) y concentra la identificación en municipios urbanos; esperamos
+  efectos iguales o algo menores con hospital. Se reporta salga lo que salga.
