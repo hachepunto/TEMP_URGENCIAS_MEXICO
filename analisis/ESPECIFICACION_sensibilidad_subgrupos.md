@@ -44,3 +44,19 @@ sensibilidad obvia es repetir el principal con 2012–2022.
   cambios de reporte de una unidad a mitad de año). Por eso A es sensibilidad y no principal.
 - B: E86 y N17 pueden tener muchos municipio-meses sin casos; `fepois` los descarta y la muestra
   efectiva se reduce.
+
+## D. Heterogeneidad por marginación (añadido 2026-10-17, antes de correr)
+
+Modelo principal de rezagos, estratificado por **terciles del índice de marginación municipal
+CONAPO 2020** (terciles por número de municipios, no ponderados por población). Capítulos: los
+que mostraron efecto claro en el principal y tienen hipótesis de vulnerabilidad social:
+infecciosas, endocrinas, genitourinario, traumatismos, y el total. Se reporta el acumulado 0–14 a
+≥ 36 °C por tercil, con su IC, y la diferencia alto − bajo con su EE (los estratos son muestras
+independientes, EE de la diferencia = √(EE₁² + EE₃²)).
+
+Hipótesis: efecto mayor en el tercil de alta marginación (menos aire acondicionado, más trabajo
+al aire libre, peor acceso a agua). Se reporta aunque salga al revés o plano. Cautela: la
+marginación correlaciona con clima (los municipios más marginados están en el sur, cálido y
+húmedo), así que una diferencia entre terciles puede reflejar clima de base y no sólo
+vulnerabilidad social; el modelo compara dentro del municipio, pero la distribución de días
+≥ 36 °C difiere entre terciles.
