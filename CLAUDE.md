@@ -39,7 +39,9 @@ fijos que absorban estacionalidad y cambios de reporte; errores agrupados por mu
   asignaba la exposición al municipio del hospital; sus resultados no son válidos.
 - Las bases DGIS cubren sobre todo unidades SSA (no IMSS/ISSSTE): el denominador es la
   población sin seguridad social, no la total.
-- 2020–2021: COVID y transición Seguro Popular → INSABI. Desde 2023: unidades IMSS-Bienestar (CLUES `…IMB…`).
+- 2020–2021: COVID y transición Seguro Popular → INSABI. En 2024 el 67 % de las atenciones pasa a clave IMSS-Bienestar (mismas unidades reetiquetadas).
+- **2013 excluido**: MUNRESIDENCIA inválida en la fuente (ver AUDITORIA_2026-10-17). 2012: 26 % sin municipio, por estados/unidades.
+- Antecedentes directos: Sarmiento et al. (RFF 25-11) y Aguilar-Gomez et al. (NBER 33491), ambos con municipio del hospital; el trabajo se posiciona como replicación + extensión (ver LITERATURA_2026-10-17).
 - Cambios en reporte de unidades a lo largo de los años: no confundir «sin reporte» con «cero».
 
 ---
@@ -73,7 +75,7 @@ de otro agente se evalúa por su argumento, no por inercia ni cortesía.
 | Bitácora | `records/REGISTRO.md` | `CC-fx-ld1` |
 | Buzón de peticiones a `CC-fx-ld1` | `records/PARA_CC-fx-ld1.md` | quien pide |
 | Respuestas de `CC-fx-ld1` | `records/DE_CC-fx-ld1.md` | `CC-fx-ld1` |
-| Manuscrito (cuando exista) | `Claude-remote/temp-urgencias/manuscript/` | por decidir |
+| Manuscrito | `Claude-remote/temp-urgencias/manuscript/` (`BORRADOR_v0.1.md` + copia Google Docs para lectura) | `CC-fx-ld1` hasta que haya coautores; la copia Docs es sólo lectura/comentarios |
 | Código publicable | repo git (fork bajo cuenta/organización por decidir) | `CC-fx-ld1` |
 
 No se crea `docs/` ni `config/` en la nube: métodos y parámetros viven en el repo
@@ -137,6 +139,12 @@ De este proyecto:
   del repo estaba corrupta. Antes de borrar un duplicado: `cmp` completo y, si difieren,
   decodificar ambos.
 - **No usar `pgrep -f`/`pkill -f` con un patrón que esté en la propia línea de comandos.**
+- **Una columna con el nombre correcto no garantiza el contenido correcto**: validar rangos y
+  cardinalidad por año (2013: MUNRESIDENCIA = entidad en el 100 %).
+- **No editar un script mientras una corrida suya está en curso**: R lo lee expresión por expresión.
+- **La clasificación cualitativa de resultados se calcula en código desde la tabla**, no a ojo desde
+  la figura ni de memoria; toda cifra del borrador se coteja contra el CSV antes de subir.
+- **Índices compuestos: comprobar la dirección** (CONAPO 2020: IM alto = menos marginación).
 - **Nombres de archivo con ñ en NFD** (hechos en macOS): abrir con `list.files()`, no tecleando
   el nombre.
 
