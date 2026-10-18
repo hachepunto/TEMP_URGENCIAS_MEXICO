@@ -1,5 +1,3 @@
-<!-- Copia de Drive:Claude-remote/temp-urgencias/CLAUDE.md (canónica). No editar aquí: se trae desde el Drive, nunca al revés. -->
-
 # CLAUDE.md — temp-urgencias
 
 Contexto del proyecto y reglas de trabajo. Derivado de `Claude-remote/PLANTILLA_REGLAS_DE_TRABAJO.md`.
@@ -68,7 +66,8 @@ de otro agente se evalúa por su argumento, no por inercia ni cortesía.
 
 | Qué | Dónde vive | Quién escribe |
 |---|---|---|
-| Datos de entrada, pipeline, salidas de cómputo | `fx-ld1:/STORAGE/genut/dalvarez/TEMP_URGENCIAS_MEXICO/` (repo git) | `CC-fx-ld1` |
+| Pipeline, derivados, salidas de cómputo (repo git, copia de trabajo) | `fx-ld1:/scratch/home/hachepunto/temp_urgencias/repo/` (disco local del nodo, desde 2026-10-17; la copia anterior en `/STORAGE/genut/dalvarez/TEMP_URGENCIAS_MEXICO/` es respaldo congelado, no se escribe) | `CC-fx-ld1` |
+| Datos crudos (DGIS, Daymet, catálogos) | `fx-ld1:/STORAGE/genut/dalvarez/` (NFS; sólo lectura desde el pipeline) | `CC-fx-ld1` |
 | Instantánea de resultados (`figures/`, `tables/`, `INDEX.md`) | `Claude-remote/temp-urgencias/` | `CC-fx-ld1`, por subida explícita; los demás sólo leen |
 | Este `CLAUDE.md` (reglas, canónico) | `Claude-remote/temp-urgencias/CLAUDE.md` | `CC-fx-ld1`; cambios se proponen en `records/` |
 | Scripts propuestos para fx-ld1 | `Claude-remote/temp-urgencias/code/` | quien propone (`CD`/`CW`/`CS`) |
@@ -147,6 +146,11 @@ De este proyecto:
 - **Índices compuestos: comprobar la dirección** (CONAPO 2020: IM alto = menos marginación).
 - **Nombres de archivo con ñ en NFD** (hechos en macOS): abrir con `list.files()`, no tecleando
   el nombre.
+- **Binarios al Drive sólo con `rclone` (`gdrive:` = `Claude-remote/`) y verificando tamaño.**
+  Reconstruir base64 en el chat corrompió un PDF (2026-10-17). INDEX/REGISTRO también se bajan,
+  editan y suben con `rclone`.
+- **`/STORAGE` es NFS**: `git status` tardó > 90 s bajo carga; el repo de trabajo vive en
+  `/scratch/home`, los crudos se leen de `/STORAGE`.
 
 ## 10. Coautores humanos
 
