@@ -1,0 +1,36 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 212,506/0 fixed-effects (6,467,870 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=6097228, [36, Inf) humedo acumulado_0_14 = 0.902 [0.866, 0.939] (95 s)
+NOTE: 166,879/0 fixed-effects (5,078,539 observations) removed because of only 0 outcomes or singletons.
+digestivo: n=7486559, [36, Inf) humedo acumulado_0_14 = 1.033 [1.000, 1.068] (117 s)
+NOTE: 212,307/0 fixed-effects (6,461,909 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=6103189, [36, Inf) humedo acumulado_0_14 = 1.151 [1.104, 1.200] (96 s)
+NOTE: 185,734/0 fixed-effects (5,652,447 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=6912651, [36, Inf) humedo acumulado_0_14 = 1.138 [1.100, 1.177] (105 s)
+NOTE: 206,968/0 fixed-effects (6,298,096 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=6267002, [36, Inf) humedo acumulado_0_14 = 1.270 [1.215, 1.326] (95 s)
+NOTE: 256,623/0 fixed-effects (7,810,623 observations) removed because of only 0 outcomes or singletons.
+mentales: n=4754475, [36, Inf) humedo acumulado_0_14 = 1.107 [1.059, 1.158] (75 s)
+NOTE: 267,276/0 fixed-effects (8,135,040 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=4430058, [36, Inf) humedo acumulado_0_14 = 0.930 [0.875, 0.989] (68 s)
+NOTE: 300,476/0 fixed-effects (9,145,776 observations) removed because of only 0 outcomes or singletons.
+oido: n=3419322, [36, Inf) humedo acumulado_0_14 = 1.134 [1.058, 1.216] (55 s)
+NOTE: 317,679/0 fixed-effects (9,669,860 observations) removed because of only 0 outcomes or singletons.
+ojo: n=2895238, [36, Inf) humedo acumulado_0_14 = 1.102 [1.017, 1.194] (49 s)
+NOTE: 239,438/0 fixed-effects (7,287,821 observations) removed because of only 0 outcomes or singletons.
+osteomuscular: n=5277277, [36, Inf) humedo acumulado_0_14 = 1.060 [1.013, 1.110] (82 s)
+NOTE: 264,378/0 fixed-effects (8,046,276 observations) removed because of only 0 outcomes or singletons.
+piel: n=4518822, [36, Inf) humedo acumulado_0_14 = 1.168 [1.113, 1.226] (70 s)
+NOTE: 178,621/0 fixed-effects (5,437,158 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=7127940, [36, Inf) humedo acumulado_0_14 = 0.802 [0.759, 0.848] (105 s)
+NOTE: 299,389/0 fixed-effects (9,112,889 observations) removed because of only 0 outcomes or singletons.
+sangre: n=3452209, [36, Inf) humedo acumulado_0_14 = 1.201 [1.106, 1.305] (58 s)
+NOTE: 177,432/0 fixed-effects (5,399,758 observations) removed because of only 0 outcomes or singletons.
+sintomas: n=7165340, [36, Inf) humedo acumulado_0_14 = 1.146 [1.111, 1.182] (115 s)
+NOTE: 137,489/0 fixed-effects (4,183,696 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=8381402, [36, Inf) humedo acumulado_0_14 = 1.114 [1.085, 1.144] (121 s)
+NOTE: 80,484/0 fixed-effects (2,448,515 observations) removed because of only 0 outcomes or singletons.
+total: n=10116583, [36, Inf) humedo acumulado_0_14 = 1.056 [1.032, 1.080] (163 s)
+-> resultados/tablas/rezagos_expo-hum_2012_2025.csv

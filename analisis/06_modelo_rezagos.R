@@ -96,6 +96,8 @@ for (cp in caps) {
              irr_lo_2way = exp(coef - 1.96 * se_2way), irr_hi_2way = exp(coef + 1.96 * se_2way))]
   if (anyNA(res)) stop("NA en coeficientes de ", cp)
   fwrite(res, sprintf("%s/%s_%s.csv", dir_out, periodo, cp))
+  Vr <- V[regs, regs]; attr(Vr, "coef") <- b[regs]   # covarianza completa de los regresores de clima, para contrastes entre bins (26)
+  saveRDS(Vr, sprintf("%s/%s_%s_vcov.rds", dir_out, periodo, cp))
   fwrite(data.table(cap = cp, fe = fe_spec, n_obs = nobs(f), n_mun = uniqueN(d[obs(f), cve]),
                     casos = sum(d[obs(f), casos]), obs_eliminadas = nrow(d) - nobs(f), bic = BIC(f), expo = expo,
                     segundos = round(as.numeric(difftime(Sys.time(), t0, units = "secs")))),
