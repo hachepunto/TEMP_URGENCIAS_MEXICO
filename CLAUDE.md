@@ -1,3 +1,5 @@
+<!-- Copia de Drive:Claude-remote/temp-urgencias/CLAUDE.md (canónica). No editar aquí: se trae desde el Drive, nunca al revés. -->
+
 # CLAUDE.md — temp-urgencias
 
 Contexto del proyecto y reglas de trabajo. Derivado de `Claude-remote/PLANTILLA_REGLAS_DE_TRABAJO.md`.
