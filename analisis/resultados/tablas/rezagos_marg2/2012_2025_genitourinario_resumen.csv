@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-genitourinario,base,2198376,814,1097969,1989990,30
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+genitourinario,base,2191247,814,1097969,1698184,3886959.88336419,tmax,28

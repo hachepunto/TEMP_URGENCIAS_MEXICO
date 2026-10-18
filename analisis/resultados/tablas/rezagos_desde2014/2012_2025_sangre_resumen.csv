@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-sangre,base,3274304,2318,441415,7494727,47
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+sangre,base,3274304,2318,441415,7494727,3844583.98294618,tmax,44

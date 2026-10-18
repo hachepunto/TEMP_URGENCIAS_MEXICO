@@ -1,0 +1,27 @@
+CONTEOS=subgrupos|06_subgrupos
+MARG=1|06_marg1
+MARG=2|06_marg2
+MARG=3|06_marg3
+CLIMA=1 MARG=1|06_clima1_marg1|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=1 MARG=2|06_clima1_marg2|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=1 MARG=3|06_clima1_marg3|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=2 MARG=1|06_clima2_marg1|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=2 MARG=2|06_clima2_marg2|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=2 MARG=3|06_clima2_marg3|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=3 MARG=1|06_clima3_marg1|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=3 MARG=2|06_clima3_marg2|infecciosas endocrinas genitourinario traumatismos total
+CLIMA=3 MARG=3|06_clima3_marg3|infecciosas endocrinas genitourinario traumatismos total
+CONTEOS=hospital|06_hospital
+VENTANAS=30|06_v30|circulatorio infecciosas nervioso respiratorio total
+ANIO_MIN=2014|06_desde2014
+EXPO=at|06_expo-at
+EXPO=hum|06_expo-hum
+CONTEOS=codigos|06_codigos_lote0|A02 A05 A08 A09 A90 A97 D25 D64 E10 E11 E14 E16 E86 E87 F10 F32 F41 F44 G40 G43 G44 H10 H65 H66 H81 I10 I50 I67
+CONTEOS=codigos|06_codigos_lote1|I87 J00 J02 J03 J04 J06 J18 J20 J21 J22 J31 J44 J45 J46 J96 J98 K21 K29 K30 K31 K35 K37 K40 K42 K52 K56 K58
+CONTEOS=codigos|06_codigos_lote2|K59 K72 K74 K80 K81 K85 K92 L02 L03 L20 L23 L30 L50 M25 M54 M62 M79 M93 M94 N12 N18 N20 N23 N30 N39 N40 N76 N91
+CONTEOS=codigos|06_codigos_lote3|N93 N94 O00 O02 O03 O06 O13 O14 O20 O23 O26 O34 O36 O41 O42 O47 O60 O62 O63 O75 O80 O99 P59 R04 R07 R10 R11
+CONTEOS=codigos|06_codigos_lote4|R33 R42 R50 R51 R52 R56 R69 S00 S01 S02 S05 S06 S09 S13 S20 S30 S40 S42 S43 S50 S51 S52 S60 S61 S62 S63 S72
+CONTEOS=codigos|06_codigos_lote5|S80 S81 S82 S83 S90 S91 S92 S93 T00 T07 T14 T15 T30 T63 T78 U07 Z03 Z04 Z32 Z33 Z34 Z35 Z39 Z48 Z51 Z71 Z76
+CONTEOS=defunciones MARG=1|06_defunciones_marg1
+CONTEOS=defunciones MARG=2|06_defunciones_marg2
+CONTEOS=defunciones MARG=3|06_defunciones_marg3

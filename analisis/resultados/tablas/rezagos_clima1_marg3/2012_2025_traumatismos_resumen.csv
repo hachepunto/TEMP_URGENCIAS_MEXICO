@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-traumatismos,base,607726,244,255324,640090,8
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+traumatismos,base,605741,244,255324,553015,961237.353723953,tmax,8

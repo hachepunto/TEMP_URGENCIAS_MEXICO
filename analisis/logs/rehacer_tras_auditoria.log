@@ -1,0 +1,37 @@
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+Sun Oct 18 02:39:26 CST 2026 fase 1: 27 corridas
+OK 06_subgrupos
+OK 06_marg3
+OK 06_marg2
+OK 06_clima1_marg2
+OK 06_clima1_marg1
+OK 06_clima1_marg3
+OK 06_clima2_marg1
+OK 06_marg1
+OK 06_clima2_marg2
+OK 06_clima2_marg3
+OK 06_clima3_marg1
+OK 06_clima3_marg2
+OK 06_clima3_marg3
+OK 06_hospital
+OK 06_v30
+OK 06_desde2014
+OK 06_expo-at
+OK 06_codigos_lote0
+OK 06_expo-hum
+OK 06_codigos_lote1
+OK 06_codigos_lote2
+OK 06_codigos_lote3
+OK 06_defunciones_marg1
+OK 06_defunciones_marg2
+OK 06_defunciones_marg3
+OK 06_codigos_lote4
+OK 06_codigos_lote5
+Sun Oct 18 03:55:57 CST 2026 fase 1 terminada
+OK 22
+OK 23
+OK marginación por código
+OK códigos hum
+FALLO 24
+OK 26
+Sun Oct 18 04:23:43 CST 2026 fase 2 terminada

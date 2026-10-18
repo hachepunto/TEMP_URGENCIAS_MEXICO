@@ -1,0 +1,19 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 3: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones
+NOTE: 46,787/0 fixed-effects (1,424,030 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=2465401, [36, Inf) acumulado_0_14 = 0.944 [0.861, 1.034] (30 s)
+NOTE: 65,953/0 fixed-effects (2,007,414 observations) removed because of only 0 outcomes or singletons.
+endocrino: n=1882017, [36, Inf) acumulado_0_14 = 0.982 [0.885, 1.089] (23 s)
+NOTE: 85,834/0 fixed-effects (2,612,478 observations) removed because of only 0 outcomes or singletons.
+externas: n=1276953, [36, Inf) acumulado_0_14 = 1.187 [0.993, 1.418] (18 s)
+NOTE: 16,592/0 fixed-effects (504,919 observations) removed because of only 0 outcomes or singletons.
+naturales: n=3384512, [36, Inf) acumulado_0_14 = 0.991 [0.938, 1.047] (37 s)
+NOTE: 113,075/8 fixed-effects (3,442,319 observations) removed because of only 0 outcomes or singletons.
+renal: n=447112, [36, Inf) acumulado_0_14 = 0.838 [0.599, 1.173] (7 s)
+NOTE: 84,939/1 fixed-effects (2,585,877 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=1303554, [36, Inf) acumulado_0_14 = 1.058 [0.911, 1.228] (16 s)
+NOTE: 14,858/0 fixed-effects (452,073 observations) removed because of only 0 outcomes or singletons.
+todas: n=3437358, [36, Inf) acumulado_0_14 = 1.011 [0.960, 1.065] (38 s)
+-> resultados/tablas/rezagos_defunciones_marg3_2012_2025.csv

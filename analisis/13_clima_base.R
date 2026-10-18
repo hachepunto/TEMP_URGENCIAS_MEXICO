@@ -5,8 +5,11 @@
 # Entrada: datos/derivados/clima_ventanas_2012_2025.parquet, marginacion_terciles_2020.csv
 # Salida:  datos/derivados/clima_base_terciles.csv (cve, frac_ge33, clima); resultados/tablas/celdas_clima_marg.csv
 suppressMessages({library(data.table); library(arrow)}); setDTthreads(as.integer(Sys.getenv("NHILOS", "8")))
-cl <- as.data.table(read_parquet("datos/derivados/clima_ventanas_2012_2025.parquet", col_select = c("cve", "bin")))
-b <- cl[, .(frac_ge33 = mean(bin >= 9), dias_33_36 = sum(bin == 9), dias_ge36 = sum(bin == 10)), by = cve]
+cl <- as.data.table(read_parquet("datos/derivados/clima_ventanas_2012_2025.parquet", col_select = c("cve", "fecha", "bin")))
+# clima de base con todos los días (climatología); tamaños de celda sólo con los días que entran al modelo
+# de urgencias (sin 2012-12-26..2013-12-25, AUDITORIA_2026-10-18)
+cl[, en_modelo := !(fecha >= as.IDate("2012-12-26") & fecha <= as.IDate("2013-12-25"))]
+b <- cl[, .(frac_ge33 = mean(bin >= 9), dias_33_36 = sum(bin == 9 & en_modelo), dias_ge36 = sum(bin == 10 & en_modelo)), by = cve]
 b[, clima := cut(frac_ge33, quantile(frac_ge33, c(0, 1/3, 2/3, 1)), labels = 1:3, include.lowest = TRUE)]
 print(b[, .(n = .N, frac_min = round(min(frac_ge33), 3), frac_max = round(max(frac_ge33), 3)), by = clima][order(clima)])
 m <- fread("datos/derivados/marginacion_terciles_2020.csv")[, .(cve, marg = tercil)]

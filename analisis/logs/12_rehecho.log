@@ -1,0 +1,21 @@
+Key: <cap>
+               cap ratio    lo    hi     z
+            <char> <num> <num> <num> <num>
+ 1:   circulatorio 0.995 0.895 1.106 -0.10
+ 2:      digestivo 1.012 0.941 1.087  0.32
+ 3:     endocrinas 0.923 0.832 1.023 -1.53
+ 4: genitourinario 0.995 0.911 1.085 -0.12
+ 5:    infecciosas 0.933 0.846 1.029 -1.39
+ 6:       mentales 0.871 0.751 1.010 -1.83
+ 7:       nervioso 0.887 0.770 1.020 -1.68
+ 8:           oido 1.266 1.047 1.530  2.44
+ 9:            ojo 0.987 0.775 1.257 -0.11
+10:  osteomuscular 1.028 0.910 1.161  0.44
+11:           piel 0.932 0.811 1.072 -0.98
+12:   respiratorio 0.996 0.903 1.099 -0.07
+13:         sangre 0.872 0.681 1.117 -1.08
+14:       sintomas 1.093 0.999 1.196  1.93
+15:          total 0.986 0.941 1.034 -0.58
+16:   traumatismos 0.975 0.924 1.029 -0.91
+Fontconfig warning: using without calling FcInit()
+-> resultados/{tablas,figuras}/marginacion_2012_2025

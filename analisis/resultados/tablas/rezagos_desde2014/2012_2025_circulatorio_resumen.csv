@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-circulatorio,base,5751602,2427,2931912,5017429,82
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+circulatorio,base,5751602,2427,2931912,5017429,10422671.9899515,tmax,77

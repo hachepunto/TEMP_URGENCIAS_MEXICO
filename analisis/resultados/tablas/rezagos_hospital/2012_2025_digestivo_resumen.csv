@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-digestivo,base,2382525,692,7519757,10182573,40
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+digestivo,base,2366409,692,7519754,9301884,9292049.4541274,tmax,39

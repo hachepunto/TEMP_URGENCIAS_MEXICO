@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-E86_deshidratacion,base,1876821,2074,195109,10688277,32
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+E86_deshidratacion,base,1872223,2074,195109,9796070,2010075.89228017,tmax,34

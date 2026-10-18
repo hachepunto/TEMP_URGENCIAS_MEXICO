@@ -3,20 +3,19 @@ package ‘fixest’ was built under R version 4.5.3
 tercil de clima de base 1: 823 municipios
 tercil de marginación 3: 244 municipios
 FE: cve^anio^mes + ent^dow | conteos: capitulos
-NOTE: 27,815/6 fixed-effects (846,706 observations) removed because of only 0 outcomes or singletons.
-infecciosas: n=401110, >=36 acumulado 0-14 = 3.356 [0.773, 14.562] (7 s)
-NOTE: 29,411/4 fixed-effects (895,384 observations) removed because of only 0 outcomes or singletons.
-endocrinas: n=352432, >=36 acumulado 0-14 = 19.385 [2.899, 129.640] (5 s)
-NOTE: 26,957/1 fixed-effects (820,553 observations) removed because of only 0 outcomes or singletons.
-genitourinario: n=427263, >=36 acumulado 0-14 = 2.993 [0.404, 22.152] (6 s)
-NOTE: 21,031/0 fixed-effects (640,090 observations) removed because of only 0 outcomes or singletons.
-traumatismos: n=607726, >=36 acumulado 0-14 = 1.965 [0.361, 10.690] (8 s)
-NOTE: 12,902/0 fixed-effects (392,643 observations) removed because of only 0 outcomes or singletons.
-total: n=855173, >=36 acumulado 0-14 = 2.636 [1.258, 5.523] (10 s)
+NOTE: 25,131/6 fixed-effects (758,670 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=400086, [36, Inf) acumulado_0_14 = 3.352 [0.772, 14.551] (7 s)
+NOTE: 26,727/4 fixed-effects (807,344 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=351412, [36, Inf) acumulado_0_14 = 19.347 [2.888, 129.629] (5 s)
+NOTE: 24,273/1 fixed-effects (732,660 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=426096, [36, Inf) acumulado_0_14 = 2.985 [0.404, 22.045] (6 s)
+NOTE: 18,347/0 fixed-effects (553,015 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=605741, [36, Inf) acumulado_0_14 = 1.958 [0.360, 10.656] (8 s)
+NOTE: 10,218/0 fixed-effects (307,036 observations) removed because of only 0 outcomes or singletons.
+total: n=851720, [36, Inf) acumulado_0_14 = 2.628 [1.254, 5.507] (11 s)
 Warning messages:
 1: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
 2: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
 3: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
 4: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
 5: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
-06_clima1_marg3: 46.85 s, 7661268 KB

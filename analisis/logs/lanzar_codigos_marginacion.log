@@ -1,18 +1,5 @@
-/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
 D: 62 codigos; E: 20
-logs/lanzar_codigos_marginacion.sh: line 23: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 23: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 23: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-Sat Oct 17 21:17:44 CST 2026 proceso marg3 terminado
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-Sat Oct 17 21:20:56 CST 2026 proceso marg2 terminado
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-logs/lanzar_codigos_marginacion.sh: line 19: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
-Sat Oct 17 21:29:44 CST 2026 proceso marg1 terminado
-Sat Oct 17 21:29:44 CST 2026 paso 2 (D y E) terminado
+Sun Oct 18 04:06:19 CST 2026 proceso marg3 terminado
+Sun Oct 18 04:09:54 CST 2026 proceso marg2 terminado
+Sun Oct 18 04:19:17 CST 2026 proceso marg1 terminado
+Sun Oct 18 04:19:17 CST 2026 paso 2 (D y E) terminado

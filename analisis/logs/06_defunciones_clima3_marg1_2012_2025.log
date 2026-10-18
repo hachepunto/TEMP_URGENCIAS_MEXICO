@@ -1,0 +1,5 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 3: 819 municipios
+tercil de marginación 1: 288 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones

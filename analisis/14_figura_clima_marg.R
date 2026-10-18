@@ -10,7 +10,8 @@ periodo <- commandArgs(trailingOnly = TRUE)[1]; stopifnot(!is.na(periodo))
 celdas <- fread("resultados/tablas/celdas_clima_marg.csv")
 r <- rbindlist(lapply(1:3, function(cc) rbindlist(lapply(1:3, function(k) {
   dir <- sprintf("resultados/tablas/rezagos_clima%d_marg%d", cc, k)
-  arch <- list.files(dir, sprintf("^%s_", periodo), full.names = TRUE); arch <- arch[!grepl("_resumen", arch)]
+  arch <- list.files(dir, sprintf("^%s_[a-z_]+\\.csv$", periodo), full.names = TRUE)
+  arch <- arch[!grepl("_resumen|_noidentificado", arch)]   # excluye resúmenes, avisos y vcov (.rds)
   rbindlist(lapply(arch, fread))[, `:=`(clima = cc, marg = k)]
 }))))
 x <- r[cantidad == "acumulado_0_14" & bin %in% c("[33,36)", "[36, Inf)")]

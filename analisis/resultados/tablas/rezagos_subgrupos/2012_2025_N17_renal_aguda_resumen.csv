@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-N17_renal_aguda,base,467323,1519,27924,12097775,14
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+N17_renal_aguda,base,466476,1519,27924,11201817,385922.296221504,tmax,15

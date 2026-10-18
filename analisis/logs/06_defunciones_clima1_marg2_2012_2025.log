@@ -1,0 +1,11 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 1: 823 municipios
+tercil de marginación 2: 308 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones
+NOTE: 7,303/0 fixed-effects (222,257 observations) removed because of only 0 outcomes or singletons.
+todas: n=1240435, [36, Inf) acumulado_0_14 = 1.351 [0.488, 3.746] (14 s)
+NOTE: 15,858/0 fixed-effects (482,651 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=980041, [36, Inf) acumulado_0_14 = 0.831 [0.139, 4.967] (12 s)
+Warning message:
+The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 

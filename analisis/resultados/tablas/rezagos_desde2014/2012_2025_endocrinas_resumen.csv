@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-endocrinas,base,5767521,2428,2863881,5001510,76
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+endocrinas,base,5767521,2428,2863881,5001510,10398692.3391159,tmax,71

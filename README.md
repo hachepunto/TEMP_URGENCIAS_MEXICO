@@ -9,38 +9,48 @@ Proyecto iniciado por Diana Álvarez ([dialvas/TEMP_URGENCIAS_MEXICO](https://gi
 
 ## Estado
 
-**2026-10-17.** Resultados vigentes = corridas **sin 2013** (el archivo DGIS 2013 no identifica el
-municipio de residencia; ver `analisis/AUDITORIA_2026-10-17.md`). Los resultados previos con 2013
-están congelados en `analisis/resultados/historico/2026-10-17_con2013/`; las diferencias son del
-segundo o tercer decimal. Borrador del manuscrito en `Drive:Claude-remote/temp-urgencias/manuscript/`.
+**2026-10-18.** Resultados vigentes tras la segunda auditoría (`analisis/AUDITORIA_2026-10-18.md`):
+urgencias sin el periodo que cubre el archivo DGIS 2013 (2012-12-26 a 2013-12-25; el archivo no
+identifica el municipio de residencia, ver `AUDITORIA_2026-10-17.md`) y mortalidad con los 13 años
+completos. Versiones anteriores congeladas en `analisis/resultados/historico/` (no versionado).
+Borrador del manuscrito en `Drive:Claude-remote/temp-urgencias/manuscript/`.
 
-Efecto acumulado 0–14 días de un día con Tmax ≥ 36 °C frente a 24–27 °C, 2012–2025 sin 2013,
-exposición por municipio de residencia (`analisis/resultados/tablas/rezagos_2012_2025.csv`):
+Efecto de un día con Tmax ≥ 36 °C frente a 24–27 °C, exposición por municipio de residencia
+(`analisis/resultados/tablas/rezagos_2012_2025.csv`; «mismo día» = IRR de la ventana 0, columna
+`cantidad == "v0"`):
 
 | Capítulo | Mismo día | Acumulado 0–14 |
 |---|---|---|
-| Infecciosas | 1.126 | 1.182 [1.146, 1.219] |
-| Endocrinas | 1.133 | 1.156 [1.120, 1.193] |
-| Genitourinario | 1.070 | 1.142 [1.111, 1.174] |
-| Sangre | 1.066 | 1.138 [1.064, 1.217] |
-| Piel | 1.063 | 1.133 [1.094, 1.173] |
-| Traumatismos | 1.113 | 1.124 [1.102, 1.146] |
-| Síntomas | 1.071 | 1.106 [1.078, 1.134] |
-| Ojo | 1.039 | 1.096 [1.026, 1.170] |
-| Mentales | 1.099 | 1.086 [1.052, 1.122] |
-| Oído | 1.023 | 1.063 [1.007, 1.121] |
-| Total (15 capítulos) | 1.067 | 1.038 [1.020, 1.056] |
-| Digestivo | 1.011 | 1.026 [1.002, 1.051] |
-| Osteomuscular | 1.031 | 1.023 [0.986, 1.061] |
-| Nervioso | 1.041 | 0.955 [0.917, 0.995] |
-| Circulatorio | 0.979 | 0.897 [0.868, 0.928] |
-| Respiratorio | 1.028 | 0.783 [0.756, 0.811] |
+| Infecciosas | 1.121 | 1.178 [1.143, 1.215] |
+| Endocrinas | 1.135 | 1.155 [1.119, 1.191] |
+| Genitourinario | 1.069 | 1.140 [1.109, 1.171] |
+| Sangre | 1.068 | 1.138 [1.064, 1.217] |
+| Piel | 1.059 | 1.131 [1.093, 1.171] |
+| Traumatismos | 1.117 | 1.121 [1.099, 1.143] |
+| Síntomas y signos (R) | 1.072 | 1.103 [1.075, 1.131] |
+| Ojo | 1.038 | 1.093 [1.024, 1.167] |
+| Mentales | 1.099 | 1.083 [1.049, 1.119] |
+| Oído | 1.022 | 1.057 [1.003, 1.115] |
+| Total (15 capítulos) | 1.067 | 1.035 [1.017, 1.053] |
+| Digestivo | 1.011 | 1.024 [1.001, 1.049] |
+| Osteomuscular | 1.033 | 1.019 [0.983, 1.057] |
+| Nervioso | 1.044 | 0.953 [0.915, 0.993] |
+| Circulatorio | 0.979 | 0.895 [0.866, 0.926] |
+| Respiratorio | 1.028 | 0.779 [0.752, 0.808] |
 
-Subgrupos: deshidratación E86 2.11 [1.91, 2.33]; renal aguda N17 0.94 [0.74, 1.19] (adelanto);
-infarto I21 0.99 [0.84, 1.16]. Exposición por municipio del hospital: diferencias < 0.03 salvo
+Subgrupos: deshidratación E86 2.11 [1.91, 2.32]; renal aguda N17 0.95 [0.75, 1.20] (adelanto);
+infarto I21 0.98 [0.83, 1.16]. Exposición por municipio del hospital: diferencias < 0.03 salvo
 sangre y mentales. Sensibilidad de efectos fijos (mun×año + edo×semana): efectos del calor a la
 mitad y frío < 12 °C con efecto negativo en todos los capítulos (fragilidad reportada). Sin gradiente
-por marginación, tampoco a clima de base constante.
+por marginación en urgencias, tampoco a clima de base constante.
+
+Mortalidad (mismos municipio-días, 2012–2024, `rezagos_defunciones_2012_2025.csv`), acumulado 0–14 a
+≥ 36 °C: todas las causas 1.086 [1.062, 1.110], circulatorio 1.106, respiratorio 1.119: sube donde las
+urgencias por las mismas causas bajan (figura 8). El exceso de mortalidad por calor es menor en el
+tercil más marginado (todas M3/M1 0.92 [0.87, 0.98]; circulatorio 0.84 [0.76, 0.93]).
+
+Barrido por código CIE-10 (164 códigos, `codigos_fdr_2012_2025.csv`) y humedad
+(`humedad_comparacion_2012_2025.csv`): ver `ESPECIFICACION_codigos.md` y `ESPECIFICACION_humedad.md`.
 
 Antecedentes directos: Sarmiento, Colelli & Pavanello (RFF WP 25-11, 2025) y Aguilar-Gomez, Graff
 Zivin & Neidell (NBER 33491, 2025), ambos con exposición por municipio del hospital; ver

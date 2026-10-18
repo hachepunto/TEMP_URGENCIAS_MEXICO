@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-infecciosas,base,991297,271,1328184,394597,14
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+infecciosas,base,987124,271,1328183,299855,2369300.39216274,tmax,14

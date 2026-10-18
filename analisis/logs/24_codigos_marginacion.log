@@ -1,38 +1,52 @@
-D: 62 códigos; M3/M1 con q < 0.05: 1 (0 con M3 > M1, 1 con M3 < M1); mediana del cociente 0.970
+D: 62 códigos; M3/M1 con q < 0.05: 1 (0 con M3 > M1, 1 con M3 < M1); mediana del cociente 0.993
       cie3                               nombre irr_M1 irr_M3 ratio    lo    hi
     <char>                               <char>  <num>  <num> <num> <num> <num>
- 1:    R04 HEMORRAGIA DE LAS VÍAS RESPIRATORIAS   1.74   2.14  1.23  0.79  1.92
- 2:    N23        CÓLICO RENAL, NO ESPECIFICADO   1.61   1.13  0.71  0.45  1.11
- 3:    A90   FIEBRE DEL DENGUE [DENGUE CLÁSICO]   1.78   3.21  1.80  0.74  4.39
- 4:    T63 EFECTO TÓXICO DEL CONTACTO CON ANIMA   1.63   1.03  0.63  0.53  0.75
- 5:    N94 DOLOR Y OTRAS AFECCIONES RELACIONADA   1.18   0.96  0.82  0.52  1.27
- 6:    T78 EFECTOS ADVERSOS, NO CLASIFICADOS EN   1.22   0.85  0.70  0.49  1.01
- 7:    O26 ATENCIÓN A LA MADRE POR OTRAS COMPLI   1.29   2.07  1.60  0.87  2.93
- 8:    S92 FRACTURA DEL PIE, EXCEPTO DEL TOBILL   1.17   1.72  1.47  0.86  2.52
- 9:    O75 OTRAS COMPLICACIONES DEL TRABAJO DE    1.62   1.17  0.72  0.39  1.34
-10:    J45                                 ASMA   0.74   0.91  1.23  0.96  1.59
-11:    J96 INSUFICIENCIA RESPIRATORIA, NO CLASI   0.77   0.36  0.47  0.23  0.94
-12:    J98       OTROS TRASTORNOS RESPIRATORIOS   0.74   0.54  0.72  0.44  1.19
-13:    J21                  BRONQUIOLITIS AGUDA   0.58   0.99  1.71  1.10  2.64
+ 1:    R04 HEMORRAGIA DE LAS VÍAS RESPIRATORIAS   1.73   2.18  1.26  0.81  1.96
+ 2:    N23        CÓLICO RENAL, NO ESPECIFICADO   1.60   1.15  0.72  0.45  1.13
+ 3:    A90   FIEBRE DEL DENGUE [DENGUE CLÁSICO]   1.78   3.27  1.83  0.76  4.44
+ 4:    T63 EFECTO TÓXICO DEL CONTACTO CON ANIMA   1.63   1.04  0.64  0.54  0.76
+ 5:    T78 EFECTOS ADVERSOS, NO CLASIFICADOS EN   1.21   0.87  0.72  0.50  1.04
+ 6:    S92 FRACTURA DEL PIE, EXCEPTO DEL TOBILL   1.16   1.74  1.50  0.87  2.56
+ 7:    O26 ATENCIÓN A LA MADRE POR OTRAS COMPLI   1.28   2.09  1.63  0.89  2.98
+ 8:    O75 OTRAS COMPLICACIONES DEL TRABAJO DE    1.59   1.17  0.74  0.40  1.37
+ 9:    J03                    AMIGDALITIS AGUDA   0.82   1.01  1.23  0.90  1.68
+10:    J45                                 ASMA   0.73   0.94  1.29  1.00  1.65
+11:    J96 INSUFICIENCIA RESPIRATORIA, NO CLASI   0.78   0.37  0.47  0.23  0.96
+12:    J31 RINITIS, RINOFARINGITIS Y FARINGITIS   0.65   0.86  1.33  0.67  2.64
+13:    J98       OTROS TRASTORNOS RESPIRATORIOS   0.74   0.55  0.75  0.45  1.25
+14:    J46                      ESTADO ASMÁTICO   0.69   0.86  1.25  0.83  1.89
+15:    J21                  BRONQUIOLITIS AGUDA   0.57   1.07  1.87  1.21  2.88
           q
       <num>
- 1: 9.2e-01
- 2: 8.4e-01
- 3: 8.9e-01
- 4: 1.9e-05
- 5: 9.2e-01
- 6: 5.9e-01
- 7: 8.4e-01
- 8: 8.8e-01
- 9: 9.2e-01
-10: 8.4e-01
-11: 5.2e-01
-12: 8.9e-01
-13: 4.2e-01
-E: 22 estimaciones descartadas por EE > 1 (no identificadas); 116 conservadas
-E: 20 códigos × 9 estratos; M3/M1 con q < 0.05 dentro de clima: 1 de 38
-Key: <cie3, nombre, clima>
-     cie3                         nombre clima ratio    lo    hi
-   <char>                         <char> <int> <num> <num> <num>
-1:    T63 EFECTO TÓXICO DEL CONTACTO CON     3  0.54  0.37  0.78
+ 1: 9.3e-01
+ 2: 8.2e-01
+ 3: 8.5e-01
+ 4: 3.5e-05
+ 5: 7.8e-01
+ 6: 8.2e-01
+ 7: 7.8e-01
+ 8: 9.3e-01
+ 9: 8.6e-01
+10: 6.0e-01
+11: 5.9e-01
+12: 9.3e-01
+13: 9.3e-01
+14: 9.3e-01
+15: 1.4e-01
+   clima  marg   md36 mun36   md33 mun33 bin_usado
+   <int> <int>  <int> <int>  <int> <int>    <char>
+1:     1     1    159    56   6920   262   [33,36)
+2:     1     2    175    90  11175   303   [33,36)
+3:     1     3    195    85  10676   238   [33,36)
+4:     2     1   8053   260  57700   260 [36, Inf)
+5:     2     2   6849   245  59061   245 [36, Inf)
+6:     2     3   6661   306  79315   310 [36, Inf)
+7:     3     1 240538   288 343614   288 [36, Inf)
+8:     3     2 127050   266 457407   266 [36, Inf)
+9:     3     3  97910   265 488490   265 [36, Inf)
+E: 177 estimaciones por celda; celdas no identificadas en >= 36 -> [33,36): C1M1 C1M2 C1M3
+E: contrastes con separación numérica (fuera de BH): A90 C2
+E: 20 códigos × 9 estratos; M3/M1 con q < 0.05 dentro de clima: 0 de 58
+Key: <cie3, nombre, clima, bin_clima>
+Empty data.table (0 rows and 7 cols): cie3,nombre,clima,bin_clima,ratio,lo...
 -> codigos_marginacion_2012_2025.csv, codigos_clima_marg_2012_2025.csv, figuras/codigos_marginacion_2012_2025

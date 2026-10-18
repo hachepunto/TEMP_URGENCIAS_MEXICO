@@ -2,17 +2,36 @@ Warning message:
 package ‘fixest’ was built under R version 4.5.3 
 tercil de marginación 1: 819 municipios
 FE: cve^anio^mes + ent^dow | conteos: capitulos
-NOTE: 47,818/0 fixed-effects (1,454,854 observations) removed because of only 0 outcomes or singletons.
-infecciosas: n=2733512, >=36 acumulado 0-14 = 1.184 [1.139, 1.230] (35 s)
-NOTE: 48,371/0 fixed-effects (1,472,018 observations) removed because of only 0 outcomes or singletons.
-endocrinas: n=2716348, >=36 acumulado 0-14 = 1.170 [1.124, 1.218] (37 s)
-NOTE: 39,859/0 fixed-effects (1,212,888 observations) removed because of only 0 outcomes or singletons.
-genitourinario: n=2975478, >=36 acumulado 0-14 = 1.139 [1.101, 1.178] (36 s)
-NOTE: 27,609/0 fixed-effects (839,791 observations) removed because of only 0 outcomes or singletons.
-traumatismos: n=3348575, >=36 acumulado 0-14 = 1.125 [1.098, 1.153] (44 s)
-NOTE: 16,698/0 fixed-effects (507,694 observations) removed because of only 0 outcomes or singletons.
-total: n=3680672, >=36 acumulado 0-14 = 1.035 [1.013, 1.057] (48 s)
-Error: unexpected string constant in "agos", sufijo, ""
-Execution halted
-Command exited with non-zero status 1
-06_marg1: 214.03 s, 12694492 KB
+NOTE: 38,068/0 fixed-effects (1,144,963 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=2744468, [36, Inf) acumulado_0_14 = 0.892 [0.857, 0.929] (38 s)
+NOTE: 25,872/0 fixed-effects (776,404 observations) removed because of only 0 outcomes or singletons.
+digestivo: n=3113027, [36, Inf) acumulado_0_14 = 1.015 [0.986, 1.044] (40 s)
+NOTE: 39,362/0 fixed-effects (1,184,228 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=2705203, [36, Inf) acumulado_0_14 = 1.167 [1.121, 1.214] (36 s)
+NOTE: 30,853/0 fixed-effects (927,074 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=2962357, [36, Inf) acumulado_0_14 = 1.134 [1.097, 1.172] (37 s)
+NOTE: 38,810/0 fixed-effects (1,167,220 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=2722211, [36, Inf) acumulado_0_14 = 1.178 [1.134, 1.223] (35 s)
+NOTE: 50,548/0 fixed-effects (1,522,438 observations) removed because of only 0 outcomes or singletons.
+mentales: n=2366993, [36, Inf) acumulado_0_14 = 1.086 [1.049, 1.126] (30 s)
+NOTE: 55,343/0 fixed-effects (1,667,955 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=2221476, [36, Inf) acumulado_0_14 = 0.954 [0.910, 0.999] (29 s)
+NOTE: 68,120/0 fixed-effects (2,056,260 observations) removed because of only 0 outcomes or singletons.
+oido: n=1833171, [36, Inf) acumulado_0_14 = 1.024 [0.961, 1.091] (25 s)
+NOTE: 76,496/0 fixed-effects (2,309,106 observations) removed because of only 0 outcomes or singletons.
+ojo: n=1580325, [36, Inf) acumulado_0_14 = 1.093 [1.013, 1.179] (21 s)
+NOTE: 44,259/0 fixed-effects (1,332,634 observations) removed because of only 0 outcomes or singletons.
+osteomuscular: n=2556797, [36, Inf) acumulado_0_14 = 1.014 [0.972, 1.058] (42 s)
+NOTE: 54,474/0 fixed-effects (1,641,658 observations) removed because of only 0 outcomes or singletons.
+piel: n=2247773, [36, Inf) acumulado_0_14 = 1.127 [1.083, 1.173] (35 s)
+NOTE: 28,504/0 fixed-effects (857,855 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=3031576, [36, Inf) acumulado_0_14 = 0.769 [0.737, 0.802] (43 s)
+NOTE: 69,665/0 fixed-effects (2,100,657 observations) removed because of only 0 outcomes or singletons.
+sangre: n=1788774, [36, Inf) acumulado_0_14 = 1.140 [1.052, 1.237] (25 s)
+NOTE: 26,989/0 fixed-effects (808,910 observations) removed because of only 0 outcomes or singletons.
+sintomas: n=3080521, [36, Inf) acumulado_0_14 = 1.089 [1.057, 1.122] (45 s)
+NOTE: 18,601/0 fixed-effects (556,308 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=3333123, [36, Inf) acumulado_0_14 = 1.120 [1.093, 1.147] (46 s)
+NOTE: 7,701/0 fixed-effects (228,371 observations) removed because of only 0 outcomes or singletons.
+total: n=3661060, [36, Inf) acumulado_0_14 = 1.029 [1.008, 1.051] (48 s)
+-> resultados/tablas/rezagos_marg1_2012_2025.csv

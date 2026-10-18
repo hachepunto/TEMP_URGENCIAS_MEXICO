@@ -1,0 +1,20 @@
+Fontconfig warning: using without calling FcInit()
+Key: <cap>
+               cap Municipio de residencia Municipio del hospital    dif
+            <fctr>                   <num>                  <num>  <num>
+ 1:   respiratorio               0.7793604              0.7717868 -0.008
+ 2:   circulatorio               0.8953543              0.8951937  0.000
+ 3:       nervioso               0.9530023              0.9274246 -0.026
+ 4:  osteomuscular               1.0192241              1.0084444 -0.011
+ 5:      digestivo               1.0244917              1.0177365 -0.007
+ 6:          total               1.0347658              1.0301699 -0.005
+ 7:           oido               1.0574741              1.0618848  0.004
+ 8:       mentales               1.0832654              1.0483308 -0.035
+ 9:            ojo               1.0931274              1.0794367 -0.014
+10:       sintomas               1.1026896              1.0969602 -0.006
+11:   traumatismos               1.1206559              1.1180528 -0.003
+12:           piel               1.1313209              1.1432041  0.012
+13:         sangre               1.1376912              1.1879886  0.050
+14: genitourinario               1.1396917              1.1377013 -0.002
+15:     endocrinas               1.1545416              1.1275869 -0.027
+16:    infecciosas               1.1782218              1.2051443  0.027

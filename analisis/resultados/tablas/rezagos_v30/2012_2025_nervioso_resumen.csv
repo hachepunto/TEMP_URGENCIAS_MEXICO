@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-nervioso,base,4413225,2391,1138060,8078163,90
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+nervioso,base,4399085,2391,1138060,7195498,6459574.23360915,tmax,87

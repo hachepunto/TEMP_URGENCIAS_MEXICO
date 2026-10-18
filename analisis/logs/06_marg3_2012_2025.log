@@ -2,14 +2,38 @@ Warning message:
 package ‘fixest’ was built under R version 4.5.3 
 tercil de marginación 3: 819 municipios
 FE: cve^anio^mes + ent^dow | conteos: capitulos
-NOTE: 84,950/2 fixed-effects (2,585,302 observations) removed because of only 0 outcomes or singletons.
-infecciosas: n=1603064, >=36 acumulado 0-14 = 1.090 [0.995, 1.195] (23 s)
-NOTE: 89,924/3 fixed-effects (2,737,324 observations) removed because of only 0 outcomes or singletons.
-endocrinas: n=1451042, >=36 acumulado 0-14 = 1.066 [0.969, 1.173] (20 s)
-NOTE: 80,489/2 fixed-effects (2,449,630 observations) removed because of only 0 outcomes or singletons.
-genitourinario: n=1738736, >=36 acumulado 0-14 = 1.116 [1.028, 1.211] (24 s)
-NOTE: 61,236/0 fixed-effects (1,863,517 observations) removed because of only 0 outcomes or singletons.
-traumatismos: n=2324849, >=36 acumulado 0-14 = 1.080 [1.028, 1.134] (30 s)
-NOTE: 34,860/0 fixed-effects (1,060,691 observations) removed because of only 0 outcomes or singletons.
-total: n=3127675, >=36 acumulado 0-14 = 1.002 [0.959, 1.048] (41 s)
-06_marg3: 151.30 s, 11993348 KB
+NOTE: 82,376/3 fixed-effects (2,486,572 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=1402859, [36, Inf) acumulado_0_14 = 0.888 [0.805, 0.979] (21 s)
+NOTE: 64,079/2 fixed-effects (1,931,671 observations) removed because of only 0 outcomes or singletons.
+digestivo: n=1957760, [36, Inf) acumulado_0_14 = 1.026 [0.960, 1.097] (27 s)
+NOTE: 80,915/3 fixed-effects (2,442,282 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=1447149, [36, Inf) acumulado_0_14 = 1.076 [0.979, 1.184] (19 s)
+NOTE: 71,481/2 fixed-effects (2,155,651 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=1733780, [36, Inf) acumulado_0_14 = 1.128 [1.040, 1.223] (22 s)
+NOTE: 75,941/2 fixed-effects (2,291,010 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=1598421, [36, Inf) acumulado_0_14 = 1.099 [1.004, 1.202] (23 s)
+NOTE: 98,354/9 fixed-effects (2,971,302 observations) removed because of only 0 outcomes or singletons.
+mentales: n=918129, [36, Inf) acumulado_0_14 = 0.946 [0.819, 1.093] (14 s)
+NOTE: 99,704/7 fixed-effects (3,012,119 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=877312, [36, Inf) acumulado_0_14 = 0.845 [0.741, 0.965] (13 s)
+NOTE: 108,408/11 fixed-effects (3,276,727 observations) removed because of only 0 outcomes or singletons.
+oido: n=612704, [36, Inf) acumulado_0_14 = 1.297 [1.085, 1.550] (10 s)
+NOTE: 111,856/11 fixed-effects (3,381,557 observations) removed because of only 0 outcomes or singletons.
+ojo: n=507874, [36, Inf) acumulado_0_14 = 1.079 [0.857, 1.357] (10 s)
+NOTE: 92,726/5 fixed-effects (2,800,978 observations) removed because of only 0 outcomes or singletons.
+osteomuscular: n=1088453, [36, Inf) acumulado_0_14 = 1.042 [0.930, 1.168] (16 s)
+NOTE: 98,225/7 fixed-effects (2,967,535 observations) removed because of only 0 outcomes or singletons.
+piel: n=921896, [36, Inf) acumulado_0_14 = 1.051 [0.920, 1.201] (14 s)
+NOTE: 68,254/3 fixed-effects (2,060,743 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=1828688, [36, Inf) acumulado_0_14 = 0.766 [0.702, 0.837] (26 s)
+NOTE: 106,697/7 fixed-effects (3,224,472 observations) removed because of only 0 outcomes or singletons.
+sangre: n=664959, [36, Inf) acumulado_0_14 = 0.995 [0.787, 1.257] (12 s)
+NOTE: 69,227/0 fixed-effects (2,087,223 observations) removed because of only 0 outcomes or singletons.
+sintomas: n=1802208, [36, Inf) acumulado_0_14 = 1.191 [1.093, 1.297] (23 s)
+NOTE: 52,228/0 fixed-effects (1,572,257 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=2317174, [36, Inf) acumulado_0_14 = 1.092 [1.040, 1.146] (30 s)
+NOTE: 25,854/0 fixed-effects (774,643 observations) removed because of only 0 outcomes or singletons.
+total: n=3114788, [36, Inf) acumulado_0_14 = 1.015 [0.973, 1.059] (45 s)
+Warning message:
+The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+-> resultados/tablas/rezagos_marg3_2012_2025.csv

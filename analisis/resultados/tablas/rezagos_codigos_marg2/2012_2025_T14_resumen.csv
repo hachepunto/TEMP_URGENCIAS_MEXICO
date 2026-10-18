@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-T14,base,1003311,752,173258,3185055,14
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+T14,base,999942,752,173258,2889489,1254032.91775609,tmax,12

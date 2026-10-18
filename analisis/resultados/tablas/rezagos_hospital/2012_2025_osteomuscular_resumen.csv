@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-osteomuscular,base,2276460,683,2532909,10288638,35
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+osteomuscular,base,2262342,683,2532908,9405951,6114099.85485394,tmax,33

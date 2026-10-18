@@ -50,7 +50,7 @@ setorder(celdas, clima, marg); print(celdas)
 fwrite(celdas, sprintf("resultados/tablas/codigos_clima_marg_celdas_%s.csv", periodo))
 e <- rbindlist(lapply(1:3, function(j) rbindlist(lapply(1:3, function(k)
   leer(sprintf("resultados/tablas/rezagos_codigos_clima%d_marg%d", j, k), sprintf("C%d_M%d", j, k),
-       celdas[clima == j & marg == k, bin_usado]))))))
+       celdas[clima == j & marg == k, bin_usado])))))
 if (!is.null(e) && nrow(e)) {
   e[, `:=`(clima = as.integer(substr(estrato, 2, 2)), marg = as.integer(substr(estrato, 5, 5)))]
   # el contraste M3 vs M1 sólo es válido si las dos celdas usan el mismo bin
@@ -66,11 +66,16 @@ if (!is.null(e) && nrow(e)) {
   ee <- ee[!is.na(beta_1) & !is.na(beta_3)]
   ee[, `:=`(ratio = exp(beta_3 - beta_1), lo = exp(beta_3 - beta_1 - 1.96 * sqrt(se_3^2 + se_1^2)),
             hi = exp(beta_3 - beta_1 + 1.96 * sqrt(se_3^2 + se_1^2)))]
-  ee[, q := p.adjust(2 * pnorm(-abs((beta_3 - beta_1) / sqrt(se_3^2 + se_1^2))), "BH")]
-  fwrite(merge(e[, .(cie3, nombre, clima, marg, bin, irr, lo, hi, se)], ee[, .(cie3, clima, bin_clima, ratio_M3_M1 = ratio, ratio_lo = lo, ratio_hi = hi, q_ratio = q)],
+  # separación numérica de Poisson (pocos casos del código en la celda): |log-IRR| > 10 (IRR > 22,000) no es
+  # una estimación. Se marca y queda fuera de BH; desviación declarada de la especificación (REGISTRO 2026-10-18).
+  ee[, separacion := abs(beta_1) > 10 | abs(beta_3) > 10]
+  ee[, q := NA_real_]
+  ee[separacion == FALSE, q := p.adjust(2 * pnorm(-abs((beta_3 - beta_1) / sqrt(se_3^2 + se_1^2))), "BH")]
+  message("E: contrastes con separación numérica (fuera de BH): ", paste(ee[separacion == TRUE, sprintf("%s C%d", cie3, clima)], collapse = " "))
+  fwrite(merge(e[, .(cie3, nombre, clima, marg, bin, irr, lo, hi, se)], ee[, .(cie3, clima, bin_clima, ratio_M3_M1 = ratio, ratio_lo = lo, ratio_hi = hi, q_ratio = q, separacion)],
                by = c("cie3", "clima"), all.x = TRUE), sprintf("resultados/tablas/codigos_clima_marg_%s.csv", periodo))
-  message(sprintf("E: %d códigos × 9 estratos; M3/M1 con q < 0.05 dentro de clima: %d de %d", uniqueN(e$cie3), sum(ee$q < 0.05), nrow(ee)))
-  print(ee[q < 0.05, .(cie3, nombre = substr(nombre, 1, 30), clima, bin_clima, ratio = round(ratio, 2), lo = round(lo, 2), hi = round(hi, 2))])
+  message(sprintf("E: %d códigos × 9 estratos; M3/M1 con q < 0.05 dentro de clima: %d de %d", uniqueN(e$cie3), sum(ee$q < 0.05, na.rm = TRUE), sum(!ee$separacion)))
+  print(ee[!is.na(q) & q < 0.05, .(cie3, nombre = substr(nombre, 1, 30), clima, bin_clima, ratio = round(ratio, 2), lo = round(lo, 2), hi = round(hi, 2))])
 }
 
 # --- figura 10: cociente M3/M1 por código (D) -------------------------------------
