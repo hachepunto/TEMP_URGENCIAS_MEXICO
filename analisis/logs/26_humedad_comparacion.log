@@ -1,0 +1,51 @@
+I1: BIC mejor con AT en 11, con Tmax en 4, igual en 1 de 16
+I2: húmedo - seco con q < 0.05 en 1 de 16 capítulos (1 húmedo > seco, 0 seco > húmedo)
+Key: <cap>
+               cap  dbic  mejor irr_tmax irr_at irr_seco irr_humedo ratio
+            <char> <num> <char>    <num>  <num>    <num>      <num> <num>
+ 1:   circulatorio   114   Tmax    0.897  0.933    0.900      0.902 1.002
+ 2:      digestivo  -196     AT    1.026  1.045    1.031      1.033 1.002
+ 3:     endocrinas   155   Tmax    1.156  1.104    1.165      1.151 0.988
+ 4: genitourinario  -211     AT    1.142  1.160    1.157      1.138 0.983
+ 5:    infecciosas  -320     AT    1.182  1.285    1.149      1.270 1.105
+ 6:       mentales   -48     AT    1.086  1.096    1.083      1.107 1.022
+ 7:       nervioso   -37     AT    0.955  0.989    0.969      0.930 0.960
+ 8:           oido   -77     AT    1.063  1.083    1.036      1.134 1.095
+ 9:            ojo    16   Tmax    1.096  1.100    1.099      1.102 1.003
+10:  osteomuscular   -40     AT    1.023  1.059    1.011      1.060 1.048
+11:           piel  -154     AT    1.133  1.180    1.128      1.168 1.035
+12:   respiratorio   507   Tmax    0.783  0.829    0.777      0.802 1.032
+13:         sangre     4  igual    1.138  1.136    1.107      1.201 1.085
+14:       sintomas  -533     AT    1.106  1.160    1.097      1.146 1.045
+15:          total  -948     AT    1.038  1.065    1.037      1.056 1.018
+16:   traumatismos  -626     AT    1.124  1.117    1.132      1.114 0.984
+          q
+      <num>
+ 1: 0.95000
+ 2: 0.95000
+ 3: 0.66000
+ 4: 0.45000
+ 5: 0.00084
+ 6: 0.45000
+ 7: 0.35000
+ 8: 0.06800
+ 9: 0.95000
+10: 0.14000
+11: 0.32000
+12: 0.45000
+13: 0.29000
+14: 0.06800
+15: 0.14000
+16: 0.32000
+
+Códigos, IRR >= 36 seco / húmedo y cociente:
+Key: <cap>
+      cap [36, Inf) humedo [36, Inf) seco ratio    lo    hi
+   <char>            <num>          <num> <num> <num> <num>
+1:    A09            1.208          1.134 1.066 1.010 1.124
+2:    A90            2.118          1.595 1.328 0.831 2.121
+3:    A97            2.676          1.231 2.174 1.811 2.611
+4:    E86            2.002          2.160 0.927 0.802 1.072
+5:    N23            1.598          1.583 1.010 0.913 1.116
+6:    T63            1.528          1.509 1.013 0.955 1.074
+-> humedad_comparacion_2012_2025.csv, figuras/humedad_2012_2025

@@ -2,16 +2,16 @@ Warning message:
 package ‘fixest’ was built under R version 4.5.3 
 FE: cve^anio^mes + ent^dow | conteos: codigos
 NOTE: 351,145/0 fixed-effects (10,688,277 observations) removed because of only 0 outcomes or singletons.
-E86: n=1876821, [36, Inf) humedo acumulado_0_14 = 2.002 [1.737, 2.308] (47 s)
+E86: n=1876821, [36, Inf) humedo acumulado_0_14 = 2.002 [1.737, 2.308] (39 s)
 NOTE: 235,332/0 fixed-effects (7,161,781 observations) removed because of only 0 outcomes or singletons.
-A09: n=5403317, [36, Inf) humedo acumulado_0_14 = 1.208 [1.153, 1.266] (99 s)
+A09: n=5403317, [36, Inf) humedo acumulado_0_14 = 1.208 [1.153, 1.266] (86 s)
 NOTE: 399,186/3 fixed-effects (12,150,718 observations) removed because of only 0 outcomes or singletons.
-A90: n=414380, [36, Inf) humedo acumulado_0_14 = 2.118 [1.481, 3.029] (18 s)
+A90: n=414380, [36, Inf) humedo acumulado_0_14 = 2.118 [1.481, 3.029] (16 s)
 NOTE: 385,323/0 fixed-effects (11,727,609 observations) removed because of only 0 outcomes or singletons.
-A97: n=837489, [36, Inf) humedo acumulado_0_14 = 2.676 [2.211, 3.239] (25 s)
+A97: n=837489, [36, Inf) humedo acumulado_0_14 = 2.676 [2.211, 3.239] (21 s)
 NOTE: 301,167/0 fixed-effects (9,164,751 observations) removed because of only 0 outcomes or singletons.
-T63: n=3400347, [36, Inf) humedo acumulado_0_14 = 1.528 [1.422, 1.642] (65 s)
+T63: n=3400347, [36, Inf) humedo acumulado_0_14 = 1.528 [1.422, 1.642] (53 s)
 NOTE: 344,003/0 fixed-effects (10,470,533 observations) removed because of only 0 outcomes or singletons.
-N23: n=2094565, [36, Inf) humedo acumulado_0_14 = 1.598 [1.446, 1.766] (65 s)
+N23: n=2094565, [36, Inf) humedo acumulado_0_14 = 1.598 [1.446, 1.766] (41 s)
 Warning message:
 The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 

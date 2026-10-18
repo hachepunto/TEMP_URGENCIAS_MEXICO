@@ -58,7 +58,7 @@ if (dir.exists(dc)) {
 
 # --- figura 11 ---------------------------------------------------------------------
 orden <- out[order(irr_tmax), cap]; out[, cap := factor(cap, levels = orden)]
-a <- melt(out[, .(cap, Tmax = irr_tmax, `Temperatura aparente` = irr_at)], id.vars = "cap", variable.name = "expo", value.name = "irr")
+a <- melt(out[, .(cap, Tmax = irr_tmax, `Temperatura aparente` = irr_at)], id.vars = "cap", value.name = "irr")
 lo <- melt(out[, .(cap, Tmax = lo_tmax, `Temperatura aparente` = lo_at)], id.vars = "cap", value.name = "lo")
 hi <- melt(out[, .(cap, Tmax = hi_tmax, `Temperatura aparente` = hi_at)], id.vars = "cap", value.name = "hi")
 a <- merge(merge(a, lo, by = c("cap", "variable")), hi, by = c("cap", "variable"))

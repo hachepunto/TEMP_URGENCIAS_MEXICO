@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-respiratorio,base,7127940,2445,13046997,5437158,87
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+respiratorio,base,7127940,2445,13046997,5437158,18308100.0432875,tmax,84
