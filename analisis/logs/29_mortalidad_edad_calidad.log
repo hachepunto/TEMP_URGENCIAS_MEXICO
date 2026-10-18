@@ -1,0 +1,55 @@
+Descriptivos por tercil de marginación (M1 menos, M3 más marginado):
+Key: <marg>
+    marg defunciones pct_65mas edad_mediana municipios
+   <num>       <num>     <num>        <num>      <num>
+1:     1     7404063     56.30           68        819
+2:     2     1546524     60.23           71        819
+3:     3      938301     58.85           70        819
+   fecha_incompleta_agregado fecha_incompleta_mediana tardio_agregado
+                       <num>                    <num>           <num>
+1:                      0.08                     0.04            1.91
+2:                      0.08                     0.00            2.55
+3:                      0.09                     0.00            3.46
+   tardio_mediana sin_asistencia_agregado sin_asistencia_mediana
+            <num>                   <num>                  <num>
+1:           1.17                   11.35                  12.72
+2:           1.71                   16.32                  16.03
+3:           2.10                   25.86                  24.18
+   edad_ne_agregado pct_mun_buena_calidad
+              <num>                 <num>
+1:             0.22                 60.56
+2:             0.13                 54.21
+3:             0.17                 54.70
+
+J-a nacional, acumulado 0-14 a >= 36 por grupo de edad:
+                    cap   irr    lo    hi
+                 <char> <num> <num> <num>
+1:   circulatorio_65mas 1.115 1.072 1.160
+2: circulatorio_menos65 1.080 1.028 1.134
+3:          todas_65mas 1.099 1.066 1.132
+4:        todas_menos65 1.071 1.048 1.094
+
+Cocientes M3/M1, acumulado 0-14 a >= 36 °C:
+                                     parte                  cap    M1    M2
+                                    <char>               <char> <num> <num>
+1: G (ii) referencia, todos los municipios         circulatorio 1.126 1.117
+2: G (ii) referencia, todos los municipios                todas 1.097 1.075
+3:                                J-a edad   circulatorio_65mas 1.142 1.118
+4:                                J-a edad circulatorio_menos65 1.084 1.109
+5:                                J-a edad          todas_65mas 1.118 1.092
+6:                                J-a edad        todas_menos65 1.074 1.048
+7:                      J-b registro bueno         circulatorio 1.142 1.158
+8:                      J-b registro bueno                todas 1.112 1.085
+      M3 ratio    lo    hi       q
+   <num> <num> <num> <num>   <num>
+1: 0.944 0.838 0.759 0.927      NA
+2: 1.011 0.921 0.869 0.977      NA
+3: 0.932 0.816 0.732 0.910 0.00052
+4: 1.000 0.922 0.760 1.119 0.55000
+5: 0.962 0.861 0.801 0.925 0.00018
+6: 1.085 1.010 0.932 1.094 0.81000
+7: 0.950 0.832 0.723 0.956 0.01600
+8: 1.009 0.907 0.838 0.982 0.01600
+
+J-a: (i) efecto mayor en >= 65: TRUE; (ii) M3/M1 en >= 65 incluye 1 y más cerca de 1 que 0.921: FALSE -> la edad NO explica el gradiente
+J-b: (i) M3 con peor registro que M1: TRUE; (ii) M3/M1 en buena calidad incluye 1: FALSE (0.907 [0.838, 0.982]) -> la calidad NO explica el gradiente

@@ -1,0 +1,13 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 3: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones_edad
+NOTE: 52,881/0 fixed-effects (1,609,567 observations) removed because of only 0 outcomes or singletons.
+circulatorio_65mas: n=2279864, [36, Inf) acumulado_0_14 = 0.932 [0.845, 1.028] (27 s)
+NOTE: 95,616/1 fixed-effects (2,910,259 observations) removed because of only 0 outcomes or singletons.
+circulatorio_menos65: n=979172, [36, Inf) acumulado_0_14 = 1.000 [0.830, 1.204] (13 s)
+NOTE: 24,261/0 fixed-effects (738,421 observations) removed because of only 0 outcomes or singletons.
+todas_65mas: n=3151010, [36, Inf) acumulado_0_14 = 0.962 [0.905, 1.024] (39 s)
+NOTE: 39,906/0 fixed-effects (1,214,280 observations) removed because of only 0 outcomes or singletons.
+todas_menos65: n=2675151, [36, Inf) acumulado_0_14 = 1.085 [1.005, 1.171] (35 s)
+-> resultados/tablas/rezagos_defunciones_edad_marg3_2012_2025.csv

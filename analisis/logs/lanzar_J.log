@@ -1,0 +1,9 @@
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+OK 06_defunciones_edad_marg2
+OK 06_defunciones_edad_marg1
+OK 06_defunciones_marg1_regbueno
+OK 06_defunciones_edad_marg3
+OK 06_defunciones_marg2_regbueno
+OK 06_defunciones_marg3_regbueno
+OK 06_defunciones_edad
+Sun Oct 18 08:57:30 CST 2026 J terminado

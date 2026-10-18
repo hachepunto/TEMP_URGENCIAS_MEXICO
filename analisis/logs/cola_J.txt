@@ -1,0 +1,7 @@
+CONTEOS=defunciones_edad|06_defunciones_edad|
+CONTEOS=defunciones_edad MARG=1|06_defunciones_edad_marg1|
+CONTEOS=defunciones_edad MARG=2|06_defunciones_edad_marg2|
+CONTEOS=defunciones_edad MARG=3|06_defunciones_edad_marg3|
+CONTEOS=defunciones MARG=1 MUNICIPIOS=datos/derivados/municipios_registro_bueno.txt|06_defunciones_marg1_regbueno|todas circulatorio
+CONTEOS=defunciones MARG=2 MUNICIPIOS=datos/derivados/municipios_registro_bueno.txt|06_defunciones_marg2_regbueno|todas circulatorio
+CONTEOS=defunciones MARG=3 MUNICIPIOS=datos/derivados/municipios_registro_bueno.txt|06_defunciones_marg3_regbueno|todas circulatorio

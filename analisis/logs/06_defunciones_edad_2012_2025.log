@@ -1,0 +1,12 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: defunciones_edad
+NOTE: 116,645/0 fixed-effects (3,550,389 observations) removed because of only 0 outcomes or singletons.
+circulatorio_65mas: n=8117904, [36, Inf) acumulado_0_14 = 1.115 [1.072, 1.160] (100 s)
+NOTE: 233,359/0 fixed-effects (7,102,549 observations) removed because of only 0 outcomes or singletons.
+circulatorio_menos65: n=4565744, [36, Inf) acumulado_0_14 = 1.080 [1.028, 1.134] (59 s)
+NOTE: 50,524/0 fixed-effects (1,537,819 observations) removed because of only 0 outcomes or singletons.
+todas_65mas: n=10130474, [36, Inf) acumulado_0_14 = 1.099 [1.066, 1.132] (126 s)
+NOTE: 88,321/0 fixed-effects (2,687,500 observations) removed because of only 0 outcomes or singletons.
+todas_menos65: n=8980793, [36, Inf) acumulado_0_14 = 1.071 [1.048, 1.094] (108 s)
+-> resultados/tablas/rezagos_defunciones_edad_2012_2025.csv
