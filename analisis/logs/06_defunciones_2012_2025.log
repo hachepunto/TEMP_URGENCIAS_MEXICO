@@ -1,18 +1,18 @@
 Warning message:
 package ‘fixest’ was built under R version 4.5.3 
 FE: cve^anio^mes + ent^dow | conteos: defunciones
-NOTE: 142,607/0 fixed-effects (4,338,703 observations) removed because of only 0 outcomes or singletons.
-circulatorio: n=7329590, >=36 acumulado_0_14 = 1.121 [1.080, 1.164] (85 s)
-NOTE: 180,224/0 fixed-effects (5,484,304 observations) removed because of only 0 outcomes or singletons.
-endocrino: n=6183989, >=36 acumulado_0_14 = 1.084 [1.035, 1.136] (71 s)
-NOTE: 225,927/0 fixed-effects (6,875,496 observations) removed because of only 0 outcomes or singletons.
-externas: n=4792797, >=36 acumulado_0_14 = 1.158 [1.106, 1.212] (61 s)
-NOTE: 82,953/0 fixed-effects (2,522,300 observations) removed because of only 0 outcomes or singletons.
-naturales: n=9145993, >=36 acumulado_0_14 = 1.088 [1.061, 1.116] (115 s)
-NOTE: 312,848/0 fixed-effects (9,522,709 observations) removed because of only 0 outcomes or singletons.
-renal: n=2145584, >=36 acumulado_0_14 = 0.983 [0.882, 1.095] (36 s)
-NOTE: 227,828/0 fixed-effects (6,935,015 observations) removed because of only 0 outcomes or singletons.
-respiratorio: n=4733278, >=36 acumulado_0_14 = 1.141 [1.073, 1.213] (69 s)
-NOTE: 79,038/0 fixed-effects (2,402,990 observations) removed because of only 0 outcomes or singletons.
-todas: n=9265303, >=36 acumulado_0_14 = 1.095 [1.068, 1.123] (120 s)
+NOTE: 101,647/0 fixed-effects (3,093,800 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=8574493, [36, Inf) acumulado_0_14 = 1.106 [1.068, 1.145] (106 s)
+NOTE: 145,057/0 fixed-effects (4,415,109 observations) removed because of only 0 outcomes or singletons.
+endocrino: n=7253184, [36, Inf) acumulado_0_14 = 1.064 [1.020, 1.110] (84 s)
+NOTE: 199,726/0 fixed-effects (6,078,534 observations) removed because of only 0 outcomes or singletons.
+externas: n=5589759, [36, Inf) acumulado_0_14 = 1.166 [1.118, 1.216] (75 s)
+NOTE: 36,467/0 fixed-effects (1,109,754 observations) removed because of only 0 outcomes or singletons.
+naturales: n=10558539, [36, Inf) acumulado_0_14 = 1.079 [1.054, 1.105] (126 s)
+NOTE: 300,055/0 fixed-effects (9,133,566 observations) removed because of only 0 outcomes or singletons.
+renal: n=2534727, [36, Inf) acumulado_0_14 = 0.977 [0.877, 1.089] (37 s)
+NOTE: 199,315/0 fixed-effects (6,068,160 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=5600133, [36, Inf) acumulado_0_14 = 1.119 [1.057, 1.185] (78 s)
+NOTE: 32,837/0 fixed-effects (999,184 observations) removed because of only 0 outcomes or singletons.
+todas: n=10669109, [36, Inf) acumulado_0_14 = 1.086 [1.062, 1.110] (142 s)
 -> resultados/tablas/rezagos_defunciones_2012_2025.csv

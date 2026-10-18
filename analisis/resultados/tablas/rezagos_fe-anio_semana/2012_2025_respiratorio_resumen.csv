@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-respiratorio,anio_semana,10740619,2445,13046997,1824479,165
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+respiratorio,anio_semana,10363721,2445,13046995,1304572,16910624.7473977,tmax,163

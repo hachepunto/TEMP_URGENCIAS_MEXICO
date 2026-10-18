@@ -79,7 +79,14 @@ for (cp in caps) {
   f <- fepois(fml, data = d, cluster = ~cve)
   b <- coef(f); V <- vcov(f)
   V2 <- vcov(f, vcov = ~cve + fecha)   # sensibilidad de inferencia: agrupamiento bidireccional municipio + fecha
-  stopifnot(all(regs %in% names(b)))
+  # un desenlace no identificado (p. ej. un código en un estrato sin días >= 36) se registra y se sigue
+  # con el siguiente, en vez de abortar el lote (AUDITORIA_2026-10-18, I2)
+  if (!all(regs %in% names(b))) {
+    falta <- setdiff(regs, names(b))
+    message(sprintf("%s: NO IDENTIFICADO, %d regresores eliminados por colinealidad (%s)", cp, length(falta), paste(head(falta, 4), collapse = " ")))
+    fwrite(data.table(cap = cp, regresores_faltantes = paste(falta, collapse = " ")), sprintf("%s/%s_%s_noidentificado.csv", dir_out, periodo, cp))
+    rm(d, f); gc(); next
+  }
 
   res <- rbindlist(lapply(setdiff(seq_along(niveles), ref_id), function(k) {
     nm <- sprintf("n_%s_b%d", names(ventanas), k)

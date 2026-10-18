@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-endocrinas,anio_semana,9942425,2430,3065091,2622673,142
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+endocrinas,anio_semana,9694425,2430,3065091,1973868,8907559.47822898,tmax,169

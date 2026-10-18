@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-renal,base,2145584,2375,152858,9522709,36
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+renal,base,2534727,2394,180531,9133566,2410710.42948233,tmax,37

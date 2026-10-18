@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-traumatismos,anio_semana,11321868,2457,15755531,1243230,169
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+traumatismos,anio_semana,10943023,2457,15755527,725270,19143123.3817818,tmax,166

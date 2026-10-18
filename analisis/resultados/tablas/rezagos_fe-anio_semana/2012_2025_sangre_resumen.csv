@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-sangre,anio_semana,7733431,2320,466746,4831667,107
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+sangre,anio_semana,7640276,2320,466746,4028017,2979803.98398879,tmax,123

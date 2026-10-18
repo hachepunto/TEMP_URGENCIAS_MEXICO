@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-piel,anio_semana,8595925,2383,1620132,3969173,120
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+piel,anio_semana,8413171,2383,1620132,3255122,5870859.55036708,tmax,136

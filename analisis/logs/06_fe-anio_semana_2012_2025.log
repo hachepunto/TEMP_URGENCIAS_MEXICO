@@ -1,37 +1,36 @@
 Warning message:
 package ‘fixest’ was built under R version 4.5.3 
 FE: cve^anio + ent^semana + ent^dow | conteos: capitulos
-NOTE: 7,074/0/0 fixed-effects (2,583,889 observations) removed because of only 0 outcomes or singletons.
-circulatorio: n=9981209, >=36 acumulado 0-14 = 0.890 [0.865, 0.916] (147 s)
-NOTE: 4,635/0/0 fixed-effects (1,692,931 observations) removed because of only 0 outcomes or singletons.
-digestivo: n=10872167, >=36 acumulado 0-14 = 0.967 [0.945, 0.990] (169 s)
-NOTE: 7,180/0/0 fixed-effects (2,622,673 observations) removed because of only 0 outcomes or singletons.
-endocrinas: n=9942425, >=36 acumulado 0-14 = 1.107 [1.073, 1.144] (142 s)
-NOTE: 5,681/0/0 fixed-effects (2,075,053 observations) removed because of only 0 outcomes or singletons.
-genitourinario: n=10490045, >=36 acumulado 0-14 = 1.079 [1.051, 1.109] (146 s)
-NOTE: 6,651/0/0 fixed-effects (2,429,337 observations) removed because of only 0 outcomes or singletons.
-infecciosas: n=10135761, >=36 acumulado 0-14 = 0.987 [0.935, 1.042] (143 s)
-NOTE: 10,575/0/0 fixed-effects (3,862,808 observations) removed because of only 0 outcomes or singletons.
-mentales: n=8702290, >=36 acumulado 0-14 = 0.999 [0.964, 1.034] (120 s)
-NOTE: 10,887/0/0 fixed-effects (3,976,845 observations) removed because of only 0 outcomes or singletons.
-nervioso: n=8588253, >=36 acumulado 0-14 = 0.912 [0.880, 0.946] (120 s)
-NOTE: 15,147/0/0 fixed-effects (5,532,993 observations) removed because of only 0 outcomes or singletons.
-oido: n=7032105, >=36 acumulado 0-14 = 1.074 [1.015, 1.135] (103 s)
-NOTE: 16,398/0/0 fixed-effects (5,990,032 observations) removed because of only 0 outcomes or singletons.
-ojo: n=6575066, >=36 acumulado 0-14 = 1.032 [0.977, 1.090] (92 s)
-NOTE: 9,255/0/0 fixed-effects (3,380,662 observations) removed because of only 0 outcomes or singletons.
-osteomuscular: n=9184436, >=36 acumulado 0-14 = 0.986 [0.953, 1.020] (122 s)
-NOTE: 10,866/0/0 fixed-effects (3,969,173 observations) removed because of only 0 outcomes or singletons.
-piel: n=8595925, >=36 acumulado 0-14 = 1.040 [1.002, 1.078] (120 s)
-NOTE: 4,995/0/0 fixed-effects (1,824,479 observations) removed because of only 0 outcomes or singletons.
-respiratorio: n=10740619, >=36 acumulado 0-14 = 0.890 [0.849, 0.934] (165 s)
-NOTE: 13,227/0/0 fixed-effects (4,831,667 observations) removed because of only 0 outcomes or singletons.
-sangre: n=7733431, >=36 acumulado 0-14 = 1.061 [1.003, 1.123] (107 s)
-NOTE: 5,287/0/0 fixed-effects (1,931,194 observations) removed because of only 0 outcomes or singletons.
-sintomas: n=10633904, >=36 acumulado 0-14 = 1.042 [0.997, 1.089] (145 s)
-NOTE: 3,404/0/0 fixed-effects (1,243,230 observations) removed because of only 0 outcomes or singletons.
-traumatismos: n=11321868, >=36 acumulado 0-14 = 1.056 [1.032, 1.080] (169 s)
-NOTE: 1,449/0/0 fixed-effects (529,094 observations) removed because of only 0 outcomes or singletons.
-total: n=12036004, >=36 acumulado 0-14 = 1.001 [0.976, 1.027] (192 s)
+NOTE: 7,074/0/0 fixed-effects (1,930,903 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=9737390, [36, Inf) acumulado_0_14 = 0.894 [0.869, 0.919] (164 s)
+NOTE: 4,637/0/0 fixed-effects (1,125,534 observations) removed because of only 0 outcomes or singletons.
+digestivo: n=10542759, [36, Inf) acumulado_0_14 = 0.971 [0.949, 0.994] (168 s)
+NOTE: 7,180/0/0 fixed-effects (1,973,868 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=9694425, [36, Inf) acumulado_0_14 = 1.112 [1.077, 1.148] (169 s)
+NOTE: 5,682/0/0 fixed-effects (1,468,392 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=10199901, [36, Inf) acumulado_0_14 = 1.084 [1.055, 1.113] (161 s)
+NOTE: 6,651/0/0 fixed-effects (1,779,398 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=9888895, [36, Inf) acumulado_0_14 = 0.991 [0.939, 1.046] (153 s)
+NOTE: 10,575/0/0 fixed-effects (3,141,015 observations) removed because of only 0 outcomes or singletons.
+mentales: n=8527278, [36, Inf) acumulado_0_14 = 1.001 [0.966, 1.036] (129 s)
+NOTE: 10,887/0/0 fixed-effects (3,242,240 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=8426053, [36, Inf) acumulado_0_14 = 0.915 [0.882, 0.948] (132 s)
+NOTE: 15,147/0/0 fixed-effects (4,781,380 observations) removed because of only 0 outcomes or singletons.
+oido: n=6886913, [36, Inf) acumulado_0_14 = 1.077 [1.018, 1.139] (108 s)
+NOTE: 16,398/0/0 fixed-effects (5,193,524 observations) removed because of only 0 outcomes or singletons.
+ojo: n=6474769, [36, Inf) acumulado_0_14 = 1.036 [0.981, 1.095] (106 s)
+NOTE: 9,256/0/0 fixed-effects (2,701,945 observations) removed because of only 0 outcomes or singletons.
+osteomuscular: n=8966348, [36, Inf) acumulado_0_14 = 0.989 [0.956, 1.023] (135 s)
+NOTE: 10,866/0/0 fixed-effects (3,255,122 observations) removed because of only 0 outcomes or singletons.
+piel: n=8413171, [36, Inf) acumulado_0_14 = 1.043 [1.006, 1.082] (136 s)
+NOTE: 4,995/0/0 fixed-effects (1,304,572 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=10363721, [36, Inf) acumulado_0_14 = 0.897 [0.854, 0.941] (163 s)
+NOTE: 13,227/0/0 fixed-effects (4,028,017 observations) removed because of only 0 outcomes or singletons.
+sangre: n=7640276, [36, Inf) acumulado_0_14 = 1.064 [1.005, 1.126] (123 s)
+NOTE: 5,288/0/0 fixed-effects (1,318,196 observations) removed because of only 0 outcomes or singletons.
+sintomas: n=10350097, [36, Inf) acumulado_0_14 = 1.044 [0.999, 1.091] (156 s)
+NOTE: 3,404/0/0 fixed-effects (725,270 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=10943023, [36, Inf) acumulado_0_14 = 1.060 [1.037, 1.084] (166 s)
+NOTE: 1,450/0/0 fixed-effects (178,277 observations) removed because of only 0 outcomes or singletons.
+total: n=11490016, [36, Inf) acumulado_0_14 = 1.005 [0.979, 1.031] (173 s)
 -> resultados/tablas/rezagos_fe-anio_semana_2012_2025.csv
-06_fe-anio_semana: 2241.39 s, 41515416 KB

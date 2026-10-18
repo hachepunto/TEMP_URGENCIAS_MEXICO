@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-osteomuscular,anio_semana,9184436,2405,2644480,3380662,122
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+osteomuscular,anio_semana,8966348,2405,2644479,2701945,7629769.52834414,tmax,135

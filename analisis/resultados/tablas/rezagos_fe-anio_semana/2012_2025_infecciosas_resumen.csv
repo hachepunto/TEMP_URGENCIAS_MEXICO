@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-infecciosas,anio_semana,10135761,2430,5889546,2429337,143
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+infecciosas,anio_semana,9888895,2430,5889544,1779398,11847810.8867394,tmax,153

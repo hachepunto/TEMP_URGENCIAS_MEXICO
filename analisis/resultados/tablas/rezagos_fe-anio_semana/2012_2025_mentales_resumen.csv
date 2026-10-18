@@ -1,2 +1,2 @@
-cap,fe,n_obs,n_mun,casos,obs_eliminadas,segundos
-mentales,anio_semana,8702290,2377,1793895,3862808,120
+cap,fe,n_obs,n_mun,casos,obs_eliminadas,bic,expo,segundos
+mentales,anio_semana,8527278,2377,1793895,3141015,5965321.66752146,tmax,129
