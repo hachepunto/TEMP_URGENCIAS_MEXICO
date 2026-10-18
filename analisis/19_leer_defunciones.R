@@ -20,11 +20,23 @@ leer_csv <- function(z, m) {
            fecha = suppressWarnings(as.IDate(sprintf("%s-%02d-%02d", anio_ocur, as.integer(mes_ocurr), as.integer(dia_ocurr)))))]
   d[, .(fecha, ent_res, mun_res, cie3, archivo = basename(m))]
 }
-res <- rbindlist(lapply(zips, function(z) {
-  ms <- grep("\\.csv$", unzip(z, list = TRUE)$Name, ignore.case = TRUE, value = TRUE)
-  ms <- ms[!grepl("catalog|diccionario|modelo", ms, ignore.case = TRUE)]
-  rbindlist(lapply(ms, function(m) leer_csv(z, m)))
-}))
+# 2018 y 2021 traen el CSV dentro de un zip anidado (DEFUN_2018.zip -> def18.zip; AUDITORIA_2026-10-18, B1):
+# se extrae el zip interno a un temporal y se lee igual
+leer_zip <- function(z) {
+  nom <- unzip(z, list = TRUE)$Name
+  ms  <- grep("\\.csv$", nom, ignore.case = TRUE, value = TRUE)
+  ms  <- ms[!grepl("catalog|diccionario|modelo", ms, ignore.case = TRUE)]
+  dentro <- rbindlist(lapply(ms, function(m) leer_csv(z, m)))
+  anid <- grep("\\.zip$", nom, ignore.case = TRUE, value = TRUE)
+  for (a in anid) {
+    tmp <- tempfile(); dir.create(tmp)
+    unzip(z, files = a, exdir = tmp, junkpaths = TRUE)
+    dentro <- rbind(dentro, leer_zip(file.path(tmp, basename(a))))
+  }
+  if (!nrow(dentro)) stop("sin CSV de defunciones en ", z)
+  dentro
+}
+res <- rbindlist(lapply(zips, leer_zip))
 # validación por archivo: fecha válida, residencia, cardinalidad de municipios (mismo chequeo que urgencias)
 val <- res[, .(n = .N, pct_fecha_na = round(100 * mean(is.na(fecha)), 2),
                pct_mun_na = round(100 * mean(is.na(mun_res) | mun_res >= 998), 2),
@@ -35,5 +47,8 @@ print(val)
 stopifnot(all(val$pct_mun_igual_ent < 10), all(val$municipios > 1500))
 res[mun_res >= 998L, mun_res := NA_integer_]
 res <- res[!is.na(fecha) & fecha >= as.IDate("2012-01-01") & fecha <= as.IDate("2024-12-31")]
+# validación por año de ocurrencia: México registra > 550 mil defunciones al año; un año hueco detiene todo
+por_anio <- res[, .N, by = .(anio = year(fecha))][order(anio)]; print(por_anio)
+stopifnot(identical(por_anio$anio, 2012:2024), all(por_anio$N > 550000))
 write_parquet(res[, .(fecha, ent_res, mun_res, cie3)], "datos/derivados/defunciones_2012_2024.parquet")
 message("defunciones 2012-2024: ", format(nrow(res), big.mark = ","), " registros con fecha de ocurrencia en el periodo")

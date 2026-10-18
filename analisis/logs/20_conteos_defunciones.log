@@ -1,12 +1,12 @@
-defunciones con residencia válida: 8,088,907; sin polígono: 0.08%
-golpe de calor (X30/T67) por año: 2012:45 2013:33 2014:57 2015:84 2016:70 2017:60 2019:75 2020:128 2022:70 2023:425 2024:399
+defunciones con residencia válida: 9,897,781; sin polígono: 0.09%
+golpe de calor (X30/T67) por año: 2012:45 2013:33 2014:57 2015:84 2016:70 2017:60 2018:65 2019:75 2020:128 2021:92 2022:70 2023:425 2024:399
             cap   casos   filas
          <char>   <int>   <int>
-1:        todas 8082090 2963087
-2:    naturales 7038921 2771869
-3: circulatorio 2111697 1262134
-4: respiratorio  693636  521475
-5:        renal  152858  142460
-6:    endocrino 1349291  909041
-7:     externas  799956  563429
+1:        todas 9888888 3538690
+2:    naturales 8456896 3296955
+3: circulatorio 2560925 1518224
+4: respiratorio  845928  631108
+5:        renal  180531  168311
+6:    endocrino 1624604 1089264
+7:     externas  951076  666315
 -> conteos_defunciones_2012_2025.parquet

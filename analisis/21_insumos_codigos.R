@@ -12,7 +12,7 @@ cves <- as.integer(sub("^MX", "", m$ADM2_PCODE))
 d <- as.data.table(read_parquet("datos/derivados/urgencias_2012_2025.parquet", col_select = c("fecha", "ent_res", "mun_res", "cie3")))
 d <- d[!is.na(mun_res) & ent_res %in% 1:32][, cve := ent_res * 1000L + mun_res][cve %in% cves]
 d[, cie3 := toupper(substr(cie3, 1, 3))]
-n <- d[, .(casos = .N, mun_dias = uniqueN(cve * 100000L + as.integer(fecha))), by = cie3][casos >= umbral][order(cie3)]
+n <- d[, .(casos = .N, mun_dias = uniqueN(cve * 100000 + as.numeric(fecha))), by = cie3][casos >= umbral][order(cie3)]
 n[, capitulo := fcase(cie3 >= "A00" & cie3 <= "B99", "infecciosas", cie3 >= "C00" & cie3 <= "D48", "tumores",
                       cie3 >= "D50" & cie3 <= "D89", "sangre", cie3 >= "E00" & cie3 <= "E90", "endocrinas",
                       cie3 >= "F00" & cie3 <= "F99", "mentales", cie3 >= "G00" & cie3 <= "G99", "nervioso",

@@ -46,6 +46,9 @@ clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_
                                               if (v30) "30" else if (expo != "tmax") paste0("_", expo) else "", periodo)))
 if (anio_min > 0) clima <- clima[year(fecha) >= anio_min]
 if (conteos_tipo == "defunciones") clima <- clima[fecha <= as.IDate("2024-12-31")]
+# urgencias: el archivo DGIS 2013 (excluido) cubre 2012-12-26 a 2013-12-25 (los archivos 2012-2015 van
+# del 26-dic al 25-dic). Sin él esos días no son ceros sino «sin dato»: se sacan del panel (AUDITORIA_2026-10-18, I1).
+if (conteos_tipo != "defunciones") clima <- clima[!(fecha >= as.IDate("2012-12-26") & fecha <= as.IDate("2013-12-25"))]
 conteos <- as.data.table(read_parquet(sprintf("datos/derivados/conteos_%s_%s.parquet", conteos_tipo, periodo)))
 if (clima_e != "") {
   cb <- fread("datos/derivados/clima_base_terciles.csv")

@@ -1,4 +1,3 @@
-There were 11 warnings (use warnings() to see them)
                                                    archivo       n pct_fecha_na
                                                     <char>   <int>        <num>
  1:                                            DEFUN12.csv  602354         0.15
@@ -7,23 +6,41 @@ There were 11 warnings (use warnings() to see them)
  4:                         defunciones_generales_2015.csv  655688         0.09
  5:                         defunciones_generales_2016.csv  685766         0.08
  6:                                              def17.csv  703047         0.08
- 7:                                   Defunciones_2019.CSV  747784         0.10
- 8:     conjunto_de_datos_defunciones_registrados_2020.csv 1086743         0.14
- 9:     conjunto_de_datos_defunciones_registradas_2022.CSV  847716         0.10
-10: conjunto_de_datos_defunciones_registradas_2023_csv.CSV  799869         0.10
-11:    conjunto_de_datos_defunciones_registradas24_csv.csv  819672         0.09
+ 7:                                              def18.csv  722611         0.14
+ 8:                                   Defunciones_2019.CSV  747784         0.10
+ 9:     conjunto_de_datos_defunciones_registrados_2020.csv 1086743         0.14
+10:     conjunto_de_datos_defunciones_registradas_2021.csv 1122249         0.09
+11:     conjunto_de_datos_defunciones_registradas_2022.CSV  847716         0.10
+12: conjunto_de_datos_defunciones_registradas_2023_csv.CSV  799869         0.10
+13:    conjunto_de_datos_defunciones_registradas24_csv.csv  819672         0.09
     pct_mun_na pct_mun_igual_ent municipios anio_min anio_max
          <num>             <num>      <int>    <int>    <int>
- 1:       0.34              2.51       5973     1900     2012
- 2:       0.34              2.50       5331     1926     2013
- 3:       0.31              2.52       5266     1900     2014
- 4:       0.32              2.54       5240     1914     2015
- 5:       0.31              2.55       5338     1923     2016
- 6:       1.45              2.52       6208     1943     2017
- 7:       1.90              2.47       6317     1934     2019
- 8:       1.33              2.62       6424     1945     2020
- 9:       1.84              2.49       6349     1922     2022
-10:       1.41              2.49       6369     1961     2023
-11:       1.29              2.48       6368     1955     2024
-defunciones 2012-2024: 8,172,609 registros con fecha de ocurrencia en el periodo
-19: 109.75 s, 1458924 KB
+ 1:       0.34              2.51       2454     1900     2012
+ 2:       0.34              2.50       2454     1926     2013
+ 3:       0.31              2.52       2454     1900     2014
+ 4:       0.32              2.54       2455     1914     2015
+ 5:       0.31              2.55       2457     1923     2016
+ 6:       1.45              2.52       2455     1943     2017
+ 7:       2.99              2.45       2458     1935     2018
+ 8:       1.90              2.47       2461     1934     2019
+ 9:       1.33              2.62       2462     1945     2020
+10:       1.11              2.40       2469     1918     2021
+11:       1.84              2.49       2475     1922     2022
+12:       1.41              2.49       2471     1961     2023
+13:       1.29              2.48       2472     1955     2024
+     anio       N
+    <int>   <int>
+ 1:  2012  602295
+ 2:  2013  622289
+ 3:  2014  631428
+ 4:  2015  653933
+ 5:  2016  685268
+ 6:  2017  704433
+ 7:  2018  722290
+ 8:  2019  745115
+ 9:  2020 1092521
+10:  2021 1117329
+11:  2022  843249
+12:  2023  796712
+13:  2024  797217
+defunciones 2012-2024: 10,014,079 registros con fecha de ocurrencia en el periodo
