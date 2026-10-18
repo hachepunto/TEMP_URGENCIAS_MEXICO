@@ -29,7 +29,7 @@ res <- rbindlist(lapply(zips, function(z) {
 val <- res[, .(n = .N, pct_fecha_na = round(100 * mean(is.na(fecha)), 2),
                pct_mun_na = round(100 * mean(is.na(mun_res) | mun_res >= 998), 2),
                pct_mun_igual_ent = round(100 * mean(mun_res == ent_res, na.rm = TRUE), 2),
-               municipios = uniqueN(ent_res * 1000L + mun_res[mun_res < 998]),
+               municipios = uniqueN((ent_res * 1000L + mun_res)[mun_res < 998]),
                anio_min = min(year(fecha), na.rm = TRUE), anio_max = max(year(fecha), na.rm = TRUE)), by = archivo]
 print(val)
 stopifnot(all(val$pct_mun_igual_ent < 10), all(val$municipios > 1500))

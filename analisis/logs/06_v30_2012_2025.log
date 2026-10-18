@@ -1,0 +1,14 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 207,755/0 fixed-effects (6,248,783 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=6242605, >=36 acumulado_0_30 = 1.131 [1.071, 1.195] (128 s)
+NOTE: 179,723/0 fixed-effects (5,397,610 observations) removed because of only 0 outcomes or singletons.
+respiratorio: n=7093778, >=36 acumulado_0_30 = 0.652 [0.618, 0.688] (140 s)
+NOTE: 213,265/0 fixed-effects (6,417,689 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=6073699, >=36 acumulado_0_30 = 0.889 [0.853, 0.927] (121 s)
+NOTE: 267,819/0 fixed-effects (8,078,163 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=4413225, >=36 acumulado_0_30 = 0.987 [0.929, 1.048] (92 s)
+NOTE: 82,055/0 fixed-effects (2,423,506 observations) removed because of only 0 outcomes or singletons.
+total: n=10067882, >=36 acumulado_0_30 = 1.027 [1.003, 1.051] (224 s)
+06_v30: 836.19 s, 44163684 KB
