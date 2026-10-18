@@ -5,10 +5,12 @@
 # en 2016; columnas extra desde 2023), por eso se normalizan nombres y se recorta todo.
 # Entrada: /STORAGE/genut/dalvarez/PROYECTO_URGENCIAS/DATOS/DEFUNCIONES_DGIS/DEFUN_*.zip
 # Salida:  datos/derivados/defunciones_2012_2024.parquet
+#          datos/derivados/calidad_defunciones_municipio.csv (especificación J-b: indicadores de calidad del
+#          registro por municipio de residencia, incluidas las defunciones con fecha incompleta)
 suppressMessages({library(data.table); library(arrow)}); setDTthreads(as.integer(Sys.getenv("NHILOS", "8")))
 dir_z <- "/STORAGE/genut/dalvarez/PROYECTO_URGENCIAS/DATOS/DEFUNCIONES_DGIS"
 zips  <- list.files(dir_z, "^DEFUN_.*\\.zip$", full.names = TRUE)
-quiero <- c("ent_resid", "mun_resid", "causa_def", "dia_ocurr", "mes_ocurr", "anio_ocur")
+quiero <- c("ent_resid", "mun_resid", "causa_def", "dia_ocurr", "mes_ocurr", "anio_ocur", "edad", "anio_regis", "asist_medi")
 
 leer_csv <- function(z, m) {
   d <- fread(cmd = sprintf("unzip -p '%s' '%s'", z, m), colClasses = "character", encoding = "Latin-1")
@@ -18,7 +20,12 @@ leer_csv <- function(z, m) {
   for (v in quiero) set(d, j = v, value = trimws(d[[v]]))
   d[, `:=`(ent_res = as.integer(ent_resid), mun_res = as.integer(mun_resid), cie3 = substr(toupper(causa_def), 1, 3),
            fecha = suppressWarnings(as.IDate(sprintf("%s-%02d-%02d", anio_ocur, as.integer(mes_ocurr), as.integer(dia_ocurr)))))]
-  d[, .(fecha, ent_res, mun_res, cie3, archivo = basename(m))]
+  # edad INEGI: 1xxx horas, 2xxx días, 3xxx meses (todos < 1 año), 4xxx años cumplidos, 4998 no especificada
+  e <- suppressWarnings(as.integer(d$edad))
+  d[, edad_anios := fifelse(e < 4000L, 0L, fifelse(e >= 4000L & e < 4998L, e - 4000L, NA_integer_))]
+  d[, `:=`(anio_ocur_n = suppressWarnings(as.integer(anio_ocur)), anio_regis = suppressWarnings(as.integer(anio_regis)),
+           asist_medi = suppressWarnings(as.integer(asist_medi)))]
+  d[, .(fecha, ent_res, mun_res, cie3, edad_anios, anio_ocur = anio_ocur_n, anio_regis, asist_medi, archivo = basename(m))]
 }
 # 2018 y 2021 traen el CSV dentro de un zip anidado (DEFUN_2018.zip -> def18.zip; AUDITORIA_2026-10-18, B1):
 # se extrae el zip interno a un temporal y se lee igual
@@ -46,9 +53,19 @@ val <- res[, .(n = .N, pct_fecha_na = round(100 * mean(is.na(fecha)), 2),
 print(val)
 stopifnot(all(val$pct_mun_igual_ent < 10), all(val$municipios > 1500))
 res[mun_res >= 998L, mun_res := NA_integer_]
+# J-b: calidad del registro por municipio de residencia, antes de descartar fechas incompletas
+# (los archivos son por año de registro 2012-2024; anio_ocur 9999 = no especificado)
+q <- res[ent_res %in% 1:32 & !is.na(mun_res)]
+q <- q[, .(defunciones = .N, pct_fecha_incompleta = 100 * mean(is.na(fecha)),
+           pct_registro_tardio = 100 * mean((anio_regis > anio_ocur)[anio_ocur < 9000L], na.rm = TRUE),
+           pct_sin_asistencia = 100 * mean(asist_medi == 2L, na.rm = TRUE),
+           pct_edad_ne = 100 * mean(is.na(edad_anios))), by = .(cve = ent_res * 1000L + mun_res)]
+fwrite(q, "datos/derivados/calidad_defunciones_municipio.csv")
+message("calidad por municipio: ", nrow(q), " municipios; % fecha incompleta nacional ",
+        round(weighted.mean(q$pct_fecha_incompleta, q$defunciones), 2))
 res <- res[!is.na(fecha) & fecha >= as.IDate("2012-01-01") & fecha <= as.IDate("2024-12-31")]
 # validación por año de ocurrencia: México registra > 550 mil defunciones al año; un año hueco detiene todo
 por_anio <- res[, .N, by = .(anio = year(fecha))][order(anio)]; print(por_anio)
 stopifnot(identical(por_anio$anio, 2012:2024), all(por_anio$N > 550000))
-write_parquet(res[, .(fecha, ent_res, mun_res, cie3)], "datos/derivados/defunciones_2012_2024.parquet")
+write_parquet(res[, .(fecha, ent_res, mun_res, cie3, edad_anios, anio_regis, asist_medi)], "datos/derivados/defunciones_2012_2024.parquet")
 message("defunciones 2012-2024: ", format(nrow(res), big.mark = ","), " registros con fecha de ocurrencia en el periodo")

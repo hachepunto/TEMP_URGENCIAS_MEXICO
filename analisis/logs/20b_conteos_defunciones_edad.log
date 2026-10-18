@@ -1,0 +1,9 @@
+edad no especificada: 0.18% (fuera de estos desenlaces)
+                    cap   casos
+                 <char>   <int>
+1:          todas_65mas 5642096
+2:        todas_menos65 4229055
+3:   circulatorio_65mas 1941500
+4: circulatorio_menos65  617557
+-> conteos_defunciones_edad_2012_2025.parquet
+J-b: 2360 municipios con >= 100 defunciones; p75 fecha incompleta 0.111%, p75 registro tardío 3.78%; buena calidad: 1388

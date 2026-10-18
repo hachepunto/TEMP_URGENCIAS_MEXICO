@@ -11,6 +11,7 @@
 #   CLIMA=1|2|3 restringe a un tercil de clima de base (datos/derivados/clima_base_terciles.csv)
 #   VENTANAS=30 usa clima_ventanas30 (ventanas 0,1-3,4-7,8-14,15-21,22-30; acumulado 0-30)
 #   ANIO_MIN=2014 excluye años anteriores (sensibilidad sin 2012)
+#   CONTEOS=defunciones_edad (J-a) y MUNICIPIOS=<archivo de cve> (J-b): ESPECIFICACION_mortalidad_marginacion.md
 #   EXPO=tmax (default) | at (temperatura aparente) | hum (Tmax con bins >= 33 partidos seco/húmedo) -> clima_ventanas_<EXPO> (ESPECIFICACION_humedad.md)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
 # Al final (si están todos): resultados/tablas/rezagos<sufijo>_<periodo>.csv y _resumen.csv
@@ -30,11 +31,13 @@ v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("
 ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
 acum_lab <- if (v30) "acumulado_0_30" else "acumulado_0_14"
 fe_spec <- Sys.getenv("FE_SPEC", "base"); conteos_tipo <- Sys.getenv("CONTEOS", "capitulos")
-stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones", "codigos"))
+stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones", "defunciones_edad", "codigos"))
 marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
+mun_lista <- Sys.getenv("MUNICIPIOS", "")   # archivo con una cve por línea (especificación J-b)
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
 sufijo  <- paste0(if (fe_spec != "base") paste0("_fe-", fe_spec), if (conteos_tipo != "capitulos") paste0("_", conteos_tipo),
                   if (clima_e != "") paste0("_clima", clima_e), if (marg != "") paste0("_marg", marg),
+                  if (mun_lista != "") paste0("_mun-", sub("\\.[a-z]+$", "", basename(mun_lista))),
                   if (v30) "_v30", if (anio_min > 0) paste0("_desde", anio_min), if (expo != "tmax") paste0("_expo-", expo))
 if (length(sufijo) == 0) sufijo <- ""   # paste0 de puros NULL devuelve character(0)
 fe      <- switch(fe_spec, base = "cve^anio^mes + ent^dow", anio_semana = "cve^anio + ent^semana + ent^dow")
@@ -45,15 +48,21 @@ stopifnot(!(v30 && expo != "tmax"))
 clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_%s.parquet",
                                               if (v30) "30" else if (expo != "tmax") paste0("_", expo) else "", periodo)))
 if (anio_min > 0) clima <- clima[year(fecha) >= anio_min]
-if (conteos_tipo == "defunciones") clima <- clima[fecha <= as.IDate("2024-12-31")]
+es_defun <- conteos_tipo %in% c("defunciones", "defunciones_edad")
+if (es_defun) clima <- clima[fecha <= as.IDate("2024-12-31")]
 # urgencias: el archivo DGIS 2013 (excluido) cubre 2012-12-26 a 2013-12-25 (los archivos 2012-2015 van
 # del 26-dic al 25-dic). Sin él esos días no son ceros sino «sin dato»: se sacan del panel (AUDITORIA_2026-10-18, I1).
-if (conteos_tipo != "defunciones") clima <- clima[!(fecha >= as.IDate("2012-12-26") & fecha <= as.IDate("2013-12-25"))]
+if (!es_defun) clima <- clima[!(fecha >= as.IDate("2012-12-26") & fecha <= as.IDate("2013-12-25"))]
 conteos <- as.data.table(read_parquet(sprintf("datos/derivados/conteos_%s_%s.parquet", conteos_tipo, periodo)))
 if (clima_e != "") {
   cb <- fread("datos/derivados/clima_base_terciles.csv")
   clima <- clima[cve %in% cb[clima == as.integer(clima_e), cve]]
   message("tercil de clima de base ", clima_e, ": ", uniqueN(clima$cve), " municipios")
+}
+if (mun_lista != "") {
+  keep <- as.integer(readLines(mun_lista)); stopifnot(length(keep) > 0, !anyNA(keep))
+  clima <- clima[cve %in% keep]
+  message("municipios de ", basename(mun_lista), ": ", uniqueN(clima$cve))
 }
 if (marg != "") {
   terc <- fread("datos/derivados/marginacion_terciles_2020.csv")
