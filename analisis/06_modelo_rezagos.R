@@ -4,7 +4,8 @@
 # Uso: Rscript 06_modelo_rezagos.R <periodo> [capítulo ...]   (sin capítulos: todos los del archivo)
 # Variables de entorno (ESPECIFICACION_sensibilidad_subgrupos.md):
 #   FE_SPEC=base (cve^anio^mes + ent^dow) | anio_semana (cve^anio + ent^semana + ent^dow)
-#   CONTEOS=capitulos (default) | subgrupos | hospital | defunciones -> datos/derivados/conteos_<CONTEOS>_<periodo>.parquet
+#   CONTEOS=capitulos (default) | subgrupos | hospital | defunciones | codigos -> datos/derivados/conteos_<CONTEOS>_<periodo>.parquet
+#   (codigos: 164 códigos CIE-10 de 3 caracteres, ESPECIFICACION_codigos.md; se corre por lotes con la lista de códigos como argumentos)
 #   (defunciones: 2012-2024; el clima 2025 queda con ceros y lo descarta fepois por celdas vacías; se recorta abajo)
 #   MARG=1|2|3  restringe a un tercil de marginación CONAPO 2020 (datos/derivados/marginacion_terciles_2020.csv)
 #   CLIMA=1|2|3 restringe a un tercil de clima de base (datos/derivados/clima_base_terciles.csv)
@@ -26,7 +27,7 @@ v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("
 ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
 acum_lab <- if (v30) "acumulado_0_30" else "acumulado_0_14"
 fe_spec <- Sys.getenv("FE_SPEC", "base"); conteos_tipo <- Sys.getenv("CONTEOS", "capitulos")
-stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones"))
+stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones", "codigos"))
 marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
 sufijo  <- paste0(if (fe_spec != "base") paste0("_fe-", fe_spec), if (conteos_tipo != "capitulos") paste0("_", conteos_tipo),
