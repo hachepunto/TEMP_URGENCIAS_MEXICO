@@ -1,0 +1,18 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 1: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 47,818/0 fixed-effects (1,454,854 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=2733512, >=36 acumulado 0-14 = 1.184 [1.139, 1.230] (35 s)
+NOTE: 48,371/0 fixed-effects (1,472,018 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=2716348, >=36 acumulado 0-14 = 1.170 [1.124, 1.218] (37 s)
+NOTE: 39,859/0 fixed-effects (1,212,888 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=2975478, >=36 acumulado 0-14 = 1.139 [1.101, 1.178] (36 s)
+NOTE: 27,609/0 fixed-effects (839,791 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=3348575, >=36 acumulado 0-14 = 1.125 [1.098, 1.153] (44 s)
+NOTE: 16,698/0 fixed-effects (507,694 observations) removed because of only 0 outcomes or singletons.
+total: n=3680672, >=36 acumulado 0-14 = 1.035 [1.013, 1.057] (48 s)
+Error: unexpected string constant in "agos", sufijo, ""
+Execution halted
+Command exited with non-zero status 1
+06_marg1: 214.03 s, 12694492 KB

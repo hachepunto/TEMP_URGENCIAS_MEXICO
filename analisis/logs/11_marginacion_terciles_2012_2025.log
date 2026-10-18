@@ -1,0 +1,12 @@
+municipios en CONAPO 2020: 2469; en el panel: 2457; cruzan: 2457; sin índice en CONAPO: 0
+   tercil     n IM_min IM_max pob_mill
+   <fctr> <int>  <num>  <num>    <num>
+1:      1   819  55.97  62.40     95.4
+2:      2   819  52.79  55.97     18.2
+3:      3   819  21.41  52.79     12.1
+   
+    Alto Bajo Medio Muy alto Muy bajo
+  1    0  165     0        0      654
+  2    0  363   456        0        0
+  3  582    0    33      204        0
+11_marginacion_terciles: 0.83 s, 118764 KB

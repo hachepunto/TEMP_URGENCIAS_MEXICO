@@ -1,0 +1,9 @@
+clima: 2457 municipios, 4380 días
+atenciones: 95,818,476 totales; 21,368,062 en capítulos piloto con residencia válida; 1.03% con clave municipal sin clima (descartadas)
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells   811149  43.4    1469790   78.5    859767   46.0
+Vcells 49155155 375.1  483021902 3685.2 741935539 5660.6
+panel: 29,594,565 filas; 82.6% ceros; casos fuera del calendario Daymet: 8910
+rezagos NA (tras 29-feb/1-ene sin día previo en Daymet): 66339
+-> datos/derivados/panel_2012_2022.parquet
+02_panel: 153.59 s, 7096740 KB

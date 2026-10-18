@@ -1,0 +1,9 @@
+CLUES sin catálogo: 9.66% de atenciones; municipio del hospital sin polígono: 0.10%
+    grupo        n pct_otro_municipio
+   <char>    <int>              <num>
+1:  total 89334469              19.42
+2:  marg1 66850102              16.65
+3:  marg2 15813153              23.69
+4:  marg3  6660645              36.88
+-> conteos_hospital: 19,151,808 filas; municipios con unidad: 727
+15: 83.26 s, 16158544 KB

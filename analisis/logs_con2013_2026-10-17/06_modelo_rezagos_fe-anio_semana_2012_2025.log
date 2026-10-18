@@ -1,0 +1,18 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio + ent^semana + ent^dow | conteos: capitulos
+NOTE: 7,050/0/0 fixed-effects (2,575,122 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=9989976, >=36 acumulado 0-14 = 0.890 [0.865, 0.916] (127 s)
+NOTE: 4,619/0/0 fixed-effects (1,687,090 observations) removed because of only 0 outcomes or singletons.
+digestivo: n=10878008, >=36 acumulado 0-14 = 0.964 [0.941, 0.988] (147 s)
+NOTE: 7,159/0/0 fixed-effects (2,615,003 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=9950095, >=36 acumulado 0-14 = 1.093 [1.060, 1.126] (138 s)
+NOTE: 5,664/0/0 fixed-effects (2,068,845 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=10496253, >=36 acumulado 0-14 = 1.066 [1.038, 1.095] (144 s)
+NOTE: 6,630/0/0 fixed-effects (2,421,668 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=10143430, >=36 acumulado 0-14 = 0.971 [0.917, 1.029] (140 s)
+NOTE: 10,548/0/0 fixed-effects (3,852,945 observations) removed because of only 0 outcomes or singletons.
+mentales: n=8712153, >=36 acumulado 0-14 = 0.990 [0.957, 1.024] (107 s)
+NOTE: 10,861/0/0 fixed-effects (3,967,347 observations) removed because of only 0 outcomes or singletons.
+nervioso: n=8597751, >=36 acumulado 0-14 = 0.908 [0.877, 0.941] (104 s)
+NOTE: 15,114/0/0 fixed-effects (5,520,935 observations) removed because of only 0 outcomes or singletons.

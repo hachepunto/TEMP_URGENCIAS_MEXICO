@@ -1,0 +1,10 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: subgrupos
+NOTE: 350,796/0 fixed-effects (10,677,649 observations) removed because of only 0 outcomes or singletons.
+E86_deshidratacion: n=1887449, >=36 acumulado 0-14 = 2.061 [1.863, 2.279] (26 s)
+NOTE: 372,187/0 fixed-effects (11,329,060 observations) removed because of only 0 outcomes or singletons.
+I21_infarto: n=1236038, >=36 acumulado 0-14 = 0.974 [0.827, 1.147] (20 s)
+NOTE: 397,152/0 fixed-effects (12,089,280 observations) removed because of only 0 outcomes or singletons.
+N17_renal_aguda: n=475818, >=36 acumulado 0-14 = 0.943 [0.749, 1.187] (13 s)
+-> resultados/tablas/rezagos_subgrupos_2012_2025.csv

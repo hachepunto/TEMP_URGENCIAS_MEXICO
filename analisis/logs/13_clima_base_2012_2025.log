@@ -1,0 +1,17 @@
+    clima     n frac_min frac_max
+   <fctr> <int>    <num>    <num>
+1:      1   823    0.000    0.022
+2:      2   815    0.022    0.164
+3:      3   819    0.166    0.866
+    clima  marg municipios dias_33_36 dias_ge36 mun_con_ge36 ge36_identificado
+   <fctr> <int>      <int>      <int>     <int>        <int>            <lgcl>
+1:      1     1        271       7509       174           58             FALSE
+2:      1     2        308      12639       185           91             FALSE
+3:      1     3        244      12186       200           90             FALSE
+4:      2     1        260      64036      9158          260              TRUE
+5:      2     2        245      67216      7596          245              TRUE
+6:      2     3        310      89495      7172          306              TRUE
+7:      3     1        288     367685    257645          288              TRUE
+8:      3     2        266     491132    136424          266              TRUE
+9:      3     3        265     527267    105921          265              TRUE
+13_clima_base: 1.68 s, 457056 KB

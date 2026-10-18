@@ -1,0 +1,26 @@
+claves municipales sin polígono (descartadas): 16 claves, 47,735 atenciones; las 12 mayores: 02006(22,379) 17035( 8,005) 07123( 2,811) 02007( 2,547) 04013( 2,084) 23011( 1,988) 04012( 1,854) 17034( 1,823) 07122( 1,458) 17036(   855) 07124(   777) 07120(   557)
+códigos sin llave numérica (3er carácter no dígito): 0
+atenciones con residencia válida: 99,433,301; en los 15 capítulos: 71,352,769
+               cap        N
+            <char>    <int>
+ 1:   traumatismos 15755531
+ 2:   respiratorio 13046997
+ 3:       sintomas  7908891
+ 4:      digestivo  7727518
+ 5:    infecciosas  5889546
+ 6: genitourinario  5828236
+ 7:   circulatorio  3141131
+ 8:     endocrinas  3065091
+ 9:  osteomuscular  2644480
+10:       mentales  1793895
+11:           piel  1620132
+12:       nervioso  1143392
+13:           oido   871890
+14:         sangre   466746
+15:            ojo   449293
+           used  (Mb) gc trigger   (Mb)   max used    (Mb)
+Ncells   874725  46.8    1637064   87.5    1637064    87.5
+Vcells 87276469 665.9 1126390616 8593.7 1406225801 10728.7
+clima: 2457 municipios × 5479 días (4 31-dic imputados con el 30-dic)
+clima_ventanas: 12,565,098 filas, 46 columnas
+05_insumos_capitulos: 218.50 s, 10815908 KB

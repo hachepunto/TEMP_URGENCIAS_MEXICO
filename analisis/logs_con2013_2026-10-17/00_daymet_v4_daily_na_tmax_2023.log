@@ -1,0 +1,4 @@
+Warning message:
+package ‘terra’ was built under R version 4.5.3 
+daymet_v4_daily_na_tmax_2023.nc: 2457 municipios × 365 días -> /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_tmax_2023.rds
+547.87 s 16486548 KB

@@ -1,0 +1,6 @@
+                  cap      N
+               <char>  <int>
+1: E86_deshidratacion 211176
+2:        I21_infarto  88241
+3:    N17_renal_aguda  29775
+-> conteos_subgrupos: 275234 filas

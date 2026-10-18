@@ -1,0 +1,11 @@
+Key: <cap>
+              cap ratio    lo    hi     z
+           <char> <num> <num> <num> <num>
+1:     endocrinas 0.911 0.821 1.010 -1.76
+2: genitourinario 0.979 0.897 1.070 -0.46
+3:    infecciosas 0.921 0.834 1.017 -1.63
+4:          total 0.968 0.922 1.017 -1.28
+5:   traumatismos 0.960 0.908 1.014 -1.48
+Fontconfig warning: using without calling FcInit()
+-> resultados/{tablas,figuras}/marginacion_2012_2025
+12_figura_marginacion: 2.10 s, 196012 KB

@@ -1,0 +1,15 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 3: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: capitulos
+NOTE: 84,950/2 fixed-effects (2,585,302 observations) removed because of only 0 outcomes or singletons.
+infecciosas: n=1603064, >=36 acumulado 0-14 = 1.090 [0.995, 1.195] (23 s)
+NOTE: 89,924/3 fixed-effects (2,737,324 observations) removed because of only 0 outcomes or singletons.
+endocrinas: n=1451042, >=36 acumulado 0-14 = 1.066 [0.969, 1.173] (20 s)
+NOTE: 80,489/2 fixed-effects (2,449,630 observations) removed because of only 0 outcomes or singletons.
+genitourinario: n=1738736, >=36 acumulado 0-14 = 1.116 [1.028, 1.211] (24 s)
+NOTE: 61,236/0 fixed-effects (1,863,517 observations) removed because of only 0 outcomes or singletons.
+traumatismos: n=2324849, >=36 acumulado 0-14 = 1.080 [1.028, 1.134] (30 s)
+NOTE: 34,860/0 fixed-effects (1,060,691 observations) removed because of only 0 outcomes or singletons.
+total: n=3127675, >=36 acumulado 0-14 = 1.002 [0.959, 1.048] (41 s)
+06_marg3: 151.30 s, 11993348 KB
