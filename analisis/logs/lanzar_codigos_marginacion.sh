@@ -8,9 +8,11 @@ R=~/miniforge/envs/bio/bin/Rscript
 LC_ALL=C.UTF-8 $R -e '
 suppressMessages(library(data.table))
 x <- fread("resultados/tablas/codigos_fdr_2012_2025.csv")[contraste == "calor_36" & sig & capitulo != "Z_control"]
-setorder(x, -abs(beta_post))
+x[, orden := -abs(beta_post)]; setorder(x, orden)
 writeLines(x$cie3, "logs/codigos_fdr_calor.txt"); writeLines(head(x$cie3, 20), "logs/codigos_fdr_calor_top20.txt")
 cat("D:", nrow(x), "codigos; E: 20\n")' 2>&1 | grep -v setlocale
+# sin lista no se lanza nada: 06 sin argumentos correría los 164 códigos en cada estrato
+[ -s logs/codigos_fdr_calor.txt ] || { echo "lista vacía, abortando"; exit 1; }
 for k in 1 2 3; do
   (
     CONTEOS=codigos MARG=$k LC_ALL=C.UTF-8 NHILOS=8 $R 06_modelo_rezagos.R 2012_2025 $(cat logs/codigos_fdr_calor.txt) > "logs/06_codigos_marg${k}_2012_2025.log" 2>&1
