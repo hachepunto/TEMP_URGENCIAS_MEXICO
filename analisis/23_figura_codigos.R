@@ -15,14 +15,15 @@ calor <- x[contraste == "calor_36", .(cie3, capitulo, b_calor = beta_post)]
 calor[, capitulo := factor(capitulo, levels = orden_cap)]
 setorder(calor, capitulo, -b_calor)
 x[, cie3 := factor(cie3, levels = rev(calor$cie3))]
-x[, capitulo := factor(capitulo, levels = orden_cap)]
+x[, capitulo := factor(capitulo, levels = orden_cap, labels = sub("Z_control", "Z (control)", orden_cap))]
 x[, etiqueta := sprintf("%s %s", cie3, tolower(substr(nombre, 1, 38)))]
 etiquetas <- unique(x[, .(cie3, etiqueta)]); setkey(etiquetas, cie3)
 lim <- 0.5   # log-IRR; ±0.5 ≈ IRR 0.61–1.65; T63 y E86 se saturan y se anotan
 x[, b_plot := pmax(pmin(beta_post, lim), -lim)]
 g <- ggplot(x, aes(bin, cie3, fill = b_plot)) + geom_tile(colour = "white", linewidth = 0.2) +
-  geom_point(data = x[preespecificado & sig], size = 0.9, colour = "black") +
-  geom_text(data = x[abs(beta_post) > lim], aes(label = sprintf("%.2f", exp(beta_post))), size = 1.8) +
+  geom_point(data = x[preespecificado & sig & abs(beta_post) <= lim], size = 0.9, colour = "black") +
+  geom_point(data = x[preespecificado & sig & abs(beta_post) > lim], size = 0.9, colour = "black", position = position_nudge(x = 0.33)) +
+  geom_text(data = x[abs(beta_post) > lim], aes(label = sprintf("%.2f", exp(beta_post))), size = 1.8, colour = "white", nudge_x = -0.08) +
   scale_fill_gradient2(low = "#2a6f97", mid = "grey97", high = "#c44536", midpoint = 0, limits = c(-lim, lim),
                        name = "log-IRR acumulado 0–14 d\n(contraído, ref. 24–27 °C)") +
   scale_y_discrete(labels = function(v) etiquetas[v, etiqueta]) +

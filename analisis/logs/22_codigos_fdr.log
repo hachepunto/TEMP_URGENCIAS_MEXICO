@@ -1,0 +1,74 @@
+164 códigos con resultados de 164 comprometidos
+
+calor_36: 64/164 con q < 0.05 (44 suben, 20 bajan); controles Z: 2/11 con q < 0.05
+      cie3       capitulo                                   nombre   irr
+    <char>         <char>                                   <char> <num>
+ 1:    E86     endocrinas                    DEPLECIÓN DEL VOLUMEN 2.113
+ 2:    E87     endocrinas OTROS TRASTORNOS DE LOS LÍQUIDOS, DE LOS 1.878
+ 3:    R04       sintomas     HEMORRAGIA DE LAS VÍAS RESPIRATORIAS 1.754
+ 4:    A97    infecciosas                                   DENGUE 1.822
+ 5:    N23 genitourinario            CÓLICO RENAL, NO ESPECIFICADO 1.575
+ 6:    J21   respiratorio                      BRONQUIOLITIS AGUDA 0.630
+ 7:    A90    infecciosas       FIEBRE DEL DENGUE [DENGUE CLÁSICO] 1.970
+ 8:    T63   traumatismos EFECTO TÓXICO DEL CONTACTO CON ANIMALES  1.519
+ 9:    J00   respiratorio   RINOFARINGITIS AGUDA [RESFRIADO COMÚN] 0.678
+10:    J20   respiratorio                         BRONQUITIS AGUDA 0.666
+11:    R50       sintomas FIEBRE DE OTRO ORIGEN Y DE ORIGEN DESCON 1.405
+12:    N20 genitourinario           CÁLCULO DEL RIÑÓN Y DEL URÉTER 1.405
+13:    J46   respiratorio                          ESTADO ASMÁTICO 0.708
+14:    J04   respiratorio           LARINGITIS Y TRAQUEÍTIS AGUDAS 0.715
+15:    J98   respiratorio           OTROS TRASTORNOS RESPIRATORIOS 0.693
+    irr_post       q
+       <num>   <num>
+ 1:    2.071 3.9e-48
+ 2:    1.823 2.6e-18
+ 3:    1.647 1.7e-20
+ 4:    1.642 1.5e-10
+ 5:    1.541 7.4e-24
+ 6:    0.663 8.9e-15
+ 7:    1.501 2.7e-04
+ 8:    1.488 3.2e-49
+ 9:    0.693 1.8e-18
+10:    0.698 1.0e-09
+11:    1.389 2.2e-23
+12:    1.381 2.0e-11
+13:    0.731 6.8e-07
+14:    0.732 5.0e-08
+15:    0.736 4.3e-04
+
+frio_12: 12/164 con q < 0.05 (1 suben, 11 bajan); controles Z: 1/11 con q < 0.05
+      cie3     capitulo                                   nombre   irr irr_post
+    <char>       <char>                                   <char> <num>    <num>
+ 1:    A97  infecciosas                                   DENGUE 0.207    0.504
+ 2:    A05  infecciosas OTRAS INTOXICACIONES ALIMENTARIAS BACTER 0.480    0.533
+ 3:    A90  infecciosas       FIEBRE DEL DENGUE [DENGUE CLÁSICO] 0.187    0.576
+ 4:    Z04    Z_control   EXAMEN Y OBSERVACIÓN POR OTRAS RAZONES 0.554    0.674
+ 5:    R50     sintomas FIEBRE DE OTRO ORIGEN Y DE ORIGEN DESCON 0.642    0.711
+ 6:    Z48    Z_control  OTROS CUIDADOS POSTERIORES A LA CIRUGÍA 0.637    0.718
+ 7:    Z51    Z_control                     OTRA ATENCIÓN MÉDICA 0.649    0.722
+ 8:    R69     sintomas CAUSAS DE MORBILIDAD DESCONOCIDAS Y NO E 1.946    1.376
+ 9:    A09  infecciosas DIARREA Y GASTROENTERITIS DE PRESUNTO OR 0.773    0.772
+10:    U07        covid                     USO EMERGENTE DE U07 0.586    0.774
+11:    Z03    Z_control OBSERVACIÓN Y EVALUACIÓN MÉDICAS POR SOS 0.705    0.779
+12:    T14 traumatismos TRAUMATISMO DE REGIONES NO ESPECIFICADAS 0.701    0.783
+13:    F32     mentales                       EPISODIO DEPRESIVO 1.526    1.277
+14:    Z71    Z_control PERSONAS EN CONTACTO CON LOS SERVICIOS D 0.747    0.785
+15:    R04     sintomas     HEMORRAGIA DE LAS VÍAS RESPIRATORIAS 0.691    0.792
+         q
+     <num>
+ 1: 0.0320
+ 2: 0.0091
+ 3: 0.1600
+ 4: 0.0290
+ 5: 0.0091
+ 6: 0.0570
+ 7: 0.0570
+ 8: 0.0200
+ 9: 0.0091
+10: 0.0140
+11: 0.2400
+12: 0.0091
+13: 0.0920
+14: 0.1500
+15: 0.1900
+-> resultados/tablas/codigos_fdr_2012_2025.csv

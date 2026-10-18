@@ -1,0 +1,7 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: codigos
+NOTE: 366,313/0 fixed-effects (11,150,705 observations) removed because of only 0 outcomes or singletons.
+N91: n=1414393, >=36 acumulado_0_14 = 1.017 [0.893, 1.159] (32 s)
+NOTE: 321,514/0 fixed-effects (9,786,774 observations) removed because of only 0 outcomes or singletons.
+N93: n=2778324, >=36 acumulado_0_14 = 0.953 [0.883, 1.027] (51 s)
