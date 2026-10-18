@@ -47,7 +47,9 @@ por marginación en urgencias, tampoco a clima de base constante.
 Mortalidad (mismos municipio-días, 2012–2024, `rezagos_defunciones_2012_2025.csv`), acumulado 0–14 a
 ≥ 36 °C: todas las causas 1.086 [1.062, 1.110], circulatorio 1.106, respiratorio 1.119: sube donde las
 urgencias por las mismas causas bajan (figura 8). El exceso de mortalidad por calor es menor en el
-tercil más marginado (todas M3/M1 0.92 [0.87, 0.98]; circulatorio 0.84 [0.76, 0.93]).
+tercil más marginado (todas M3/M1 0.92 [0.87, 0.98]; circulatorio 0.84 [0.76, 0.93]), también a clima
+de base constante (estrato cálido: todas 0.87 [0.80, 0.94], circulatorio 0.79 [0.69, 0.91]);
+`defunciones_marginacion_2012_2025.csv`, `defunciones_clima_marg_2012_2025.csv`.
 
 Barrido por código CIE-10 (164 códigos, `codigos_fdr_2012_2025.csv`) y humedad
 (`humedad_comparacion_2012_2025.csv`): ver `ESPECIFICACION_codigos.md` y `ESPECIFICACION_humedad.md`.

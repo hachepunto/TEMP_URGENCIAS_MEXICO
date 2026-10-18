@@ -1,0 +1,40 @@
+(ii) acumulado 0-14 a >= 36 por tercil de marginación, M3/M1 (BH dentro de cada fuente):
+         fuente            cap    M1    M2    M3 ratio    lo    hi      q
+         <char>         <char> <num> <num> <num> <num> <num> <num>  <num>
+ 1: defunciones          renal 1.020 0.838 0.838 0.822 0.574 1.177 0.4000
+ 2: defunciones   circulatorio 1.126 1.117 0.944 0.838 0.759 0.927 0.0039
+ 3: defunciones      endocrino 1.082 1.036 0.982 0.907 0.807 1.019 0.1700
+ 4: defunciones      naturales 1.092 1.072 0.991 0.907 0.853 0.965 0.0072
+ 5: defunciones          todas 1.097 1.075 1.011 0.921 0.869 0.977 0.0140
+ 6: defunciones   respiratorio 1.133 1.077 1.058 0.933 0.792 1.100 0.4800
+ 7: defunciones       externas 1.168 1.141 1.187 1.016 0.845 1.222 0.8600
+ 8:   urgencias       mentales 1.086 1.119 0.946 0.871 0.751 1.010 0.3600
+ 9:   urgencias         sangre 1.140 1.198 0.995 0.872 0.681 1.117 0.6400
+10:   urgencias       nervioso 0.954 1.009 0.845 0.887 0.770 1.020 0.3700
+11:   urgencias     endocrinas 1.167 1.162 1.076 0.923 0.832 1.023 0.4000
+12:   urgencias           piel 1.127 1.198 1.051 0.932 0.811 1.072 0.6500
+13:   urgencias    infecciosas 1.178 1.219 1.099 0.933 0.846 1.029 0.4400
+14:   urgencias   traumatismos 1.120 1.148 1.092 0.975 0.924 1.029 0.6500
+15:   urgencias          total 1.029 1.072 1.015 0.986 0.941 1.034 0.8900
+16:   urgencias            ojo 1.093 1.087 1.079 0.987 0.775 1.257 0.9400
+17:   urgencias   circulatorio 0.892 0.916 0.888 0.995 0.895 1.106 0.9400
+18:   urgencias genitourinario 1.134 1.176 1.128 0.995 0.911 1.085 0.9400
+19:   urgencias   respiratorio 0.769 0.833 0.766 0.996 0.903 1.099 0.9400
+20:   urgencias      digestivo 1.015 1.070 1.026 1.012 0.941 1.087 0.9400
+21:   urgencias  osteomuscular 1.014 1.048 1.042 1.028 0.910 1.161 0.9400
+22:   urgencias       sintomas 1.089 1.141 1.191 1.093 0.999 1.196 0.3600
+23:   urgencias           oido 1.024 1.120 1.297 1.266 1.047 1.530 0.2400
+         fuente            cap    M1    M2    M3 ratio    lo    hi      q
+         <char>         <char> <num> <num> <num> <num> <num> <num>  <num>
+
+(iii) M3/M1 dentro de cada estrato de clima de base (todas, circulatorio):
+Key: <cap, clima, bin>
+            cap clima       bin    M1    M3 ratio    lo    hi      q
+         <char> <int>    <char> <num> <num> <num> <num> <num>  <num>
+1: circulatorio     1   [33,36) 1.094 0.931 0.850 0.644 1.122 0.3000
+2: circulatorio     2 [36, Inf) 1.328 1.063 0.800 0.601 1.066 0.2100
+3: circulatorio     3 [36, Inf) 1.014 0.802 0.791 0.687 0.911 0.0034
+4:        todas     1   [33,36) 1.078 0.956 0.887 0.757 1.040 0.2100
+5:        todas     2 [36, Inf) 1.235 1.135 0.919 0.779 1.084 0.3200
+6:        todas     3 [36, Inf) 1.014 0.878 0.866 0.797 0.940 0.0034
+-> defunciones_marginacion_2012_2025.csv, defunciones_clima_marg_2012_2025.csv
