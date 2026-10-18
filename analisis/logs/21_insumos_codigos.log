@@ -1,0 +1,28 @@
+There were 50 or more warnings (use warnings() to see the first 50)
+codigos con >= 100000 atenciones: 164 (85.7% de las atenciones con residencia valida)
+          capitulo codigos    casos
+            <char>   <int>    <int>
+ 1:      Z_control      11 15139904
+ 2:   traumatismos      35 13408063
+ 3:   respiratorio      15 12329841
+ 4:       embarazo      20  9453660
+ 5:       sintomas      11  6872137
+ 6:      digestivo      18  6658377
+ 7:    infecciosas       6  4763247
+ 8: genitourinario      11  4735347
+ 9:     endocrinas       6  2659715
+10:   circulatorio       4  2231973
+11:  osteomuscular       6  1936954
+12:       mentales       4  1172622
+13:           piel       6  1123463
+14:       nervioso       3   788123
+15:           oido       3   671357
+16:          covid       1   558653
+17:         sangre       1   296320
+18:            ojo       1   267681
+19:        tumores       1   164643
+20:      perinatal       1   105506
+          capitulo codigos    casos
+            <char>   <int>    <int>
+codigos sin nombre en el catalogo: 0
+-> conteos_codigos_2012_2025.parquet (48,103,695 filas) y codigos_incluidos.csv

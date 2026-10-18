@@ -32,7 +32,8 @@ print(n[, .(codigos = .N, casos = sum(casos)), by = capitulo][order(-casos)])
 # nombre del código (catálogo DGIS; la copia del repo Datos/cie10/ está vacía, se usa la de PROYECTO_URGENCIAS)
 cat10 <- fread("/STORAGE/genut/dalvarez/PROYECTO_URGENCIAS/DATOS/CODIGOS_CIE10/codigos_cie_10_capitulo_mexico.csv", encoding = "UTF-8")
 setnames(cat10, sub("^﻿", "", names(cat10)))
-n[cat10[nchar(CLAVE) == 3], nombre := i.NOMBRE, on = .(cie3 = CLAVE)]
+cat10[, c3 := sub("X$", "", CLAVE)]   # los códigos sin subdivisión vienen como "I10X", "E86X"
+n[cat10[nchar(c3) == 3], nombre := i.NOMBRE, on = .(cie3 = c3)]
 message("codigos sin nombre en el catalogo: ", sum(is.na(n$nombre)))
 fwrite(n[, .(cie3, capitulo, nombre, casos, mun_dias)], "datos/derivados/codigos_incluidos.csv")
 conteos <- d[cie3 %in% n$cie3, .(casos = .N), by = .(cve, fecha, cap = cie3)]
