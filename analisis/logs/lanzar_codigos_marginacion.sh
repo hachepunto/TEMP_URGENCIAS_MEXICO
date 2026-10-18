@@ -3,6 +3,7 @@
 # Lee codigos_fdr_2012_2025.csv (22). Un proceso por tercil de marginación k: primero D (MARG=k,
 # todos los códigos con q < 0.05 a >= 36 °C, sin Z), luego E (CLIMA=1..3 con MARG=k, los 20 de
 # mayor |beta_post| de calor). 3 procesos × 8 hilos.
+export OPENBLAS_NUM_THREADS=1   # límite de hilos de BLAS (no OMP_NUM_THREADS: data.table y fixest lo toman como tope) (aviso de uso de cores 2026-10-18)
 cd /scratch/home/hachepunto/temp_urgencias/repo/analisis || exit 1
 R=~/miniforge/envs/bio/bin/Rscript
 LC_ALL=C.UTF-8 $R -e '

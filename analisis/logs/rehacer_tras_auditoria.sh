@@ -5,6 +5,7 @@
 # resultados/historico/2026-10-18_hueco2013_defun/.
 # Fase 1: cola de corridas independientes, 3 procesos × 8 hilos (otro job propio usa ~30 cores; tope 55).
 # Fase 2: lo que depende del barrido por código (22, 23, marginación por código, 24) y comparaciones (26).
+export OPENBLAS_NUM_THREADS=1   # límite de hilos de BLAS (no OMP_NUM_THREADS: data.table y fixest lo toman como tope) (aviso de uso de cores 2026-10-18)
 cd /scratch/home/hachepunto/temp_urgencias/repo/analisis || exit 1
 export LC_ALL=C.UTF-8 NHILOS=8
 R=~/miniforge/envs/bio/bin/Rscript

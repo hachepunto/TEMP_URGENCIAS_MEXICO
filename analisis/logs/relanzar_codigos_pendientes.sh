@@ -2,6 +2,7 @@
 # Espera a que terminen los lotes 0 y 1 del barrido por código (PIDs dados) y lanza en dos lotes
 # los códigos comprometidos que aún no tienen resultado. Existe porque el tope de CPU del nodo
 # (55 hilos propios) obligó a detener los lotes 2 y 3 mientras corre otro job propio (mra_bench).
+export OPENBLAS_NUM_THREADS=1   # límite de hilos de BLAS (no OMP_NUM_THREADS: data.table y fixest lo toman como tope) (aviso de uso de cores 2026-10-18)
 cd /scratch/home/hachepunto/temp_urgencias/repo/analisis || exit 1
 while kill -0 1029818 2>/dev/null || kill -0 1029822 2>/dev/null; do sleep 60; done
 awk -F, 'NR>1{print $1}' datos/derivados/codigos_incluidos.csv | while read -r c; do

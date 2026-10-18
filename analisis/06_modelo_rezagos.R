@@ -19,6 +19,10 @@
 
 suppressMessages({library(data.table); library(arrow); library(fixest)})
 nh <- as.integer(Sys.getenv("NHILOS", "8")); setDTthreads(nh); setFixest_nthreads(nh)
+# OpenBLAS (libopenblasp del env bio) abre un hilo por core del nodo (112 en fx-ld1) en cada operación de
+# matrices si no se limita, por encima de NHILOS: rebasa el tope del nodo (aviso de uso de cores, 2026-10-18).
+# El límite sólo se puede fijar antes de arrancar R, así que se exige aquí.
+if (Sys.getenv("OPENBLAS_NUM_THREADS") == "") stop("defina OPENBLAS_NUM_THREADS=1 antes de correr R (no OMP_NUM_THREADS: limitaría a data.table y fixest)")
 
 args    <- commandArgs(trailingOnly = TRUE)
 periodo <- args[1]; stopifnot(!is.na(periodo))
