@@ -11,6 +11,7 @@
 #   CLIMA=1|2|3 restringe a un tercil de clima de base (datos/derivados/clima_base_terciles.csv)
 #   VENTANAS=30 usa clima_ventanas30 (ventanas 0,1-3,4-7,8-14,15-21,22-30; acumulado 0-30)
 #   ANIO_MIN=2014 excluye años anteriores (sensibilidad sin 2012)
+#   EXPO=tmax (default) | at (temperatura aparente) | hum (Tmax con bins >= 33 partidos seco/húmedo) -> clima_ventanas_<EXPO> (ESPECIFICACION_humedad.md)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
 # Al final (si están todos): resultados/tablas/rezagos<sufijo>_<periodo>.csv y _resumen.csv
 # sufijo = "" para base/capitulos; "_fe-anio_semana", "_subgrupos", "_marg<k>" en los demás casos.
@@ -22,6 +23,8 @@ args    <- commandArgs(trailingOnly = TRUE)
 periodo <- args[1]; stopifnot(!is.na(periodo))
 cortes  <- c(-Inf, seq(12, 36, by = 3), Inf)
 niveles <- levels(cut(0, cortes, right = FALSE))
+expo    <- Sys.getenv("EXPO", "tmax"); stopifnot(expo %in% c("tmax", "at", "hum"))   # ESPECIFICACION_humedad.md
+if (expo == "hum") niveles <- c(niveles[1:8], "[33,36) seco", "[33,36) humedo", "[36, Inf) seco", "[36, Inf) humedo")
 ref_id  <- match("[24,27)", niveles)
 v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("ANIO_MIN", "0"))
 ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
@@ -32,13 +35,15 @@ marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
 sufijo  <- paste0(if (fe_spec != "base") paste0("_fe-", fe_spec), if (conteos_tipo != "capitulos") paste0("_", conteos_tipo),
                   if (clima_e != "") paste0("_clima", clima_e), if (marg != "") paste0("_marg", marg),
-                  if (v30) "_v30", if (anio_min > 0) paste0("_desde", anio_min))
+                  if (v30) "_v30", if (anio_min > 0) paste0("_desde", anio_min), if (expo != "tmax") paste0("_expo-", expo))
 if (length(sufijo) == 0) sufijo <- ""   # paste0 de puros NULL devuelve character(0)
 fe      <- switch(fe_spec, base = "cve^anio^mes + ent^dow", anio_semana = "cve^anio + ent^semana + ent^dow")
 dir_out <- paste0("resultados/tablas/rezagos", sufijo)
 dir.create(dir_out, recursive = TRUE, showWarnings = FALSE)
 
-clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_%s.parquet", if (v30) "30" else "", periodo)))
+stopifnot(!(v30 && expo != "tmax"))
+clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_%s.parquet",
+                                              if (v30) "30" else if (expo != "tmax") paste0("_", expo) else "", periodo)))
 if (anio_min > 0) clima <- clima[year(fecha) >= anio_min]
 if (conteos_tipo == "defunciones") clima <- clima[fecha <= as.IDate("2024-12-31")]
 conteos <- as.data.table(read_parquet(sprintf("datos/derivados/conteos_%s_%s.parquet", conteos_tipo, periodo)))
@@ -92,11 +97,11 @@ for (cp in caps) {
   if (anyNA(res)) stop("NA en coeficientes de ", cp)
   fwrite(res, sprintf("%s/%s_%s.csv", dir_out, periodo, cp))
   fwrite(data.table(cap = cp, fe = fe_spec, n_obs = nobs(f), n_mun = uniqueN(d[obs(f), cve]),
-                    casos = sum(d[obs(f), casos]), obs_eliminadas = nrow(d) - nobs(f),
+                    casos = sum(d[obs(f), casos]), obs_eliminadas = nrow(d) - nobs(f), bic = BIC(f), expo = expo,
                     segundos = round(as.numeric(difftime(Sys.time(), t0, units = "secs")))),
          sprintf("%s/%s_%s_resumen.csv", dir_out, periodo, cp))
-  a <- res[cantidad == acum_lab & bin == "[36, Inf)"]
-  message(sprintf("%s: n=%d, >=36 %s = %.3f [%.3f, %.3f] (%.0f s)", cp, nobs(f), acum_lab,
+  a <- res[cantidad == acum_lab & bin == niveles[length(niveles)]]   # bin superior (en EXPO=hum, "[36, Inf) humedo")
+  message(sprintf("%s: n=%d, %s %s = %.3f [%.3f, %.3f] (%.0f s)", cp, nobs(f), niveles[length(niveles)], acum_lab,
                   a$irr, a$irr_lo, a$irr_hi, as.numeric(difftime(Sys.time(), t0, units = "secs"))))
   rm(d, f); gc()
 }

@@ -1,0 +1,32 @@
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8): No such file or directory
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2013.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2012.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2011.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2014.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2016.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2015.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2017.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2018.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2019.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2021.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2022.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2020.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2023.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2024.nc
+OK /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/diaria_daymet_v4r1/daymet_v4_daily_na_vp_2025.nc
+Sat Oct 17 22:09:17 CST 2026 vp terminado
+-rw-r--r--+               1 hachepunto genut 13232864 Oct 17 21:39 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2011.rds
+-rw-r--r--+               1 hachepunto genut 13229640 Oct 17 21:39 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2012.rds
+-rw-r--r--+               1 hachepunto genut 13218723 Oct 17 21:39 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2013.rds
+-rw-r--r--+               1 hachepunto genut 13215640 Oct 17 21:45 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2014.rds
+-rw-r--r--+               1 hachepunto genut 13219753 Oct 17 21:45 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2015.rds
+-rw-r--r--+               1 hachepunto genut 13216850 Oct 17 21:45 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2016.rds
+-rw-r--r--+               1 hachepunto genut 13217239 Oct 17 21:50 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2017.rds
+-rw-r--r--+               1 hachepunto genut 13216434 Oct 17 21:50 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2018.rds
+-rw-r--r--+               1 hachepunto genut 13219068 Oct 17 21:50 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2019.rds
+-rw-r--r--+               1 hachepunto genut 13220376 Oct 17 22:00 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2020.rds
+-rw-r--r--+               1 hachepunto genut 13217200 Oct 17 21:59 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2021.rds
+-rw-r--r--+               1 hachepunto genut 13219697 Oct 17 21:59 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2022.rds
+-rw-r--r--+               1 hachepunto genut 13219828 Oct 17 22:08 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2023.rds
+-rw-r--r--+               1 hachepunto genut 13217531 Oct 17 22:08 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2024.rds
+-rw-r--r--+               1 hachepunto genut 13222311 Oct 17 22:09 /STORAGE/genut/dalvarez/TEMPERATURA_MEXICO_MUNICIPAL/day_results_v4r1/daymet_v4_daily_na_vp_2025.rds
