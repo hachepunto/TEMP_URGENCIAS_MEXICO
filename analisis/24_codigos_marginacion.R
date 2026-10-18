@@ -72,8 +72,8 @@ g <- ggplot(w, aes(ratio, cie3)) + geom_vline(xintercept = 1, colour = "grey50")
   scale_x_log10(breaks = c(0.5, 0.7, 1, 1.4, 2)) + coord_cartesian(xlim = c(0.4, 2.5)) +
   scale_y_discrete(labels = setNames(w$etiqueta, w$cie3)) +
   labs(x = "Cociente M3 / M1 del IRR a ≥36 °C (acumulado 0–14 d)", y = NULL,
-       caption = "M1 = tercil menos marginado, M3 = más marginado (CONAPO 2020). Relleno: q < 0.05 (BH). Códigos con q < 0.05 en el barrido nacional de calor, ordenados por efecto.") +
-  theme_minimal(base_size = 7) + theme(axis.text.y = element_text(size = 5), panel.grid.minor = element_blank())
+       caption = "M1 = tercil menos marginado, M3 = más marginado (CONAPO 2020). Relleno: q < 0.05 (BH).\nCódigos con q < 0.05 en el barrido nacional de calor, ordenados por efecto.") +
+  theme_minimal(base_size = 7) + theme(axis.text.y = element_text(size = 5), panel.grid.minor = element_blank(), plot.caption = element_text(hjust = 0))
 h <- 1.2 + nrow(w) * 0.11
 cairo_pdf(sprintf("resultados/figuras/codigos_marginacion_%s.pdf", periodo), width = 5.5, height = h); print(g); dev.off()
 png(sprintf("resultados/figuras/codigos_marginacion_%s.png", periodo), width = 5.5, height = h, units = "in", res = 220); print(g); dev.off()
