@@ -95,3 +95,30 @@ municipio de la unidad que atiende. Nosotros al de residencia. Para cuantificar 
 - Hipótesis: la asignación por hospital atenúa el efecto (error de medida de exposición para
   quien viaja a atenderse) y concentra la identificación en municipios urbanos; esperamos
   efectos iguales o algo menores con hospital. Se reporta salga lo que salga.
+
+## G. Mortalidad por los mismos municipio-días (añadido 2026-10-17, antes de correr)
+
+Objetivo: dar contenido a la lectura de «acceso» del punto D/E. Si el calor no muestra gradiente social
+en urgencias pero sí en mortalidad (Cohen & Dechezleprêtre 2022; Schwarz et al. 2024), la diferencia
+apunta a que en los municipios marginados la demanda no llega a registrarse como consulta.
+
+- **Datos**: defunciones registradas INEGI redistribuidas por la DGIS en datos abiertos
+  (`DEFUN_2012-2013.zip` … `DEFUN_2024.zip`, descargadas 2026-10-17 con SHA-256). Fecha de
+  **ocurrencia** (no de registro), municipio de **residencia**, causa básica CIE-10. 2012–2024 (2025 no
+  está publicado). Aquí no hay problema de 2013: se valida igual que en urgencias.
+- **Desenlaces (7)**: todas las causas; causas naturales (A00–R99); circulatorio (I00–I99); respiratorio
+  (J00–J99); renal (N17–N19); endocrino (E00–E90); causas externas (V01–Y98). Golpe de calor (X30, T67)
+  se reporta sólo descriptivamente: es demasiado raro para el modelo diario.
+- **Modelo**: idéntico al principal de urgencias (Poisson FE mun×año×mes + edo×dow, bins de Tmax 3 °C
+  ref 24–27, ventanas 0, 1–3, 4–7, 8–14, acumulado 0–14, cluster municipio), sobre los mismos 2,457
+  municipios y el mismo clima. Cantidad principal: acumulado 0–14 a ≥ 36 °C.
+- **Contraste comprometido**: (i) curva de mortalidad vs curva de urgencias (total y circulatorio), para
+  ver si la forma en U de mortalidad coexiste con la lineal de urgencias (como en Gould et al. y
+  Sarmiento et al.); (ii) **gradiente por marginación en mortalidad** (D sobre defunciones, todas las
+  causas y circulatorio) frente al nulo en urgencias; (iii) a clima constante (E) si (ii) da señal.
+- Hipótesis: mortalidad por calor mayor en M3 (como en la literatura mexicana); urgencias sin gradiente
+  → acceso. Si la mortalidad tampoco muestra gradiente con este diseño, la lectura de acceso pierde
+  apoyo y se dice.
+- Lo que se espera perder: las defunciones son ~2,200/día en todo el país; a nivel municipio-día casi
+  todo es cero y `fepois` descartará muchas celdas; los intervalos serán anchos en los capítulos
+  pequeños y en los terciles.
