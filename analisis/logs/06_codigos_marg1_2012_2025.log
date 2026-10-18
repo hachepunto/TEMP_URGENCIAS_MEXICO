@@ -1,0 +1,131 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 1: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: codigos
+NOTE: 103,878/0 fixed-effects (3,161,710 observations) removed because of only 0 outcomes or singletons.
+E86: n=1026656, >=36 acumulado_0_14 = 2.132 [1.879, 2.418] (16 s)
+NOTE: 109,182/0 fixed-effects (3,323,144 observations) removed because of only 0 outcomes or singletons.
+E87: n=865222, >=36 acumulado_0_14 = 1.889 [1.619, 2.204] (13 s)
+NOTE: 97,742/0 fixed-effects (2,975,601 observations) removed because of only 0 outcomes or singletons.
+R04: n=1212765, >=36 acumulado_0_14 = 1.739 [1.526, 1.982] (18 s)
+NOTE: 126,902/0 fixed-effects (3,862,267 observations) removed because of only 0 outcomes or singletons.
+A97: n=326099, >=36 acumulado_0_14 = 1.722 [1.355, 2.189] (7 s)
+NOTE: 93,532/0 fixed-effects (2,846,635 observations) removed because of only 0 outcomes or singletons.
+N23: n=1341731, >=36 acumulado_0_14 = 1.605 [1.462, 1.763] (19 s)
+NOTE: 96,724/0 fixed-effects (2,944,766 observations) removed because of only 0 outcomes or singletons.
+J21: n=1243600, >=36 acumulado_0_14 = 0.582 [0.517, 0.656] (18 s)
+NOTE: 130,606/6 fixed-effects (3,975,556 observations) removed because of only 0 outcomes or singletons.
+A90: n=212810, >=36 acumulado_0_14 = 1.784 [1.179, 2.701] (5 s)
+NOTE: 83,354/0 fixed-effects (2,536,153 observations) removed because of only 0 outcomes or singletons.
+T63: n=1652213, >=36 acumulado_0_14 = 1.632 [1.532, 1.739] (23 s)
+NOTE: 67,984/0 fixed-effects (2,069,573 observations) removed because of only 0 outcomes or singletons.
+J00: n=2118793, >=36 acumulado_0_14 = 0.672 [0.605, 0.747] (30 s)
+NOTE: 97,216/0 fixed-effects (2,959,549 observations) removed because of only 0 outcomes or singletons.
+J20: n=1228817, >=36 acumulado_0_14 = 0.665 [0.572, 0.773] (18 s)
+NOTE: 81,633/0 fixed-effects (2,484,303 observations) removed because of only 0 outcomes or singletons.
+R50: n=1704063, >=36 acumulado_0_14 = 1.363 [1.265, 1.468] (24 s)
+NOTE: 97,453/0 fixed-effects (2,966,152 observations) removed because of only 0 outcomes or singletons.
+N20: n=1222214, >=36 acumulado_0_14 = 1.446 [1.303, 1.604] (17 s)
+NOTE: 111,901/0 fixed-effects (3,406,170 observations) removed because of only 0 outcomes or singletons.
+J46: n=782196, >=36 acumulado_0_14 = 0.692 [0.594, 0.805] (12 s)
+NOTE: 101,284/0 fixed-effects (3,083,205 observations) removed because of only 0 outcomes or singletons.
+J04: n=1105161, >=36 acumulado_0_14 = 0.691 [0.612, 0.781] (15 s)
+NOTE: 111,637/0 fixed-effects (3,398,441 observations) removed because of only 0 outcomes or singletons.
+J98: n=789925, >=36 acumulado_0_14 = 0.743 [0.595, 0.927] (12 s)
+NOTE: 111,247/0 fixed-effects (3,386,645 observations) removed because of only 0 outcomes or singletons.
+J22: n=801721, >=36 acumulado_0_14 = 0.694 [0.601, 0.801] (13 s)
+NOTE: 119,660/0 fixed-effects (3,642,857 observations) removed because of only 0 outcomes or singletons.
+J31: n=545509, >=36 acumulado_0_14 = 0.642 [0.464, 0.889] (9 s)
+NOTE: 110,307/0 fixed-effects (3,357,876 observations) removed because of only 0 outcomes or singletons.
+J96: n=830490, >=36 acumulado_0_14 = 0.774 [0.664, 0.903] (12 s)
+NOTE: 86,998/0 fixed-effects (2,648,066 observations) removed because of only 0 outcomes or singletons.
+J45: n=1540300, >=36 acumulado_0_14 = 0.740 [0.685, 0.799] (21 s)
+NOTE: 103,638/0 fixed-effects (3,154,779 observations) removed because of only 0 outcomes or singletons.
+I50: n=1033587, >=36 acumulado_0_14 = 0.730 [0.634, 0.840] (16 s)
+NOTE: 100,842/0 fixed-effects (3,069,577 observations) removed because of only 0 outcomes or singletons.
+R42: n=1118789, >=36 acumulado_0_14 = 1.247 [1.099, 1.415] (18 s)
+NOTE: 108,275/0 fixed-effects (3,295,624 observations) removed because of only 0 outcomes or singletons.
+I87: n=892742, >=36 acumulado_0_14 = 1.313 [1.108, 1.557] (15 s)
+NOTE: 97,656/0 fixed-effects (2,971,987 observations) removed because of only 0 outcomes or singletons.
+S91: n=1216379, >=36 acumulado_0_14 = 1.279 [1.153, 1.417] (19 s)
+NOTE: 104,747/0 fixed-effects (3,187,886 observations) removed because of only 0 outcomes or singletons.
+S51: n=1000480, >=36 acumulado_0_14 = 1.254 [1.098, 1.433] (16 s)
+NOTE: 74,543/0 fixed-effects (2,268,957 observations) removed because of only 0 outcomes or singletons.
+J06: n=1919409, >=36 acumulado_0_14 = 0.842 [0.788, 0.899] (34 s)
+NOTE: 106,018/0 fixed-effects (3,226,917 observations) removed because of only 0 outcomes or singletons.
+T07: n=961449, >=36 acumulado_0_14 = 1.225 [1.097, 1.368] (18 s)
+NOTE: 91,946/0 fixed-effects (2,798,796 observations) removed because of only 0 outcomes or singletons.
+J03: n=1389570, >=36 acumulado_0_14 = 0.833 [0.749, 0.927] (24 s)
+NOTE: 78,407/0 fixed-effects (2,386,205 observations) removed because of only 0 outcomes or singletons.
+T14: n=1802161, >=36 acumulado_0_14 = 1.220 [1.140, 1.305] (29 s)
+NOTE: 57,043/0 fixed-effects (1,735,852 observations) removed because of only 0 outcomes or singletons.
+N39: n=2452514, >=36 acumulado_0_14 = 1.165 [1.113, 1.219] (36 s)
+NOTE: 103,808/0 fixed-effects (3,159,724 observations) removed because of only 0 outcomes or singletons.
+N94: n=1028642, >=36 acumulado_0_14 = 1.178 [1.033, 1.344] (14 s)
+NOTE: 108,083/0 fixed-effects (3,289,958 observations) removed because of only 0 outcomes or singletons.
+N12: n=898408, >=36 acumulado_0_14 = 1.137 [1.014, 1.275] (14 s)
+NOTE: 96,679/0 fixed-effects (2,942,582 observations) removed because of only 0 outcomes or singletons.
+T78: n=1245784, >=36 acumulado_0_14 = 1.217 [1.121, 1.321] (16 s)
+NOTE: 91,780/0 fixed-effects (2,793,716 observations) removed because of only 0 outcomes or singletons.
+J44: n=1394650, >=36 acumulado_0_14 = 0.886 [0.799, 0.983] (18 s)
+NOTE: 102,678/0 fixed-effects (3,125,228 observations) removed because of only 0 outcomes or singletons.
+R52: n=1063138, >=36 acumulado_0_14 = 1.164 [1.067, 1.269] (14 s)
+NOTE: 61,296/0 fixed-effects (1,865,530 observations) removed because of only 0 outcomes or singletons.
+I10: n=2322836, >=36 acumulado_0_14 = 0.853 [0.813, 0.894] (29 s)
+NOTE: 89,266/0 fixed-effects (2,717,093 observations) removed because of only 0 outcomes or singletons.
+D64: n=1471273, >=36 acumulado_0_14 = 1.155 [1.050, 1.270] (19 s)
+NOTE: 56,189/0 fixed-effects (1,709,728 observations) removed because of only 0 outcomes or singletons.
+A09: n=2478638, >=36 acumulado_0_14 = 1.154 [1.104, 1.207] (31 s)
+NOTE: 95,879/0 fixed-effects (2,918,112 observations) removed because of only 0 outcomes or singletons.
+L03: n=1270254, >=36 acumulado_0_14 = 1.144 [1.039, 1.259] (17 s)
+NOTE: 111,915/0 fixed-effects (3,406,345 observations) removed because of only 0 outcomes or singletons.
+L20: n=782021, >=36 acumulado_0_14 = 1.199 [1.053, 1.366] (11 s)
+NOTE: 107,862/0 fixed-effects (3,283,019 observations) removed because of only 0 outcomes or singletons.
+L30: n=905347, >=36 acumulado_0_14 = 1.181 [0.989, 1.409] (12 s)
+NOTE: 99,162/0 fixed-effects (3,017,896 observations) removed because of only 0 outcomes or singletons.
+L50: n=1170470, >=36 acumulado_0_14 = 1.153 [1.026, 1.296] (15 s)
+NOTE: 95,616/0 fixed-effects (2,910,103 observations) removed because of only 0 outcomes or singletons.
+S81: n=1278263, >=36 acumulado_0_14 = 1.156 [1.054, 1.267] (16 s)
+NOTE: 121,950/0 fixed-effects (3,711,922 observations) removed because of only 0 outcomes or singletons.
+O26: n=476444, >=36 acumulado_0_14 = 1.294 [1.084, 1.544] (8 s)
+NOTE: 90,024/0 fixed-effects (2,740,061 observations) removed because of only 0 outcomes or singletons.
+N18: n=1448305, >=36 acumulado_0_14 = 0.844 [0.755, 0.944] (18 s)
+NOTE: 100,206/0 fixed-effects (3,049,980 observations) removed because of only 0 outcomes or singletons.
+S92: n=1138386, >=36 acumulado_0_14 = 1.169 [1.027, 1.329] (14 s)
+NOTE: 132,525/1 fixed-effects (4,034,089 observations) removed because of only 0 outcomes or singletons.
+O75: n=154277, >=36 acumulado_0_14 = 1.622 [1.075, 2.445] (5 s)
+NOTE: 62,158/0 fixed-effects (1,891,870 observations) removed because of only 0 outcomes or singletons.
+J02: n=2296496, >=36 acumulado_0_14 = 0.892 [0.845, 0.940] (28 s)
+NOTE: 96,031/0 fixed-effects (2,922,944 observations) removed because of only 0 outcomes or singletons.
+H10: n=1265422, >=36 acumulado_0_14 = 1.154 [1.039, 1.282] (15 s)
+NOTE: 107,545/0 fixed-effects (3,273,466 observations) removed because of only 0 outcomes or singletons.
+F32: n=914900, >=36 acumulado_0_14 = 1.187 [1.065, 1.323] (11 s)
+NOTE: 91,849/0 fixed-effects (2,795,551 observations) removed because of only 0 outcomes or singletons.
+S09: n=1392815, >=36 acumulado_0_14 = 1.116 [1.018, 1.224] (18 s)
+NOTE: 110,908/0 fixed-effects (3,375,893 observations) removed because of only 0 outcomes or singletons.
+O62: n=812473, >=36 acumulado_0_14 = 1.168 [1.023, 1.334] (12 s)
+NOTE: 75,353/0 fixed-effects (2,293,182 observations) removed because of only 0 outcomes or singletons.
+S01: n=1895184, >=36 acumulado_0_14 = 1.095 [1.037, 1.157] (23 s)
+NOTE: 94,223/0 fixed-effects (2,867,735 observations) removed because of only 0 outcomes or singletons.
+R11: n=1320631, >=36 acumulado_0_14 = 1.076 [0.992, 1.166] (17 s)
+NOTE: 83,145/0 fixed-effects (2,530,444 observations) removed because of only 0 outcomes or singletons.
+T00: n=1657922, >=36 acumulado_0_14 = 1.072 [0.999, 1.151] (22 s)
+NOTE: 76,720/0 fixed-effects (2,335,004 observations) removed because of only 0 outcomes or singletons.
+K81: n=1853362, >=36 acumulado_0_14 = 1.091 [1.019, 1.169] (23 s)
+NOTE: 93,845/0 fixed-effects (2,856,303 observations) removed because of only 0 outcomes or singletons.
+S72: n=1332063, >=36 acumulado_0_14 = 0.919 [0.832, 1.016] (17 s)
+NOTE: 72,173/0 fixed-effects (2,196,287 observations) removed because of only 0 outcomes or singletons.
+O23: n=1992079, >=36 acumulado_0_14 = 1.072 [1.010, 1.139] (26 s)
+NOTE: 95,941/0 fixed-effects (2,920,310 observations) removed because of only 0 outcomes or singletons.
+G43: n=1268056, >=36 acumulado_0_14 = 0.892 [0.806, 0.988] (15 s)
+NOTE: 70,692/0 fixed-effects (2,151,616 observations) removed because of only 0 outcomes or singletons.
+E11: n=2036750, >=36 acumulado_0_14 = 1.092 [1.032, 1.154] (27 s)
+NOTE: 91,130/0 fixed-effects (2,773,735 observations) removed because of only 0 outcomes or singletons.
+K52: n=1414631, >=36 acumulado_0_14 = 1.074 [0.985, 1.171] (19 s)
+NOTE: 49,881/0 fixed-effects (1,517,998 observations) removed because of only 0 outcomes or singletons.
+R10: n=2670368, >=36 acumulado_0_14 = 1.073 [1.030, 1.117] (34 s)
+NOTE: 87,575/0 fixed-effects (2,665,543 observations) removed because of only 0 outcomes or singletons.
+K92: n=1522823, >=36 acumulado_0_14 = 0.913 [0.822, 1.015] (19 s)
+Warning messages:
+1: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+2: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 

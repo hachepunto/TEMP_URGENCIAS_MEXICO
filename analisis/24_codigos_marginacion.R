@@ -39,10 +39,18 @@ e <- rbindlist(lapply(1:3, function(j) rbindlist(lapply(1:3, function(k)
   leer(sprintf("resultados/tablas/rezagos_codigos_clima%d_marg%d", j, k), sprintf("C%d_M%d", j, k))))))
 if (!is.null(e) && nrow(e)) {
   e[, `:=`(clima = as.integer(substr(estrato, 2, 2)), marg = as.integer(substr(estrato, 5, 5)))]
+  # estratos sin identificación: en el tercil frío (C1) casi no hay días >= 36 °C dentro de un tercil de
+  # marginación; los coeficientes quedan degenerados (EE > 1 en log) o el ajuste falla por colinealidad
+  # (06 se detiene: 14/20 códigos sin resultado en C1). Se descartan con la regla fija se > 1.
+  n_deg <- e[se > 1, .N]; e <- e[se <= 1]
+  message(sprintf("E: %d estimaciones descartadas por EE > 1 (no identificadas); %d conservadas", n_deg, nrow(e)))
   e <- merge(e, fdr[, .(cie3, nombre, beta_post)], by = "cie3")
   e[, `:=`(irr = exp(beta), lo = exp(beta - 1.96 * se), hi = exp(beta + 1.96 * se))]
   # dentro de cada clima: M3 vs M1
   ee <- dcast(e, cie3 + nombre + clima ~ marg, value.var = c("beta", "se"))
+  if (!"beta_1" %in% names(ee)) ee[, `:=`(beta_1 = NA_real_, se_1 = NA_real_)]
+  if (!"beta_3" %in% names(ee)) ee[, `:=`(beta_3 = NA_real_, se_3 = NA_real_)]
+  ee <- ee[!is.na(beta_1) & !is.na(beta_3)]
   ee[, `:=`(ratio = exp(beta_3 - beta_1), lo = exp(beta_3 - beta_1 - 1.96 * sqrt(se_3^2 + se_1^2)),
             hi = exp(beta_3 - beta_1 + 1.96 * sqrt(se_3^2 + se_1^2)))]
   ee[, q := p.adjust(2 * pnorm(-abs((beta_3 - beta_1) / sqrt(se_3^2 + se_1^2))), "BH")]
@@ -57,7 +65,7 @@ w[, cie3 := factor(cie3, levels = rev(cie3))]
 w[, etiqueta := sprintf("%s %s", cie3, tolower(substr(nombre, 1, 34)))]
 w[, sig := q < 0.05]
 g <- ggplot(w, aes(ratio, cie3)) + geom_vline(xintercept = 1, colour = "grey50") +
-  geom_errorbarh(aes(xmin = lo, xmax = hi), height = 0, colour = "grey60", linewidth = 0.3) +
+  geom_errorbar(aes(xmin = lo, xmax = hi), orientation = "y", width = 0, colour = "grey60", linewidth = 0.3) +
   geom_point(aes(colour = sig, shape = sig), size = 1.4) +
   scale_colour_manual(values = c(`TRUE` = "#c44536", `FALSE` = "grey30"), guide = "none") +
   scale_shape_manual(values = c(`TRUE` = 16, `FALSE` = 1), guide = "none") +

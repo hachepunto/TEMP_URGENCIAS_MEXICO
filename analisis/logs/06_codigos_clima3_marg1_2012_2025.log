@@ -1,0 +1,53 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 3: 819 municipios
+tercil de marginación 1: 288 municipios
+FE: cve^anio^mes + ent^dow | conteos: codigos
+NOTE: 37,107/0 fixed-effects (1,129,356 observations) removed because of only 0 outcomes or singletons.
+E86: n=343476, >=36 acumulado_0_14 = 2.086 [1.716, 2.535] (6 s)
+NOTE: 38,651/0 fixed-effects (1,176,461 observations) removed because of only 0 outcomes or singletons.
+E87: n=296371, >=36 acumulado_0_14 = 1.738 [1.349, 2.241] (5 s)
+NOTE: 36,198/0 fixed-effects (1,101,855 observations) removed because of only 0 outcomes or singletons.
+R04: n=370977, >=36 acumulado_0_14 = 1.559 [1.293, 1.880] (5 s)
+NOTE: 43,014/0 fixed-effects (1,309,098 observations) removed because of only 0 outcomes or singletons.
+A97: n=163734, >=36 acumulado_0_14 = 1.488 [0.937, 2.363] (3 s)
+NOTE: 32,876/0 fixed-effects (1,000,563 observations) removed because of only 0 outcomes or singletons.
+N23: n=472269, >=36 acumulado_0_14 = 1.636 [1.402, 1.910] (6 s)
+NOTE: 35,081/0 fixed-effects (1,068,160 observations) removed because of only 0 outcomes or singletons.
+J21: n=404672, >=36 acumulado_0_14 = 0.548 [0.463, 0.647] (6 s)
+NOTE: 44,300/6 fixed-effects (1,348,489 observations) removed because of only 0 outcomes or singletons.
+A90: n=124343, >=36 acumulado_0_14 = 2.172 [1.159, 4.071] (2 s)
+NOTE: 33,028/0 fixed-effects (1,004,989 observations) removed because of only 0 outcomes or singletons.
+T63: n=467843, >=36 acumulado_0_14 = 2.115 [1.758, 2.545] (6 s)
+NOTE: 26,589/0 fixed-effects (809,387 observations) removed because of only 0 outcomes or singletons.
+J00: n=663445, >=36 acumulado_0_14 = 0.667 [0.564, 0.787] (9 s)
+NOTE: 32,763/0 fixed-effects (997,433 observations) removed because of only 0 outcomes or singletons.
+J20: n=475399, >=36 acumulado_0_14 = 0.672 [0.547, 0.827] (7 s)
+NOTE: 28,609/0 fixed-effects (870,604 observations) removed because of only 0 outcomes or singletons.
+R50: n=602228, >=36 acumulado_0_14 = 1.517 [1.351, 1.704] (8 s)
+NOTE: 33,046/0 fixed-effects (1,005,746 observations) removed because of only 0 outcomes or singletons.
+N20: n=467086, >=36 acumulado_0_14 = 1.407 [1.173, 1.687] (6 s)
+NOTE: 40,318/0 fixed-effects (1,227,323 observations) removed because of only 0 outcomes or singletons.
+J46: n=245509, >=36 acumulado_0_14 = 0.702 [0.553, 0.892] (4 s)
+NOTE: 37,391/0 fixed-effects (1,138,336 observations) removed because of only 0 outcomes or singletons.
+J04: n=334496, >=36 acumulado_0_14 = 0.633 [0.532, 0.754] (4 s)
+NOTE: 41,062/0 fixed-effects (1,250,030 observations) removed because of only 0 outcomes or singletons.
+J98: n=222802, >=36 acumulado_0_14 = 0.850 [0.569, 1.271] (3 s)
+NOTE: 38,957/0 fixed-effects (1,185,863 observations) removed because of only 0 outcomes or singletons.
+J22: n=286969, >=36 acumulado_0_14 = 0.719 [0.572, 0.905] (4 s)
+NOTE: 41,859/0 fixed-effects (1,274,348 observations) removed because of only 0 outcomes or singletons.
+J31: n=198484, >=36 acumulado_0_14 = 0.663 [0.448, 0.981] (3 s)
+NOTE: 39,498/0 fixed-effects (1,202,380 observations) removed because of only 0 outcomes or singletons.
+J96: n=270452, >=36 acumulado_0_14 = 0.872 [0.676, 1.125] (4 s)
+NOTE: 30,818/0 fixed-effects (938,157 observations) removed because of only 0 outcomes or singletons.
+J45: n=534675, >=36 acumulado_0_14 = 0.720 [0.639, 0.811] (7 s)
+NOTE: 36,298/0 fixed-effects (1,104,949 observations) removed because of only 0 outcomes or singletons.
+I50: n=367883, >=36 acumulado_0_14 = 0.686 [0.565, 0.832] (5 s)
+Warning messages:
+1: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+2: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+3: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+4: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+5: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+6: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+7: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 

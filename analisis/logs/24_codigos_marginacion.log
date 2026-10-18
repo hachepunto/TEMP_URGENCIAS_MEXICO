@@ -1,0 +1,38 @@
+D: 62 códigos; M3/M1 con q < 0.05: 1 (0 con M3 > M1, 1 con M3 < M1); mediana del cociente 0.970
+      cie3                               nombre irr_M1 irr_M3 ratio    lo    hi
+    <char>                               <char>  <num>  <num> <num> <num> <num>
+ 1:    R04 HEMORRAGIA DE LAS VÍAS RESPIRATORIAS   1.74   2.14  1.23  0.79  1.92
+ 2:    N23        CÓLICO RENAL, NO ESPECIFICADO   1.61   1.13  0.71  0.45  1.11
+ 3:    A90   FIEBRE DEL DENGUE [DENGUE CLÁSICO]   1.78   3.21  1.80  0.74  4.39
+ 4:    T63 EFECTO TÓXICO DEL CONTACTO CON ANIMA   1.63   1.03  0.63  0.53  0.75
+ 5:    N94 DOLOR Y OTRAS AFECCIONES RELACIONADA   1.18   0.96  0.82  0.52  1.27
+ 6:    T78 EFECTOS ADVERSOS, NO CLASIFICADOS EN   1.22   0.85  0.70  0.49  1.01
+ 7:    O26 ATENCIÓN A LA MADRE POR OTRAS COMPLI   1.29   2.07  1.60  0.87  2.93
+ 8:    S92 FRACTURA DEL PIE, EXCEPTO DEL TOBILL   1.17   1.72  1.47  0.86  2.52
+ 9:    O75 OTRAS COMPLICACIONES DEL TRABAJO DE    1.62   1.17  0.72  0.39  1.34
+10:    J45                                 ASMA   0.74   0.91  1.23  0.96  1.59
+11:    J96 INSUFICIENCIA RESPIRATORIA, NO CLASI   0.77   0.36  0.47  0.23  0.94
+12:    J98       OTROS TRASTORNOS RESPIRATORIOS   0.74   0.54  0.72  0.44  1.19
+13:    J21                  BRONQUIOLITIS AGUDA   0.58   0.99  1.71  1.10  2.64
+          q
+      <num>
+ 1: 9.2e-01
+ 2: 8.4e-01
+ 3: 8.9e-01
+ 4: 1.9e-05
+ 5: 9.2e-01
+ 6: 5.9e-01
+ 7: 8.4e-01
+ 8: 8.8e-01
+ 9: 9.2e-01
+10: 8.4e-01
+11: 5.2e-01
+12: 8.9e-01
+13: 4.2e-01
+E: 22 estimaciones descartadas por EE > 1 (no identificadas); 116 conservadas
+E: 20 códigos × 9 estratos; M3/M1 con q < 0.05 dentro de clima: 1 de 38
+Key: <cie3, nombre, clima>
+     cie3                         nombre clima ratio    lo    hi
+   <char>                         <char> <int> <num> <num> <num>
+1:    T63 EFECTO TÓXICO DEL CONTACTO CON     3  0.54  0.37  0.78
+-> codigos_marginacion_2012_2025.csv, codigos_clima_marg_2012_2025.csv, figuras/codigos_marginacion_2012_2025

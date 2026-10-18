@@ -1,0 +1,28 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de clima de base 1: 823 municipios
+tercil de marginación 3: 244 municipios
+FE: cve^anio^mes + ent^dow | conteos: codigos
+NOTE: 39,024/18 fixed-effects (1,188,091 observations) removed because of only 0 outcomes or singletons.
+E86: n=59725, >=36 acumulado_0_14 = 4.747 [0.000, 115205.549] (3 s)
+NOTE: 39,593/16 fixed-effects (1,205,453 observations) removed because of only 0 outcomes or singletons.
+E87: n=42363, >=36 acumulado_0_14 = 0.000 [0.000, 0.000] (2 s)
+NOTE: 38,076/12 fixed-effects (1,159,344 observations) removed because of only 0 outcomes or singletons.
+R04: n=88472, >=36 acumulado_0_14 = 0.000 [0.000, 0.000] (3 s)
+NOTE: 40,101/27 fixed-effects (1,220,909 observations) removed because of only 0 outcomes or singletons.
+A97: n=26907, >=36 acumulado_0_14 = 9.428 [0.534, 166.408] (1 s)
+NOTE: 39,270/14 fixed-effects (1,195,572 observations) removed because of only 0 outcomes or singletons.
+N23: n=52244, >=36 acumulado_0_14 = 120228.720 [64.727, 223321841.896] (1 s)
+NOTE: 38,577/10 fixed-effects (1,174,504 observations) removed because of only 0 outcomes or singletons.
+J21: n=73312, >=36 acumulado_0_14 = 2.543 [0.000, 573918.257] (1 s)
+NOTE: 40,785/47 fixed-effects (1,241,670 observations) removed because of only 0 outcomes or singletons.
+Error: all(regs %in% names(b)) is not TRUE
+In addition: Warning messages:
+1: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+2: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+3: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+4: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+5: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+6: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+7: The VCOV matrix is not positive definite and was 'fixed' (see ?vcov). 
+Execution halted
