@@ -7,6 +7,8 @@
 #   CONTEOS=capitulos (default) | subgrupos | hospital -> datos/derivados/conteos_<CONTEOS>_<periodo>.parquet
 #   MARG=1|2|3  restringe a un tercil de marginación CONAPO 2020 (datos/derivados/marginacion_terciles_2020.csv)
 #   CLIMA=1|2|3 restringe a un tercil de clima de base (datos/derivados/clima_base_terciles.csv)
+#   VENTANAS=30 usa clima_ventanas30 (ventanas 0,1-3,4-7,8-14,15-21,22-30; acumulado 0-30)
+#   ANIO_MIN=2014 excluye años anteriores (sensibilidad sin 2012)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
 # Al final (si están todos): resultados/tablas/rezagos<sufijo>_<periodo>.csv y _resumen.csv
 # sufijo = "" para base/capitulos; "_fe-anio_semana", "_subgrupos", "_marg<k>" en los demás casos.
@@ -19,19 +21,23 @@ periodo <- args[1]; stopifnot(!is.na(periodo))
 cortes  <- c(-Inf, seq(12, 36, by = 3), Inf)
 niveles <- levels(cut(0, cortes, right = FALSE))
 ref_id  <- match("[24,27)", niveles)
-ventanas <- c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
+v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("ANIO_MIN", "0"))
+ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
+acum_lab <- if (v30) "acumulado_0_30" else "acumulado_0_14"
 fe_spec <- Sys.getenv("FE_SPEC", "base"); conteos_tipo <- Sys.getenv("CONTEOS", "capitulos")
 stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital"))
 marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
 sufijo  <- paste0(if (fe_spec != "base") paste0("_fe-", fe_spec), if (conteos_tipo != "capitulos") paste0("_", conteos_tipo),
-                  if (clima_e != "") paste0("_clima", clima_e), if (marg != "") paste0("_marg", marg))
+                  if (clima_e != "") paste0("_clima", clima_e), if (marg != "") paste0("_marg", marg),
+                  if (v30) "_v30", if (anio_min > 0) paste0("_desde", anio_min))
 if (length(sufijo) == 0) sufijo <- ""   # paste0 de puros NULL devuelve character(0)
 fe      <- switch(fe_spec, base = "cve^anio^mes + ent^dow", anio_semana = "cve^anio + ent^semana + ent^dow")
 dir_out <- paste0("resultados/tablas/rezagos", sufijo)
 dir.create(dir_out, recursive = TRUE, showWarnings = FALSE)
 
-clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas_%s.parquet", periodo)))
+clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_%s.parquet", if (v30) "30" else "", periodo)))
+if (anio_min > 0) clima <- clima[year(fecha) >= anio_min]
 conteos <- as.data.table(read_parquet(sprintf("datos/derivados/conteos_%s_%s.parquet", conteos_tipo, periodo)))
 if (clima_e != "") {
   cb <- fread("datos/derivados/clima_base_terciles.csv")
@@ -71,7 +77,7 @@ for (cp in caps) {
                          coef = b[nm], se = sqrt(diag(V[nm, nm])), se_2way = sqrt(diag(V2[nm, nm])))
     # acumulado 0-14: suma de coeficientes por día de rezago
     w <- setNames(as.numeric(ventanas), nm)
-    acum <- data.table(cap = cp, cantidad = "acumulado_0_14", bin = niveles[k],
+    acum <- data.table(cap = cp, cantidad = acum_lab, bin = niveles[k],
                        coef = sum(w * b[nm]), se = sqrt(drop(t(w) %*% V[nm, nm] %*% w)),
                        se_2way = sqrt(drop(t(w) %*% V2[nm, nm] %*% w)))
     rbind(perfil, acum)
@@ -86,8 +92,8 @@ for (cp in caps) {
                     casos = sum(d[obs(f), casos]), obs_eliminadas = nrow(d) - nobs(f),
                     segundos = round(as.numeric(difftime(Sys.time(), t0, units = "secs")))),
          sprintf("%s/%s_%s_resumen.csv", dir_out, periodo, cp))
-  a <- res[cantidad == "acumulado_0_14" & bin == "[36, Inf)"]
-  message(sprintf("%s: n=%d, >=36 acumulado 0-14 = %.3f [%.3f, %.3f] (%.0f s)", cp, nobs(f),
+  a <- res[cantidad == acum_lab & bin == "[36, Inf)"]
+  message(sprintf("%s: n=%d, >=36 %s = %.3f [%.3f, %.3f] (%.0f s)", cp, nobs(f), acum_lab,
                   a$irr, a$irr_lo, a$irr_hi, as.numeric(difftime(Sys.time(), t0, units = "secs"))))
   rm(d, f); gc()
 }
