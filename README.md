@@ -12,7 +12,7 @@ Proyecto iniciado por Diana Álvarez ([dialvas/TEMP_URGENCIAS_MEXICO](https://gi
 **2026-10-18.** Resultados vigentes tras la segunda auditoría (`analisis/AUDITORIA_2026-10-18.md`):
 urgencias sin el periodo que cubre el archivo DGIS 2013 (2012-12-26 a 2013-12-25; el archivo no
 identifica el municipio de residencia, ver `AUDITORIA_2026-10-17.md`) y mortalidad con los 13 años
-completos. Versiones anteriores congeladas en `analisis/resultados/historico/` (no versionado).
+completos. Versiones anteriores de las tablas congeladas en `analisis/resultados/historico/<fecha>_<motivo>/`.
 Borrador del manuscrito en `Drive:Claude-remote/temp-urgencias/manuscript/`.
 
 Efecto de un día con Tmax ≥ 36 °C frente a 24–27 °C, exposición por municipio de residencia
