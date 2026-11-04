@@ -1,0 +1,53 @@
+Percentiles locales de Tmax por tercil de marginación:
+    marg municipios p99_mediana p75_mediana pct_p99_mayor_36
+   <num>      <num>       <num>       <num>            <num>
+1:     1        819       35.17       29.88            41.15
+2:     2        819       34.74       29.98            39.32
+3:     3        819       34.84       30.47            37.85
+
+Días con Tmax >= 36 °C por tercil (2012-2024):
+    marg dias_ge36 municipios tmax_mediana tmax_p90 pct_ge38 pct_ge40
+   <num>     <num>      <num>        <num>    <num>    <num>    <num>
+1:     1    250210        606        37.69    40.80    43.74    16.09
+2:     2    139023        602        36.99    39.26    24.82     5.57
+3:     3    110659        661        36.80    38.63    17.44     2.85
+   frac36_local_mediana pct_en_p99_local pct_bajo_p95_local
+                  <num>            <num>              <num>
+1:                24.55             8.49              68.94
+2:                11.54            12.96              53.23
+3:                 9.83            16.49              44.55
+
+Nacional, acumulado 0-14 frente a [25,75):
+Key: <bin>
+          bin circulatorio todas todas_65mas
+       <char>        <num> <num>       <num>
+ 1:     [0,1)        1.184 1.007       1.037
+ 2:     [1,5)        1.302 1.233       1.302
+ 3:   [10,25)        1.143 1.103       1.141
+ 4:   [25,75)        1.000 1.000       1.000
+ 5:    [5,10)        1.208 1.138       1.165
+ 6:   [75,90)        1.005 0.994       0.993
+ 7:   [90,95)        1.056 1.026       1.046
+ 8: [95,97.5)        1.070 1.054       1.072
+ 9: [97.5,99)        1.194 1.148       1.154
+10:  [99,100]        1.308 1.195       1.289
+
+Cocientes M3/M1 (acumulado 0-14 frente a [25,75)):
+            parte          cap       bin    T1    T2    T3 ratio    lo    hi
+           <char>       <char>    <char> <num> <num> <num> <num> <num> <num>
+1: L-a secundario circulatorio [97.5,99)  1.21  1.15  1.11 0.916 0.788  1.07
+2: L-a secundario        todas [97.5,99)  1.17  1.08  1.07 0.921 0.841  1.01
+3: L-a secundario  todas_65mas [97.5,99)  1.16  1.17  1.09 0.942 0.844  1.05
+4:  L-a principal circulatorio  [99,100]  1.28  1.45  1.33 1.040 0.916  1.18
+5:  L-a principal        todas  [99,100]  1.18  1.27  1.21 1.020 0.947  1.10
+6:  L-a principal  todas_65mas  [99,100]  1.29  1.34  1.24 0.966 0.876  1.06
+        p     q ancho_log
+    <num> <num>     <num>
+1: 0.2570    NA     0.302
+2: 0.0741    NA     0.182
+3: 0.2820    NA     0.218
+4: 0.5450 0.574     0.255
+5: 0.5740 0.574     0.154
+6: 0.4810 0.574     0.194
+
+L-a: todas a [99,100] M3/M1 1.022 [0.947, 1.104] (referencia absoluta 0.921) -> aclimatación: EXPLICA el gradiente
