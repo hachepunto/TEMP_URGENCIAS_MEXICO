@@ -14,6 +14,7 @@
 #   CONTEOS=defunciones_edad (J-a) y MUNICIPIOS=<archivo de cve> (J-b): ESPECIFICACION_mortalidad_marginacion.md
 #   CONTEOS=defunciones_k (K-a urbano/rural, K-c asistencia médica): ESPECIFICACION_mortalidad_gradiente_K.md
 #   EXPO=tmax (default) | at (temperatura aparente) | hum (Tmax con bins >= 33 partidos seco/húmedo) -> clima_ventanas_<EXPO> (ESPECIFICACION_humedad.md)
+#   EXPO=rel: Tmax en bins por percentil local, referencia [25,75) (ESPECIFICACION_aclimatacion_L.md, 33)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
 # Al final (si están todos): resultados/tablas/rezagos<sufijo>_<periodo>.csv y _resumen.csv
 # sufijo = "" para base/capitulos; "_fe-anio_semana", "_subgrupos", "_marg<k>" en los demás casos.
@@ -29,9 +30,10 @@ args    <- commandArgs(trailingOnly = TRUE)
 periodo <- args[1]; stopifnot(!is.na(periodo))
 cortes  <- c(-Inf, seq(12, 36, by = 3), Inf)
 niveles <- levels(cut(0, cortes, right = FALSE))
-expo    <- Sys.getenv("EXPO", "tmax"); stopifnot(expo %in% c("tmax", "at", "hum"))   # ESPECIFICACION_humedad.md
+expo    <- Sys.getenv("EXPO", "tmax"); stopifnot(expo %in% c("tmax", "at", "hum", "rel"))   # ESPECIFICACION_humedad.md; rel: ESPECIFICACION_aclimatacion_L.md
+if (expo == "rel") niveles <- c("[0,1)", "[1,5)", "[5,10)", "[10,25)", "[25,75)", "[75,90)", "[90,95)", "[95,97.5)", "[97.5,99)", "[99,100]")   # percentil local de Tmax
 if (expo == "hum") niveles <- c(niveles[1:8], "[33,36) seco", "[33,36) humedo", "[36, Inf) seco", "[36, Inf) humedo")
-ref_id  <- match("[24,27)", niveles)
+ref_id  <- match(if (expo == "rel") "[25,75)" else "[24,27)", niveles); stopifnot(!is.na(ref_id))
 v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("ANIO_MIN", "0"))
 ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
 acum_lab <- if (v30) "acumulado_0_30" else "acumulado_0_14"

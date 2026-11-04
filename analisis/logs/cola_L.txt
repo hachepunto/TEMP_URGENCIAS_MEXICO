@@ -1,0 +1,8 @@
+EXPO=rel CONTEOS=defunciones |06_defunciones_expo-rel|todas circulatorio
+EXPO=rel CONTEOS=defunciones_edad |06_defunciones_edad_expo-rel|todas_65mas
+EXPO=rel CONTEOS=defunciones MARG=1|06_defunciones_marg1_expo-rel|todas circulatorio
+EXPO=rel CONTEOS=defunciones_edad MARG=1|06_defunciones_edad_marg1_expo-rel|todas_65mas
+EXPO=rel CONTEOS=defunciones MARG=2|06_defunciones_marg2_expo-rel|todas circulatorio
+EXPO=rel CONTEOS=defunciones_edad MARG=2|06_defunciones_edad_marg2_expo-rel|todas_65mas
+EXPO=rel CONTEOS=defunciones MARG=3|06_defunciones_marg3_expo-rel|todas circulatorio
+EXPO=rel CONTEOS=defunciones_edad MARG=3|06_defunciones_edad_marg3_expo-rel|todas_65mas
