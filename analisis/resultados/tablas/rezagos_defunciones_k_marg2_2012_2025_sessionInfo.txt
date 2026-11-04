@@ -1,0 +1,31 @@
+R version 4.5.2 (2025-10-31)
+Platform: x86_64-conda-linux-gnu
+Running under: Ubuntu 26.04 LTS
+
+Matrix products: default
+BLAS/LAPACK: /scratch/home/hachepunto/miniforge/envs/bio/lib/libopenblasp-r0.3.30.so;  LAPACK version 3.12.0
+
+locale:
+ [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+ [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+ [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
+
+time zone: America/Mexico_City
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] fixest_0.14.2       arrow_22.0.0        data.table_1.18.2.1
+
+loaded via a namespace (and not attached):
+ [1] assertthat_0.2.1    Formula_1.2-5       R6_2.6.1           
+ [4] numDeriv_2016.8-1.1 bit_4.6.0           tidyselect_1.2.1   
+ [7] lattice_0.22-9      magrittr_2.0.4      stringmagic_1.3.0  
+[10] zoo_1.8-15          glue_1.8.0          bit64_4.6.0-1      
+[13] lifecycle_1.0.5     cli_3.6.5           dreamerr_1.5.0     
+[16] sandwich_3.1-3      grid_4.5.2          vctrs_0.7.1        
+[19] compiler_4.5.2      tools_4.5.2         purrr_1.2.1        
+[22] nlme_3.1-168        Rcpp_1.1.1          rlang_1.1.7        

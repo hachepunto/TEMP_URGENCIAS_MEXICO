@@ -1,0 +1,21 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 3: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones_k
+NOTE: 62,535/0 fixed-effects (1,903,356 observations) removed because of only 0 outcomes or singletons.
+circulatorio_conasist: n=1986075, [36, Inf) acumulado_0_14 = 0.965 [0.867, 1.074] (25 s)
+NOTE: 58,367/0 fixed-effects (1,776,577 observations) removed because of only 0 outcomes or singletons.
+circulatorio_rural: n=2112854, [36, Inf) acumulado_0_14 = 0.937 [0.845, 1.039] (24 s)
+NOTE: 87,679/0 fixed-effects (2,668,849 observations) removed because of only 0 outcomes or singletons.
+circulatorio_sinasist: n=1220582, [36, Inf) acumulado_0_14 = 0.919 [0.783, 1.078] (15 s)
+NOTE: 93,637/28 fixed-effects (2,850,254 observations) removed because of only 0 outcomes or singletons.
+circulatorio_urbano: n=1039177, [36, Inf) acumulado_0_14 = 0.944 [0.805, 1.106] (14 s)
+NOTE: 25,199/0 fixed-effects (766,811 observations) removed because of only 0 outcomes or singletons.
+todas_conasist: n=3122620, [36, Inf) acumulado_0_14 = 1.004 [0.949, 1.062] (34 s)
+NOTE: 24,295/0 fixed-effects (739,377 observations) removed because of only 0 outcomes or singletons.
+todas_rural: n=3150054, [36, Inf) acumulado_0_14 = 1.012 [0.953, 1.075] (35 s)
+NOTE: 54,181/0 fixed-effects (1,648,997 observations) removed because of only 0 outcomes or singletons.
+todas_sinasist: n=2240434, [36, Inf) acumulado_0_14 = 1.010 [0.916, 1.114] (25 s)
+NOTE: 75,712/28 fixed-effects (2,304,689 observations) removed because of only 0 outcomes or singletons.
+todas_urbano: n=1584742, [36, Inf) acumulado_0_14 = 1.000 [0.912, 1.097] (19 s)
+-> resultados/tablas/rezagos_defunciones_k_marg3_2012_2025.csv

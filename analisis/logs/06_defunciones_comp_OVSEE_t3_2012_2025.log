@@ -1,0 +1,8 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+municipios de comp_OVSEE_t3.txt: 819
+FE: cve^anio^mes + ent^dow | conteos: defunciones
+NOTE: 13,625/0 fixed-effects (414,575 observations) removed because of only 0 outcomes or singletons.
+todas: n=3474856, [36, Inf) acumulado_0_14 = 1.006 [0.961, 1.052] (38 s)
+NOTE: 42,583/0 fixed-effects (1,296,099 observations) removed because of only 0 outcomes or singletons.
+circulatorio: n=2593332, [36, Inf) acumulado_0_14 = 0.961 [0.892, 1.035] (30 s)

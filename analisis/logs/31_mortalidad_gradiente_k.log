@@ -1,0 +1,91 @@
+K descriptivos por tercil de marginación (individual):
+    marg defunciones pct_urbano pct_sin_asistencia
+   <num>       <num>      <num>              <num>
+1:     1     7404063      91.13              12.07
+2:     2     1546524      53.13              17.34
+3:     3      938301      32.08              28.22
+
+K-b: correlaciones de Spearman (marginacion = -IM_2020, mayor = más marginado):
+            marginacion PL.5000 VHAC OVPT OVSEE PO2SM
+marginacion        1.00    0.64 0.75 0.78  0.72  0.80
+PL.5000            0.64    1.00 0.26 0.37  0.42  0.57
+VHAC               0.75    0.26 1.00 0.66  0.51  0.62
+OVPT               0.78    0.37 0.66 1.00  0.60  0.62
+OVSEE              0.72    0.42 0.51 0.60  1.00  0.48
+PO2SM              0.80    0.57 0.62 0.62  0.48  1.00
+
+K-b: coincidencia de terciles con los de marginación:
+   indicador pct_T3_en_M3 pct_T1_en_M1
+      <char>        <num>        <num>
+1:   PL.5000         52.6         77.2
+2:      VHAC         70.0         71.6
+3:      OVPT         74.6         72.4
+4:     OVSEE         68.3         69.5
+5:     PO2SM         71.9         79.0
+
+K-a/K-c nacional, acumulado 0-14 a >= 36:
+                     cap   irr    lo    hi
+                  <char> <num> <num> <num>
+1: circulatorio_conasist 1.088 1.049 1.128
+2:    circulatorio_rural 1.035 0.978 1.096
+3: circulatorio_sinasist 1.183 1.098 1.275
+4:   circulatorio_urbano 1.124 1.080 1.169
+5:        todas_conasist 1.074 1.050 1.099
+6:           todas_rural 1.032 1.001 1.064
+7:        todas_sinasist 1.131 1.081 1.184
+8:          todas_urbano 1.099 1.071 1.127
+
+Cocientes T3/T1 (M3/M1), acumulado 0-14 a >= 36 °C:
+                parte                   cap    T1    T2    T3 ratio    lo    hi
+               <char>                <char> <num> <num> <num> <num> <num> <num>
+ 1: G (ii) referencia          circulatorio 1.126 1.117 0.944 0.838 0.759 0.927
+ 2: G (ii) referencia                 todas 1.097 1.075 1.011 0.921 0.869 0.977
+ 3:        K-a ámbito    circulatorio_rural 1.051 1.114 0.937 0.892 0.778 1.022
+ 4:        K-a ámbito   circulatorio_urbano 1.132 1.107 0.944 0.834 0.707 0.983
+ 5:        K-a ámbito           todas_rural 1.030 1.057 1.012 0.982 0.910 1.060
+ 6:        K-a ámbito          todas_urbano 1.104 1.086 1.000 0.906 0.823 0.998
+ 7:   K-b componentes   PL5000:circulatorio 1.131 1.086 0.983 0.869 0.790 0.957
+ 8:   K-b componentes          PL5000:todas 1.102 1.054 1.036 0.940 0.886 0.998
+ 9:   K-b componentes     VHAC:circulatorio 1.134 1.048 1.076 0.949 0.864 1.042
+10:   K-b componentes            VHAC:todas 1.103 1.042 1.085 0.983 0.926 1.044
+11:   K-b componentes     OVPT:circulatorio 1.139 1.058 0.994 0.873 0.785 0.971
+12:   K-b componentes            OVPT:todas 1.108 1.050 1.014 0.916 0.862 0.973
+13:   K-b componentes    OVSEE:circulatorio 1.146 1.076 0.961 0.839 0.769 0.915
+14:   K-b componentes           OVSEE:todas 1.119 1.028 1.006 0.899 0.852 0.949
+15:   K-b componentes    PO2SM:circulatorio 1.126 1.078 1.003 0.891 0.797 0.995
+16:   K-b componentes           PO2SM:todas 1.105 1.045 1.037 0.938 0.878 1.003
+17:    K-c asistencia circulatorio_conasist 1.096 1.114 0.965 0.880 0.785 0.988
+18:    K-c asistencia circulatorio_sinasist 1.271 1.104 0.919 0.723 0.602 0.869
+19:    K-c asistencia        todas_conasist 1.082 1.070 1.004 0.928 0.872 0.987
+20:    K-c asistencia        todas_sinasist 1.175 1.067 1.010 0.860 0.768 0.963
+                parte                   cap    T1    T2    T3 ratio    lo    hi
+               <char>                <char> <num> <num> <num> <num> <num> <num>
+          q
+      <num>
+ 1:      NA
+ 2:      NA
+ 3: 0.13000
+ 4: 0.09200
+ 5: 0.65000
+ 6: 0.09200
+ 7: 0.01100
+ 8: 0.06300
+ 9: 0.30000
+10: 0.58000
+11: 0.02400
+12: 0.01100
+13: 0.00061
+14: 0.00061
+15: 0.06300
+16: 0.07900
+17: 0.03100
+18: 0.00210
+19: 0.02400
+20: 0.01700
+          q
+      <num>
+
+K-a: (i) efecto urbano > rural: TRUE; (ii) M3/M1 incluye 1 y más cerca de 1 que 0.921 en ambos ámbitos: FALSE; algún ámbito informativo con IC < 1: TRUE -> ámbito: NO explica el gradiente
+K-b: T3/T1 todas < 1 con q < 0.05: PL5000=FALSE VHAC=FALSE OVPT=TRUE OVSEE=TRUE PO2SM=FALSE -> lectura: vivienda
+K-b: OVSEE T3/T1 < 1 contradice la hipótesis de enfriamiento (declarado de antemano)
+K-c: M3/M1 con asistencia 0.928 [0.872, 0.987] -> imprecisión sin asistencia: NO explica el gradiente
