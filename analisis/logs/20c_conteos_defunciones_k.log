@@ -1,0 +1,17 @@
+todas: 9,888,888; area_ur no especificado 0.89%; asist_medi no especificado 6.40%
+                     cap   casos
+                  <char>   <int>
+1:           todas_rural 1997186
+2:          todas_urbano 7803684
+3:   circulatorio_urbano 1972401
+4:    circulatorio_rural  571059
+5:        todas_conasist 7923132
+6:        todas_sinasist 1332693
+7: circulatorio_conasist 2048098
+8: circulatorio_sinasist  362415
+-> conteos_defunciones_k_2012_2025.parquet
+PL.5000: municipios por tercil 596/596/1265; corte T1/T2 39.09, T2/T3 91.27; empates en el valor mínimo: 18 municipios
+VHAC: municipios por tercil 819/819/819; corte T1/T2 20.79, T2/T3 29.79; empates en el valor mínimo: 1 municipios
+OVPT: municipios por tercil 819/819/819; corte T1/T2 2.48, T2/T3 8.36; empates en el valor mínimo: 10 municipios
+OVSEE: municipios por tercil 819/819/819; corte T1/T2 0.48, T2/T3 1.32; empates en el valor mínimo: 30 municipios
+PO2SM: municipios por tercil 819/819/819; corte T1/T2 78.68, T2/T3 89.34; empates en el valor mínimo: 1 municipios

@@ -33,6 +33,8 @@ Lectura fijada aquí (descriptiva: los indicadores están correlacionados y no s
 - **no separable**, si lo dan `PL.5000` y al menos uno de vivienda, o ninguno.
 `PO2SM` se reporta sin entrar en la regla. Una predicción que se declara de antemano: si `OVSEE` T3/T1 sale < 1, contradice la hipótesis de enfriamiento (sin electricidad debería aumentar el efecto, no reducirlo).
 
+**Enmienda 2026-11-04, antes de correr ningún modelo de K** (al construir los terciles): en `PL.5000`, 1,265 de los 2,457 municipios tienen 100 % (toda su población en localidades < 5,000 hab.), así que no hay terciles por número de municipios; partir el empate por `cve` lo habría repartido por estado. Para `PL.5000`, T3 = los 1,265 municipios totalmente rurales y T1/T2 = las dos mitades (596 cada una) del resto. Los otros cuatro indicadores tienen ≤ 2 municipios empatados en los cortes y se quedan como estaban.
+
 ## K-c. Asistencia médica antes de morir (individual)
 
 Variable `asist_medi` de cada defunción (1 con asistencia, 2 sin asistencia; otros valores fuera de estos desenlaces). Desenlaces (4): todas y circulatorio, con y sin asistencia.

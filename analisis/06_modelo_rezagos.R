@@ -12,6 +12,7 @@
 #   VENTANAS=30 usa clima_ventanas30 (ventanas 0,1-3,4-7,8-14,15-21,22-30; acumulado 0-30)
 #   ANIO_MIN=2014 excluye años anteriores (sensibilidad sin 2012)
 #   CONTEOS=defunciones_edad (J-a) y MUNICIPIOS=<archivo de cve> (J-b): ESPECIFICACION_mortalidad_marginacion.md
+#   CONTEOS=defunciones_k (K-a urbano/rural, K-c asistencia médica): ESPECIFICACION_mortalidad_gradiente_K.md
 #   EXPO=tmax (default) | at (temperatura aparente) | hum (Tmax con bins >= 33 partidos seco/húmedo) -> clima_ventanas_<EXPO> (ESPECIFICACION_humedad.md)
 # Salida por desenlace: resultados/tablas/rezagos<sufijo>/<periodo>_<cap>.csv (+ _resumen.csv)
 # Al final (si están todos): resultados/tablas/rezagos<sufijo>_<periodo>.csv y _resumen.csv
@@ -35,7 +36,7 @@ v30 <- Sys.getenv("VENTANAS", "14") == "30"; anio_min <- as.integer(Sys.getenv("
 ventanas <- if (v30) c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7, v15_21 = 7, v22_30 = 9) else c(v0 = 1, v1_3 = 3, v4_7 = 4, v8_14 = 7)   # días por ventana
 acum_lab <- if (v30) "acumulado_0_30" else "acumulado_0_14"
 fe_spec <- Sys.getenv("FE_SPEC", "base"); conteos_tipo <- Sys.getenv("CONTEOS", "capitulos")
-stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones", "defunciones_edad", "codigos"))
+stopifnot(fe_spec %in% c("base", "anio_semana"), conteos_tipo %in% c("capitulos", "subgrupos", "hospital", "defunciones", "defunciones_edad", "defunciones_k", "codigos"))
 marg    <- Sys.getenv("MARG", ""); stopifnot(marg %in% c("", "1", "2", "3"))
 mun_lista <- Sys.getenv("MUNICIPIOS", "")   # archivo con una cve por línea (especificación J-b)
 clima_e <- Sys.getenv("CLIMA", ""); stopifnot(clima_e %in% c("", "1", "2", "3"))
@@ -52,7 +53,7 @@ stopifnot(!(v30 && expo != "tmax"))
 clima   <- as.data.table(read_parquet(sprintf("datos/derivados/clima_ventanas%s_%s.parquet",
                                               if (v30) "30" else if (expo != "tmax") paste0("_", expo) else "", periodo)))
 if (anio_min > 0) clima <- clima[year(fecha) >= anio_min]
-es_defun <- conteos_tipo %in% c("defunciones", "defunciones_edad")
+es_defun <- conteos_tipo %in% c("defunciones", "defunciones_edad", "defunciones_k")
 if (es_defun) clima <- clima[fecha <= as.IDate("2024-12-31")]
 # urgencias: el archivo DGIS 2013 (excluido) cubre 2012-12-26 a 2013-12-25 (los archivos 2012-2015 van
 # del 26-dic al 25-dic). Sin él esos días no son ceros sino «sin dato»: se sacan del panel (AUDITORIA_2026-10-18, I1).
