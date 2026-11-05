@@ -1,0 +1,6 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+tercil de marginación 2: 819 municipios
+FE: cve^anio^mes + ent^dow | conteos: defunciones_edad
+NOTE: 18,833/0 fixed-effects (573,242 observations) removed because of only 0 outcomes or singletons.
+todas_65mas: n=3316189, [40, Inf) acumulado_0_14 = 1.266 [1.013, 1.583] (48 s)

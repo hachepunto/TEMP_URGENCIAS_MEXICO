@@ -1,0 +1,6 @@
+     bin   dias municipios
+   <int>  <int>      <int>
+1:    10 351921       1869
+2:    11 117868       1315
+3:    12  54686        909
+-> clima_ventanas_fino_2012_2025.parquet: 12,565,098 filas, 54 columnas

@@ -1,0 +1,55 @@
+Días con Tmax >= 36 °C por bin y tercil (2012-2024):
+    marg       bin   dias municipios tmax_mediana
+   <num>    <char>  <num>      <num>        <num>
+1:     1   [36,38) 140778        606        36.83
+2:     2   [36,38) 104524        602        36.68
+3:     3   [36,38)  91363        661        36.62
+4:     1   [38,40)  69185        444        38.82
+5:     2   [38,40)  26762        418        38.70
+6:     3   [38,40)  16140        453        38.61
+7:     1 [40, Inf)  40247        318        41.15
+8:     2 [40, Inf)   7737        290        40.86
+9:     3 [40, Inf)   3156        301        40.78
+
+Nacional, acumulado 0-14 frente a [24,27):
+Key: <bin>
+          bin circulatorio todas todas_65mas
+       <char>        <num> <num>       <num>
+ 1: [-Inf,12)        1.283 1.047       1.102
+ 2:   [12,15)        1.362 1.228       1.276
+ 3:   [15,18)        1.254 1.206       1.260
+ 4:   [18,21)        1.147 1.110       1.132
+ 5:   [21,24)        1.117 1.091       1.110
+ 6:   [24,27)        1.000 1.000       1.000
+ 7:   [27,30)        0.944 0.959       0.948
+ 8:   [30,33)        0.930 0.953       0.929
+ 9:   [33,36)        0.933 0.962       0.939
+10:   [36,38)        1.025 1.045       1.042
+11:   [38,40)        1.195 1.130       1.158
+12: [40, Inf)        1.328 1.210       1.286
+
+Cocientes M3/M1 (acumulado 0-14 frente a [24,27)):
+             parte          cap       bin    T1    T2    T3 ratio    lo    hi
+            <char>       <char>    <fctr> <num> <num> <num> <num> <num> <num>
+1: L-a2 secundario circulatorio   [38,40)  1.18  1.37 1.150 0.973 0.818 1.160
+2: L-a2 secundario circulatorio [40, Inf)  1.33  1.31 1.650 1.240 0.840 1.830
+3: L-a2 secundario        todas   [38,40)  1.13  1.19 1.190 1.050 0.951 1.170
+4: L-a2 secundario        todas [40, Inf)  1.21  1.26 1.320 1.090 0.848 1.390
+5: L-a2 secundario  todas_65mas   [38,40)  1.15  1.24 1.210 1.060 0.934 1.190
+6: L-a2 secundario  todas_65mas [40, Inf)  1.30  1.27 1.360 1.050 0.767 1.430
+7:  L-a2 principal circulatorio   [36,38)  1.04  1.04 0.873 0.837 0.751 0.932
+8:  L-a2 principal        todas   [36,38)  1.06  1.04 0.961 0.910 0.856 0.968
+9:  L-a2 principal  todas_65mas   [36,38)  1.06  1.04 0.891 0.839 0.778 0.905
+          p        q ancho_log
+      <num>    <num>     <num>
+1: 7.58e-01       NA     0.347
+2: 2.81e-01       NA     0.778
+3: 3.16e-01       NA     0.207
+4: 5.12e-01       NA     0.495
+5: 3.86e-01       NA     0.243
+6: 7.64e-01       NA     0.625
+7: 1.15e-03 1.73e-03     0.215
+8: 2.64e-03 2.64e-03     0.123
+9: 4.87e-06 1.46e-05     0.150
+
+L-a2: todas a [36,38) M3/M1 0.910 [0.856, 0.968] (ancho log 0.12; referencia 0.921) -> PERSISTE (ni dosis ni aclimatación lo explican)

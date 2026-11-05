@@ -1,0 +1,5 @@
+Warning message:
+package ‘fixest’ was built under R version 4.5.3 
+FE: cve^anio^mes + ent^dow | conteos: defunciones_edad
+NOTE: 50,524/0 fixed-effects (1,537,819 observations) removed because of only 0 outcomes or singletons.
+todas_65mas: n=10130474, [40, Inf) acumulado_0_14 = 1.286 [1.193, 1.388] (137 s)

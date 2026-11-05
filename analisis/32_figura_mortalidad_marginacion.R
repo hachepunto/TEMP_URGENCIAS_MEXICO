@@ -40,7 +40,7 @@ p <- ggplot(x, aes(ratio, fila)) +
   geom_pointrange(aes(xmin = lo, xmax = hi, colour = hi < 1), size = 0.25) +
   facet_grid(grupo ~ causa, scales = "free_y", space = "free_y", switch = "y") +
   scale_x_log10() + scale_colour_manual(values = c(`FALSE` = "#7a7a7a", `TRUE` = "#c44536"), guide = "none") +
-  labs(x = "Cociente más / menos marginado (M3/M1 o T3/T1) de la razón de tasas acumulada 0–14\nTmax ≥ 36 °C vs 24–27 °C (L: percentil local ≥ 99 vs 25–75; L-a2: 36–38 °C); en rojo, IC 95 % por debajo de 1", y = NULL) +
+  labs(x = "Cociente más / menos marginado (M3/M1 o T3/T1) de la razón de tasas acumulada 0–14\nTmax ≥ 36 °C vs 24–27 °C (L: percentil local ≥ 99 vs 25–75; L-a2: 36–38 °C)\nen rojo, IC 95 % por debajo de 1", y = NULL) +
   theme_minimal(base_size = 9) + theme(strip.placement = "outside", strip.text.y.left = element_text(angle = 0, hjust = 1),
                                        panel.spacing.y = unit(0.6, "lines"))
 dir.create("resultados/figuras", showWarnings = FALSE)
