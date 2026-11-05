@@ -1,9 +1,10 @@
 #!/usr/bin/env Rscript
 # Figura del gradiente de mortalidad por calor según marginación: cocientes M3/M1 (o T3/T1) del acumulado
-# 0-14 a Tmax >= 36 °C en G (ii)-(iii), J y K (y p99 local en L-a), para todas las causas y circulatorio. Sólo dibuja desde las tablas.
+# 0-14 a Tmax >= 36 °C en G (ii)-(iii), J y K (p99 local en L-a; 36-38 °C en L-a2), para todas las causas y circulatorio. Sólo dibuja desde las tablas.
 # Entrada: resultados/tablas/defunciones_marginacion_2012_2025.csv (28), defunciones_clima_marg_2012_2025.csv (28),
 #          mortalidad_edad_calidad_2012_2025.csv (29), mortalidad_gradiente_k_2012_2025.csv (31),
-#          mortalidad_aclimatacion_2012_2025.csv (34; L-a: p99 local frente a p25-75, no >= 36 °C)
+#          mortalidad_aclimatacion_2012_2025.csv (34; L-a: p99 local frente a p25-75, no >= 36 °C),
+#          mortalidad_dosis_2012_2025.csv (36; L-a2: 36-38 °C, no >= 36 °C)
 # Salida:  resultados/figuras/mortalidad_marginacion_2012_2025.{pdf,png}
 suppressMessages({library(data.table); library(ggplot2)})
 T <- "resultados/tablas"
@@ -25,7 +26,10 @@ k[, grupo := fcase(parte == "K-a ámbito", "K: ámbito", parte == "K-c asistenci
 l  <- fread(file.path(T, "mortalidad_aclimatacion_2012_2025.csv"))[parte == "L-a principal"]
 l[, `:=`(causa = fifelse(cap == "circulatorio", "circulatorio", "todas"), fila = fifelse(cap == "todas_65mas", "Percentil local ≥ 99, edad ≥ 65", "Percentil local ≥ 99"))]
 l <- l[, .(grupo = "L: umbral relativo", fila, causa, ratio, lo, hi)]
-x <- rbind(g, cl, j, k[, .(grupo, fila, causa, ratio, lo, hi)], l)
+d2 <- fread(file.path(T, "mortalidad_dosis_2012_2025.csv"))[parte == "L-a2 principal"]
+d2[, `:=`(causa = fifelse(cap == "circulatorio", "circulatorio", "todas"), fila = fifelse(cap == "todas_65mas", "Tmax 36–38 °C, edad ≥ 65", "Tmax 36–38 °C"))]
+d2 <- d2[, .(grupo = "L-a2: dosis igualada", fila, causa, ratio, lo, hi)]
+x <- rbind(g, cl, j, k[, .(grupo, fila, causa, ratio, lo, hi)], l, d2)
 stopifnot(!anyNA(x))
 x[, grupo := factor(grupo, unique(grupo))]
 x[, fila := factor(fila, rev(unique(fila)))]
@@ -36,10 +40,10 @@ p <- ggplot(x, aes(ratio, fila)) +
   geom_pointrange(aes(xmin = lo, xmax = hi, colour = hi < 1), size = 0.25) +
   facet_grid(grupo ~ causa, scales = "free_y", space = "free_y", switch = "y") +
   scale_x_log10() + scale_colour_manual(values = c(`FALSE` = "#7a7a7a", `TRUE` = "#c44536"), guide = "none") +
-  labs(x = "Cociente más / menos marginado (M3/M1 o T3/T1) de la razón de tasas acumulada 0–14\nTmax ≥ 36 °C vs 24–27 °C (L: percentil local ≥ 99 vs 25–75); en rojo, IC 95 % por debajo de 1", y = NULL) +
+  labs(x = "Cociente más / menos marginado (M3/M1 o T3/T1) de la razón de tasas acumulada 0–14\nTmax ≥ 36 °C vs 24–27 °C (L: percentil local ≥ 99 vs 25–75; L-a2: 36–38 °C); en rojo, IC 95 % por debajo de 1", y = NULL) +
   theme_minimal(base_size = 9) + theme(strip.placement = "outside", strip.text.y.left = element_text(angle = 0, hjust = 1),
                                        panel.spacing.y = unit(0.6, "lines"))
 dir.create("resultados/figuras", showWarnings = FALSE)
-ggsave("resultados/figuras/mortalidad_marginacion_2012_2025.pdf", p, width = 9, height = 7.2, device = cairo_pdf)
-ggsave("resultados/figuras/mortalidad_marginacion_2012_2025.png", p, width = 9, height = 7.2, dpi = 200)
+ggsave("resultados/figuras/mortalidad_marginacion_2012_2025.pdf", p, width = 9, height = 7.8, device = cairo_pdf)
+ggsave("resultados/figuras/mortalidad_marginacion_2012_2025.png", p, width = 9, height = 7.8, dpi = 200)
 message("-> resultados/figuras/mortalidad_marginacion_2012_2025.{pdf,png}")
