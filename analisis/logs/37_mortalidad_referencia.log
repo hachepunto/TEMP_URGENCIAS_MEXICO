@@ -1,0 +1,92 @@
+TMM por tercil (bin de menor IRR acumulado, 24-36 °C):
+Key: <cap>
+            cap       1       2       3
+         <char>  <char>  <char>  <char>
+1: circulatorio [27,30) [30,33) [33,36)
+2:        todas [27,30) [30,33) [33,36)
+3:  todas_65mas [30,33) [30,33) [33,36)
+
+Cocientes M3/M1 de razones de tasas acumuladas 0-14 entre bins:
+                       parte          cap   expo       bin
+                      <char>       <char> <char>    <char>
+ 1:           L-a3 principal circulatorio   fino   [36,38)
+ 2:           L-a3 principal        todas   fino   [36,38)
+ 3:           L-a3 principal  todas_65mas   fino   [36,38)
+ 4: L-a3 sec. 1: desde 33-36 circulatorio   fino   [38,40)
+ 5: L-a3 sec. 1: desde 33-36        todas   fino   [38,40)
+ 6: L-a3 sec. 1: desde 33-36  todas_65mas   fino   [38,40)
+ 7: L-a3 sec. 1: desde 33-36 circulatorio   fino [40, Inf)
+ 8: L-a3 sec. 1: desde 33-36        todas   fino [40, Inf)
+ 9: L-a3 sec. 1: desde 33-36  todas_65mas   fino [40, Inf)
+10: L-a3 sec. 1: desde 33-36 circulatorio   tmax [36, Inf)
+11: L-a3 sec. 1: desde 33-36        todas   tmax [36, Inf)
+12: L-a3 sec. 1: desde 33-36  todas_65mas   tmax [36, Inf)
+13:   L-a3 sec. 3: desde TMM circulatorio   fino   [36,38)
+14:   L-a3 sec. 3: desde TMM        todas   fino   [36,38)
+15:   L-a3 sec. 3: desde TMM  todas_65mas   fino   [36,38)
+                 frente_a    T1    T2    T3 ratio    lo    hi       p     q
+                   <char> <num> <num> <num> <num> <num> <num>   <num> <num>
+ 1:               [33,36)  1.09  1.15  1.06 0.978 0.891  1.07 0.64400 0.817
+ 2:               [33,36)  1.08  1.12  1.07 0.993 0.939  1.05 0.81700 0.817
+ 3:               [33,36)  1.10  1.14  1.07 0.966 0.905  1.03 0.31200 0.817
+ 4:               [33,36)  1.23  1.53  1.40 1.140 0.963  1.34 0.12900    NA
+ 5:               [33,36)  1.15  1.28  1.32 1.150 1.040  1.27 0.00603    NA
+ 6:               [33,36)  1.20  1.36  1.45 1.220 1.080  1.37 0.00155    NA
+ 7:               [33,36)  1.39  1.46  2.02 1.450 0.993  2.11 0.05420    NA
+ 8:               [33,36)  1.24  1.36  1.47 1.190 0.929  1.51 0.17100    NA
+ 9:               [33,36)  1.35  1.39  1.63 1.210 0.890  1.64 0.22400    NA
+10:               [33,36)  1.18  1.25  1.15 0.979 0.901  1.06 0.61000    NA
+11:               [33,36)  1.12  1.16  1.13 1.010 0.954  1.06 0.84000    NA
+12:               [33,36)  1.16  1.20  1.15 0.991 0.930  1.06 0.78100    NA
+13: TMM [27,30) / [33,36)  1.10  1.18  1.06 0.967 0.879  1.06 0.48100    NA
+14: TMM [27,30) / [33,36)  1.10  1.13  1.07 0.970 0.916  1.03 0.29800    NA
+15: TMM [30,33) / [33,36)  1.12  1.16  1.07 0.951 0.890  1.02 0.14000    NA
+    ancho_log
+        <num>
+ 1:     0.187
+ 2:     0.112
+ 3:     0.132
+ 4:     0.333
+ 5:     0.201
+ 6:     0.242
+ 7:     0.754
+ 8:     0.489
+ 9:     0.611
+10:     0.166
+11:     0.104
+12:     0.127
+13:     0.189
+14:     0.115
+15:     0.133
+
+Secundario 2, M3/M1 frente a 24-27 °C (G):
+             cap       bin    T1    T2    T3 ratio    lo    hi        p
+          <char>    <char> <num> <num> <num> <num> <num> <num>    <num>
+ 1: circulatorio   [27,30) 0.947 0.945 0.882 0.931 0.883 0.982 8.47e-03
+ 2:        todas   [27,30) 0.957 0.963 0.947 0.989 0.958 1.020 4.88e-01
+ 3:  todas_65mas   [27,30) 0.951 0.937 0.921 0.968 0.932 1.010 8.89e-02
+ 4: circulatorio   [30,33) 0.954 0.881 0.844 0.885 0.832 0.940 8.76e-05
+ 5:        todas   [30,33) 0.965 0.920 0.908 0.940 0.907 0.974 6.03e-04
+ 6:  todas_65mas   [30,33) 0.947 0.900 0.849 0.897 0.859 0.936 6.89e-07
+ 7: circulatorio   [33,36) 0.955 0.897 0.819 0.857 0.796 0.922 3.77e-05
+ 8:        todas   [33,36) 0.979 0.923 0.897 0.917 0.881 0.954 1.97e-05
+ 9:  todas_65mas   [33,36) 0.960 0.912 0.834 0.869 0.826 0.913 4.09e-08
+10: circulatorio [36, Inf) 1.130 1.120 0.944 0.838 0.759 0.927 5.60e-04
+11:        todas [36, Inf) 1.100 1.070 1.010 0.921 0.869 0.977 5.88e-03
+12:  todas_65mas [36, Inf) 1.120 1.090 0.962 0.861 0.801 0.925 4.62e-05
+    ancho_log
+        <num>
+ 1:    0.1060
+ 2:    0.0629
+ 3:    0.0759
+ 4:    0.1230
+ 5:    0.0707
+ 6:    0.0860
+ 7:    0.1470
+ 8:    0.0800
+ 9:    0.1010
+10:    0.2000
+11:    0.1160
+12:    0.1440
+
+L-a3: todas 36-38 frente a 33-36, M3/M1 0.993 [0.939, 1.051] (ancho log 0.11; referencia 0.921) -> REFERENCIA (el gradiente es un artefacto de medir desde 24-27 °C)
